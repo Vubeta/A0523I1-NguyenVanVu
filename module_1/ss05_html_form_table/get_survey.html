@@ -11,6 +11,7 @@
             background-color: #FFF7C0;
             padding-bottom: 5px;
             padding-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -39,14 +40,14 @@
 <div class="group" onclick="highlightGroup(event)">
     <label><strong>Gender Identity</strong></label>
     <ul style="list-style-type: none; margin: 0; padding: 0;">
-        <li><label><input type="radio" name="gender" value="male">Male</label></li>
-        <li><label><input type="radio" name="gender" value="female">Female</label></li>
-        <li><label><input type="radio" name="gender" value="nonbinary">Nonbinary</label></li>
-        <li>
-        <label><input type="radio" name="gender" value="other" id="genderRadio">Other</label>
-        <br/><input type="text" name="gender_other" id="genderInput" style="margin-left: 24px">
+        <li onclick="check_otherGender()"><label><input type="radio" name="gender" value="male">Male</label></li>
+        <li onclick="check_otherGender()"><label><input type="radio" name="gender" value="female">Female</label></li>
+        <li onclick="check_otherGender()"><label><input type="radio" name="gender" value="nonbinary">Nonbinary</label></li>
+        <li onclick="check_otherGender()">
+        <label><input type="radio" name="gender" value="other" id="otherRadio">Other</label>
+        <br/><input type="text" name="gender_other" id="otherInput" style="margin-left: 24px">
         </li>
-        <li style="font-size: 0.8em; margin-left: 24px">Maximum of 250 characters.</li>
+        <li style="font-size: 0.8em; margin-left: 24px; display: none" id="characterCheck">Maximum of 250 characters.</li>
     </ul>
 </div>
 <div class="group" onclick="highlightGroup(event)">
@@ -156,6 +157,7 @@
     <br/><input type="submit" value="Submit"/>
 </form>
 <script>
+    //Highlight light yellow
     let highlightedGroup = null;
     function highlightGroup(event) {
         let clickedGroup = event.currentTarget;
@@ -169,13 +171,26 @@
             clickedGroup.classList.add('highlight');
         }
     }
-    const gender_Input = document.getElementById('genderInput');
-    const gender_Radio = document.getElementById('genderRadio');
-    gender_Input.addEventListener('click',function () {
-        gender_Radio.checked = true;
+
+    //In case 'input_Other' is ticked then 'radio_Other' will be checked.
+    const other_Input = document.getElementById('otherInput');
+    const other_Radio = document.getElementById('otherRadio');
+    other_Input.addEventListener('click',function () {
+        other_Radio.checked = true;
     });
 
-
+    //Show character below 'input_Other' if 'radio_Other' is checked.
+    const character_Check = document.getElementById('characterCheck');
+    const gender_Radio = document.querySelectorAll('input[name="gender"]');
+    function check_otherGender() {
+        for (let i = 0; i < gender_Radio.length; i++) {
+            if (gender_Radio[i].checked === true && gender_Radio[i].value === "other") {
+                character_Check.style.display = 'block';
+            } else {
+                character_Check.style.display = 'none';
+            }
+        }
+    }
 </script>
 </body>
 </html>
