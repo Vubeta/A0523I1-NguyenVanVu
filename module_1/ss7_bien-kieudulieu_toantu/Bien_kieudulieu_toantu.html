@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến, kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<h2>Bài 1: Điểm trung bình và tổng điểm của sinh viên</h2>
+<table>
+    <tr>
+        <td>Điểm môn Vật lý</td>
+        <td><input type=number name="vat_ly" id="vat_ly"/></td>
+    </tr>
+    <tr>
+        <td>Điểm môn hóa học</td>
+        <td><input type=number name="hoa_hoc" id="hoa_hoc"/></td>
+    </tr>
+    <tr>
+        <td>Điểm môn Sinh học</td>
+        <td><input type=number name="sinh_hoc" id="sinh_hoc"/></td>
+    </tr>
+</table>
+<p style="margin-top: 10px; margin-bottom: 0px;">Điểm trung bình các môn: <span id="diem_TB"></span></p>
+<p style="margin-top: 10px; margin-bottom: 0px;">Điểm tổng các môn: <span id="diem_Tong"></span></p>
+<hr/>
+<h2>Bài 2: Chuyển đổi độ C sang độ F</h2>
+<table>
+    <tr>
+        <td>Nhiệt độ theo độ C: </td>
+        <td><input type="number" id="do_C"/></td>
+    </tr>
+    <tr>
+        <td>Nhiệt độ theo độ F: </td>
+        <td  id="do_F"></td>
+    </tr>
+</table>
+<hr/>
+<h2>Bài 3: Tính diện tích hình tròn</h2>
+<table>
+    <tr>
+        <td>Bán kính hình tròn (m): </td>
+        <td><input type="number" id="radius"/></td>
+    </tr>
+    <tr>
+        <td>Diện tích hình tròn (m<sup>2</sup>): </td>
+        <td id="area" valign="bottom";></td>
+    </tr>
+</table>
+<hr/>
+<h2>Bài 4: Tính chu vi hình tròn</h2>
+<table>
+    <tr>
+        <td>Bán kính hình tròn (m): </td>
+        <td><input type="number" id="radius_1"/></td>
+    </tr>
+    <tr>
+        <td>Chu vi hình tròn (m): </td>
+        <td  id="perimeter"></td>
+    </tr>
+</table>
+<script>
+    //Bai 1
+    let ly_Input = document.getElementById("vat_ly");
+    let hoa_Input = document.getElementById("hoa_hoc");
+    let sinh_Input = document.getElementById("sinh_hoc");
+    let diem_Ave = document.getElementById("diem_TB");
+    let diem_Sum = document.getElementById("diem_Tong")
+
+    ly_Input.addEventListener('input', calculate);
+    hoa_Input.addEventListener('input', calculate);
+    sinh_Input.addEventListener('input', calculate);
+
+    function calculate() {
+        diem_Ly = parseFloat(ly_Input.value);
+        diem_Hoa = parseFloat(hoa_Input.value);
+        diem_Sinh = parseFloat(sinh_Input.value);
+        if (isNaN(diem_Ly) || isNaN(diem_Hoa) || isNaN(diem_Sinh)) {
+            diem_Ave.textContent = "Bạn chưa nhập đủ điểm cho môn học.";
+            diem_Sum.textContent = "Bạn chưa nhập đủ điểm cho môn học.";
+            return;
+        }
+        let Sum = diem_Ly + diem_Hoa + diem_Sinh
+        let Ave = Sum/3;
+        diem_Ave.textContent = Ave.toFixed(2);
+        diem_Sum.textContent = Sum.toFixed(2);
+    }
+
+    //Bai 2
+    let doC_Input = document.getElementById("do_C");
+    let doF_Result = document.getElementById("do_F");
+
+    doC_Input.addEventListener('input', convert);
+
+    function convert() {
+        let doC_value = parseFloat(doC_Input.value);
+        if(isNaN(doC_value)) {
+            doF_Result.textContent = "Bạn chưa nhập độ C.";
+            return;
+        }
+        let doF_value = doC_value*1.8+32;
+        doF_Result.textContent = doF_value.toFixed(2);
+    }
+
+    //Bai 3
+    let radius_Input = document.getElementById("radius");
+    let area_Result = document.getElementById("area");
+
+    radius_Input.addEventListener('input', cal_Area);
+
+    function cal_Area() {
+        let radius_value = parseFloat(radius_Input.value);
+        if(isNaN(radius_value)) {
+            area_Result.textContent = "Bạn chưa nhập bán kính.";
+            return;
+        }
+        let area_value = Math.PI * Math.pow(radius_value, 2);
+        area_Result.textContent = area_value.toFixed(2);
+    }
+
+    //Bai 4
+    let radius1_Input = document.getElementById("radius_1");
+    let perimeter_Result = document.getElementById("perimeter");
+
+    radius1_Input.addEventListener('input', cal_Perimeter);
+
+    function cal_Perimeter() {
+        let radius1_value = parseFloat(radius1_Input.value);
+        if(isNaN(radius1_value)) {
+            perimeter_Result.textContent = "Bạn chưa nhập bán kính.";
+            return;
+        }
+        let perimeter_value = 2 * Math.PI * radius1_value;
+        perimeter_Result.textContent = perimeter_value.toFixed(2);
+    }
+</script>
+</body>
+</html>
