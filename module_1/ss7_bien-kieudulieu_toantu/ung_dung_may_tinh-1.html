@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<input type="number" id="number1"/>
+<input type="number" id="number2"/>
+<br/>
+<br/>
+<button onclick="calculate(this)" name="cal_Add">Addition(+)</button>
+<button onclick="calculate(this)" name="cal_Sub">Subtraction(-)</button>
+<button onclick="calculate(this)" name="cal_Mul">Multiplication(X)</button>
+<button onclick="calculate(this)" name="cal_Div">Divison(/)</button>
+<br/>
+<br/>
+<p id="result"></p>
+</body>
+<script>
+    const number1 = document.getElementById("number1");
+    const number2 = document.getElementById("number2");
+    const result_Cal = document.getElementById("result");
+    function calculate(button) {
+        let number1_value = parseFloat(number1.value);
+        let number2_value = parseFloat(number2.value);
+        if (isNaN(number1_value) || isNaN(number2_value)) {
+            result_Cal.textContent = "Please input data before calculation.";
+            return;
+        }
+        const buttonName = button.name;
+
+        switch (buttonName) {
+            case "cal_Add": //phep Cong
+                result = number1_value + number2_value;
+                result_Cal.textContent = "Result Addition: " + result.toFixed(3);
+                break;
+            case "cal_Sub": //phep Tru
+                result = number1_value - number2_value;
+                result_Cal.textContent = "Result Subtraction: " + result.toFixed(3);
+                break;
+            case "cal_Mul": //phep Nhan
+                result = number1_value * number2_value;
+                result_Cal.textContent = "Result Multiplication: " + result.toFixed(3);
+                break;
+            case "cal_Div": //phep Chia
+                result = number1_value / number2_value;
+                result_Cal.textContent = "Result Division: " + result.toFixed(3);
+                break;
+            default:
+                console.log("Unknown button clicked");
+        }
+    }
+</script>
+</html>
