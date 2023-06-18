@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<style>
+    th {
+
+    }
+    td {
+        text-align: center;
+    }
+    select {
+        width: 110px;
+    }
+</style>
+    <table>
+        <tr>
+            <th width="200px">Amount</th>
+            <th width="160px">From Currency</th>
+            <th width="160px">To Currency</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td><input type="number" id="amount" name="amount" style="width: 150px" placeholder="Enter denomination"/></td>
+            <td>
+                <select name="currency_0" id="currency_0">
+                <option value="vietnam">VietNam</option>
+                <option value="america">USD</option>
+                <option value="england">GBP</option>
+                </select>
+            </td>
+            <td>
+                <select name="currency_1" id="currency_1">
+                <option value="america">USD</option>
+                <option value="england">BGP</option>
+                <option value="vietnam">VietNam</option>
+                </select>
+            </td>
+            <td><button onclick="convert_Currency()" style="color: white; background-color: mediumslateblue">Convert</button></td>
+        </tr>
+    </table>
+<p style="color: blue;">Result :<span id="result"></span> <span id="currecy_Unit"></span></p>
+</body>
+<script>
+    const amount_Input = document.getElementById("amount");
+    const currency0_Select = document.getElementById("currency_0");
+    const currency1_Select = document.getElementById("currency_1");
+    const result_Convert = document.getElementById("result");
+    const currency_Unit = document.getElementById("currecy_Unit");
+    const USDtoVN = 23530; // 1 USD = 23530 VND
+    const GBPtoVN = 30173.7; // 1GBP = 30173.7 VND
+
+    function convert_Currency() {
+        let amount_value = parseFloat(amount_Input.value);
+        let currency0_value = currency0_Select.value;
+        let currency1_value = currency1_Select.value;
+
+        if (isNaN(amount_value)) {
+            result_Convert.textContent = "Please enter denomination!";
+            currency_Unit.textContent = "";
+            return;
+        }
+
+        //chuyen doi sang USD
+        if (currency1_value === "america") {
+            currency_Unit.textContent = 'USD';
+            if (currency0_value === "america") {
+                result = amount_value;
+            } else if (currency0_value === "england") {
+                result = amount_value*GBPtoVN/USDtoVN;
+            } else if (currency0_value === "vietnam") {
+                result = amount_value/USDtoVN;
+            }
+        }
+        //chuyen doi sang GBP
+        if (currency1_value === "england") {
+            currency_Unit.textContent = 'GBP';
+            if (currency0_value === "england") {
+                result = amount_value;
+            } else if (currency0_value === "america") {
+                result = amount_value*USDtoVN/GBPtoVN;
+            } else if (currency0_value === "vietnam") {
+                result = amount_value/GBPtoVN;
+            }
+        }
+        //chuyen doi sang VietNam
+        if (currency1_value === "vietnam") {
+            currency_Unit.textContent = 'VND';
+            if (currency0_value === "vietnam") {
+                result = amount_value;
+            } else if (currency0_value === "america") {
+                result = amount_value*USDtoVN;
+            } else if (currency0_value === "england") {
+                result = amount_value*GBPtoVN;
+            }
+        }
+        result_Convert.textContent = result.toFixed(21);
+    }
+</script>
+</html>
