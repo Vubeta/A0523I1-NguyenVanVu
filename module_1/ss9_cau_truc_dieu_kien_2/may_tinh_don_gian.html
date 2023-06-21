@@ -2,9 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Máy tính đơn giản</title>
 </head>
 <body>
-$END$
+<style>
+    .custom_Buton {
+        width: 50px;
+        height: 50px;
+        font-size: 2em;
+        color: blue;
+        background-color: white;
+        border: 2px solid silver;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .custom_DisplayFormula {
+        font-size: 2em;
+        color: blue;
+        text-align: right;
+        background-color: white;
+        padding: 10px;
+        border: 1px solid silver;
+    }
+</style>
+<table style="border: 4px solid black;" id="cal_Formula" cellspacing="10px">
+    <tr>
+        <td colspan="4" class="custom_DisplayFormula">
+            <span id="formula_Input">1</span>
+        </td>
+    </tr>
+    <tr>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>1</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>2</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>3</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>+</span></button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>4</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>5</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>6</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>-</span></button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>7</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>8</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>9</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>x</span></button></td>
+    </tr>
+    <tr>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>C</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>0</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>=</span></button></td>
+        <td><button onclick="calculalte()" class="custom_Buton" onclick="cal_AddFormula(this)"><span>/</span></button></td>
+    </tr>
+</table>
+<script>
+    const formula_Input = document.getElementById("formula_Input");
+    let isFirstButtonPressed = false;
+    function cal_AddFormula(button) {
+        let button_Value = button.innerText;
+        if ()
+    }
+</script>
 </body>
 </html>
