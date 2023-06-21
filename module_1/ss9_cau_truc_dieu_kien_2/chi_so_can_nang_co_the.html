@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính chỉ số cân nặng của cơ thể</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Cân nặng: </td>
+        <td><input type="number" id="weight"/></td>
+        <td>(kg)</td>
+    </tr>
+    <tr>
+        <td>Chiều cao: </td>
+        <td><input type="number" id="height"/></td>
+        <td>(m)</td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    const weight_Input = document.getElementById("weight");
+    const height_Input = document.getElementById("height");
+    const result = document.getElementById("result");
+    weight_Input.addEventListener('input', calculate);
+    height_Input.addEventListener('input', calculate);
+    function calculate() {
+        let weight_value = parseFloat(weight_Input.value);
+        let height_value = parseFloat(height_Input.value);
+        if (isNaN(weight_value) || isNaN(height_value)) {
+            result.textContent = "Please enter the data before calculation.";
+            return;
+        }
+        let bmi = weight_value / (Math.pow(height_value,2));
+        if (bmi < 18.5) {
+            result.textContent = "Underweight";
+        } else if (bmi < 25) {
+            result.textContent = "Normal";
+        } else if (bmi < 30) {
+            result.textContent = "Overweight";
+        } else {
+            result.textContent = "Obese";
+        }
+    }
+</script>
+</body>
+</html>
