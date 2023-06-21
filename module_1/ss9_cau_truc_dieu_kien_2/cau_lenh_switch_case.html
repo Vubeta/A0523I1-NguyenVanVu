@@ -37,8 +37,11 @@
             case 11:
                 result.textContent = "Tháng " + month_Value + " có 30 ngày";
                 break;
-            default:
+            case 2:
                 result.textContent = "Tháng " + month_Value + " có 28 hoặc 29 ngày";
+                break;
+            default:
+                result.textContent = "Tháng bạn nhập không hợp lệ";
         }
     }
 </script>
