@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính số ngày trong tháng</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td><input type="number" id="month"/></td>
+        <td><button onclick="cal_Day()">Tính số ngày</button></td>
+    </tr>
+</table>
+<p id="result"></p>
+<script>
+    const month_Input = document.getElementById("month");
+    const result = document.getElementById("result");
+    function cal_Day() {
+        let month_Value = parseInt(month_Input.value);
+        if (isNaN(month_Value)) {
+            result.textContent = "Vui lòng nhập tháng!";
+            return;
+        }
+        switch (month_Value) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                result.textContent = "Tháng " + month_Value + " có 31 ngày";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                result.textContent = "Tháng " + month_Value + " có 30 ngày";
+                break;
+            default:
+                result.textContent = "Tháng " + month_Value + " có 28 hoặc 29 ngày";
+        }
+    }
+</script>
+</body>
+</html>
