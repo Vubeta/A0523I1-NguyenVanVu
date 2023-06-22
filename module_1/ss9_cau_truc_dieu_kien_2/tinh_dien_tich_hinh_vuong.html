@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình vuông</title>
+</head>
+<body>
+<h2>Bài 3: Tính diện tích hình vuông khi biết cạnh a</h2>
+<label>Độ dài: </label>
+<input type="number" id="a_Length"/>
+<label>(m)</label>
+<p id="result_Bai3"></p>
+<script>
+    const a_Length = document.getElementById("a_Length");
+    const result_Bai3 = document.getElementById("result_Bai3");
+    a_Length.addEventListener('input',run_Bai3);
+    function run_Bai3() {
+        let a_LengthValue = parseFloat(a_Length.value);
+        if (isNaN(a_LengthValue)) {
+            result_Bai3.textContent = "Vui lòng nhập vào độ dài cạnh hình vuông (m).";
+            return;
+        } else {
+            result = Math.pow(a_LengthValue,2);
+            result_Bai3.innerHTML = "Diện tích hình vuông là " + result + ' (m<sup>2</sup>)';
+        }
+    }
+</script>
+</body>
+</html>

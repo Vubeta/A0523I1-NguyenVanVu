@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi độ C sang độ F</title>
+</head>
+<body>
+<h2>Bài 1: Chuyển từ độ C sang độ F</h2>
+<label>Nhiệt độ: </label>
+<input type="number" id="do_C"/>
+<label>(độ C)</label>
+<p id="result_Bai1"></p>
+<script>
+    const do_C = document.getElementById("do_C");
+    const result_Bai1 = document.getElementById("result_Bai1");
+    do_C.addEventListener('input',run_Bai1);
+    function run_Bai1() {
+        let do_CValue = parseFloat(do_C.value);
+        if (isNaN(do_CValue)) {
+            result_Bai1.textContent = "Vui lòng nhập vào nhiệt độ (độ C).";
+            return;
+        }  else {
+            result = do_CValue*1.8+32;
+            result_Bai1.textContent = "Nhiệt độ tương đương là " + result + "(độ F)";
+        }
+    }
+</script>
+</body>
+</html>

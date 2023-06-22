@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ mét sang feet</title>
+</head>
+<body>
+<h2>Bài 2: Chuyển từ mét sang feet</h2>
+<label>Độ dài: </label>
+<input type="number" id="meter_Unit"/>
+<label>(m)</label>
+<p id="result_Bai2"></p>
+<script>
+    const meter_Unit = document.getElementById("meter_Unit");
+    const result_Bai2 = document.getElementById("result_Bai2");
+    meter_Unit.addEventListener('input',run_Bai2);
+    function run_Bai2() {
+        let meter_UnitValue = parseFloat(meter_Unit.value);
+        if (isNaN(meter_UnitValue)) {
+            result_Bai2.textContent = "Vui lòng nhập vào độ dài (m).";
+            return;
+        }  else {
+            result = meter_UnitValue*3.2808;
+            result_Bai2.textContent = "Độ dài tương đương là " + result + "(ft)";
+        }
+    }
+</script>
+</body>
+</html>

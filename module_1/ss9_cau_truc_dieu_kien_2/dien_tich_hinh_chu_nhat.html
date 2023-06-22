@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình  chữ nhật khi biết 2 cạnh a và b</title>
+</head>
+<body>
+<h2>Bài 4: Tính diện tích hình  chữ nhật khi biết 2 cạnh a và b</h2>
+<table>
+    <tr>
+        <td><label>Chiều dài a: </label></td>
+        <td><input type="number" id="a_Input"/></td>
+        <td><label>(m)</label></td>
+    </tr>
+    <tr>
+        <td><label>Chiều rộng b: </label></td>
+        <td><input type="number" id="b_Input"/></td>
+        <td><label>(m)</label></td>
+    </tr>
+</table>
+<p id="result_Bai4"></p>
+<script>
+    const a_Input = document.getElementById("a_Input");
+    const b_Input = document.getElementById("b_Input");
+    const result_Bai4 = document.getElementById("result_Bai4");
+    a_Input.addEventListener('input', run_Bai4);
+    b_Input.addEventListener('input', run_Bai4);
+    function run_Bai4() {
+        let a_Value = parseFloat(a_Input.value);
+        let b_Value = parseFloat(b_Input.value);
+        if (isNaN(a_Value) || isNaN(b_Value)) {
+            result_Bai4.textContent = "Vui lòng điền đầy đủ thông tin.";
+            return;
+        }
+        if (a_Value<=0 || b_Value<=0) {
+            result_Bai4.textContent = "Vui lòng điền đúng thông tin.";
+        } else {
+            result = a_Value*b_Value;
+            result_Bai4.innerHTML = "Diện tích hình chữ nhật là " + result + ' (m<sup>2</sup>)';
+        }
+    }
+</script>
+</body>
+</html>
