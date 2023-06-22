@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<h2>Bài 6: Giải phương trình bậc 2</h2>
+<p>Phương trình bậc 2 có dạng: ax<span>2</span> + bx + c = 0.</p>
+<table>
+    <tr>
+        <td><label>Hệ số a: </label></td>
+        <td><input type="number" id="a_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Hệ số b: </label></td>
+        <td><input type="number" id="b_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Hệ số c: </label></td>
+        <td><input type="number" id="c_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai7"></p>
+<script>
+    const a_Input = document.getElementById("a_Input");
+    const b_Input = document.getElementById("b_Input");
+    const c_Input = document.getElementById("c_Input");
+    const result_Bai7 = document.getElementById("result_Bai7");
+    a_Input.addEventListener('input', run_Bai7);
+    b_Input.addEventListener('input', run_Bai7);
+    c_Input.addEventListener('input', run_Bai7);
+    function run_Bai7() {
+        let a_Value = parseFloat(a_Input.value);
+        let b_Value = parseFloat(b_Input.value);
+        let c_Value = parseFloat(c_Input.value);
+        let result, result2;
+        let delta;
+        if (isNaN(a_Value) || isNaN(b_Value) || isNaN(c_Value)) {
+            result_Bai7.textContent = "Vui lòng nhập đầy đủ thông tin.";
+            return;
+        }
+        if (a_Value == 0) {
+            if (b_Value == 0) {
+                if (c_Value == 0) {
+                    result_Bai7.textContent = "Phương trình có vô số nghiệm.";
+                } else {
+                    result_Bai7.textContent = "Phương trình vô nghiệm.";
+                }
+            } else {
+                result = -b_Value / a_Value;
+                result_Bai7.textContent = "Nghiệm của phương trình là: x = " + result;
+            }
+        } else {
+            delta = Math.pow(b_Value,2) - 4 * a_Value * c_Value;
+            result = -b_Value / a_Value;
+            result_Bai7.textContent = "Nghiệm của phương trình là: x = " + result;
+            if (delta < 0) {
+                result_Bai7.textContent = "Phương trình vô nghiệm.";
+            } else if (delta == 0) {
+                result = -b_Value/(2*a_Value);
+                result_Bai7.textContent = "Phương trình có nghiệm kép là: x = " + result;
+            } else {
+                result = (-b_Value + Math.sqrt(delta)) / (2*a_Value);
+                result2 = (-b_Value - Math.sqrt(delta)) / (2*a_Value);
+                result_Bai7.innerHTML = "Phương trình có 2 nghiệm phân biệt là: " + `x<sub>1</sub>=${result} và x<sub>2</sub>=${result2}`;
+            }
+        }
+    }
+</script>
+</body>
+</html>
