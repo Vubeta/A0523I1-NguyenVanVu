@@ -2,9 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính hoa hồng nhận được từ doanh số bán hàng</title>
 </head>
 <body>
-$END$
+<h2>Bài 6: Tính hoa hồng nhận được từ doanh số bán hàng</h2>
+<label>Doanh số bán hàng: </label>
+<input type="number" id="num_Sales"/>
+<label>$</label>
+<p id="result_Bai6"></p>
+<script>
+    const num_Sales = document.getElementById("num_Sales");
+    const result_Bai6 = document.getElementById("result_Bai6");
+    num_Sales.addEventListener('input',run_Bai6);
+    function run_Bai6() {
+        let num_SalesValue = parseFloat(num_Sales.value);
+        let commission;
+        if (isNaN(num_SalesValue)) {
+            result_Bai6.textContent = "Please fill in all the data.";
+            return;
+        } else if (num_SalesValue < 1000) {
+            commission = num_SalesValue*0.05;
+        } else if (num_SalesValue < 5000) {
+            commission = num_SalesValue*0.07;
+        } else if (num_SalesValue < 10000) {
+            commission = num_SalesValue*0.1;
+        } else {
+            commission = num_SalesValue*0.15;
+        }
+        result_Bai6.textContent = "The amount of commission received is " + commission + "$";
+    }
+</script>
 </body>
 </html>

@@ -2,9 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Tính cước điện thoại cho hộ gia đình</title>
 </head>
 <body>
-$END$
+<h2>Bài 7: Tính cước điện thoại cho hộ gia đình</h2>
+<label>Tổng thời gian gọi: </label>
+<input type="number" id="num_Minutes"/>
+<label>phút</label>
+<p id="result_Bai7"></p>
+<script>
+    const num_Minutes = document.getElementById("num_Minutes");
+    const result_Bai7 = document.getElementById("result_Bai7");
+    num_Minutes.addEventListener('input',run_Bai7);
+    function run_Bai7() {
+        let num_MinutesValue = parseFloat(num_Minutes.value);
+        if (isNaN(num_MinutesValue)) {
+            result_Bai7.textContent = "Please fill in all the data.";
+            return;
+        } else if (num_MinutesValue < 0) {
+            result_Bai7.textContent = "Please fill in the correct call time format (Call time >= 0).";
+            return;
+        } else {
+            result_Bai7.textContent = num_MinutesValue*1000 + "VNĐ";
+        }
+    }
+</script>
 </body>
 </html>

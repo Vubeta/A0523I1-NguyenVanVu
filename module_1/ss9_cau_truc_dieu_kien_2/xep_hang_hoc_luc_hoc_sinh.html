@@ -2,9 +2,58 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Xếp hạng học lực của học sinh</title>
 </head>
 <body>
-$END$
+<h2>Bài 5: Xếp hạng học lực của học sinh</h2>
+<table>
+    <tr>
+        <td><label>Điểm bài kiểm tra: </label></td>
+        <td><input type="number" id="score_Test"/></td>
+    </tr>
+    <tr>
+        <td><label>Điểm thi giữa kì: </label></td>
+        <td><input type="number" id="score_MidtermExem"/></td>
+    </tr>
+    <tr>
+        <td><label>Điểm thi cuối kì: </label></td>
+        <td><input type="number" id="score_FinalExem"/></td>
+    </tr>
+</table>
+<p id="result_Bai5"></p>
+<script>
+    const score_Test = document.getElementById("score_Test");
+    const score_MidtermExem = document.getElementById("score_MidtermExem");
+    const score_FinalExem = document.getElementById("score_FinalExem");
+    const result_Bai5 = document.getElementById("result_Bai5");
+    score_Test.addEventListener('input', run_Bai5);
+    score_MidtermExem.addEventListener('input', run_Bai5);
+    score_FinalExem.addEventListener('input', run_Bai5);
+    function run_Bai5() {
+        let score_TestValue = parseFloat(score_Test.value);
+        let score_MidtermExemValue = parseFloat(score_MidtermExem.value);
+        let score_FinalExemValue = parseFloat(score_FinalExem.value);
+        if (isNaN(score_TestValue) || isNaN(score_MidtermExemValue) ||isNaN(score_FinalExemValue)) {
+            result_Bai5.textContent = "Please fill in all the data.";
+            return;
+        } else if (score_TestValue<0 || score_TestValue>10 || score_MidtermExemValue<0 || score_MidtermExemValue>10 || score_FinalExemValue<0 || score_FinalExemValue>10)  {
+            result_Bai5.textContent = "Please fill in the correct score format (0<Score<10).";
+            return;
+        } else {
+            let score_Average = score_TestValue*0.3+score_MidtermExemValue*0.3+score_FinalExemValue*0.4;
+            if (score_Average >=9) {
+                result_Bai5.textContent = "Excellent Academic Performance";
+            } else if (score_Average >=8) {
+                result_Bai5.textContent = "Good Academic Performance";
+            } else if (score_Average >=7) {
+                result_Bai5.textContent = "Academic Pretty";
+            } else if (score_Average >=5) {
+                result_Bai5.textContent = "Average Academic Performance";
+            } else {
+                result_Bai5.textContent = "Weak Academic Performance";
+            }
+        }
+    }
+</script>
 </body>
 </html>

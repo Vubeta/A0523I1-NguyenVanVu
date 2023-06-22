@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra số nguyên lớn hay nhỏ hơn 0</title>
 </head>
 <body>
-$END$
+<h2>Bài 3: Kiểm tra số nguyên lớn hay nhỏ hơn 0</h2>
+<label>Số nguyên: </label>
+<input type="number" id="num_Integer"/>
+<p id="result_Bai3"></p>
+<script>
+    const num_Integer = document.getElementById("num_Integer");
+    const result_Bai3 = document.getElementById("result_Bai3");
+    num_Integer.addEventListener('input',run_Bai3);
+    function run_Bai3() {
+        let num_IntegerValue = parseFloat(num_Integer.value);
+        if (isNaN(num_IntegerValue)) {
+            result_Bai3.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(num_IntegerValue)) {
+            result_Bai3.textContent = "Please fill in the correct integer number format.";
+            return;
+        } else if (num_IntegerValue > 0) {
+            result_Bai3.textContent = "Integer number greater than 0.";
+        } else if (num_IntegerValue == 0) {
+            result_Bai3.textContent = "Integer number equal to 0.";
+        } else {
+            result_Bai3.textContent = "Integer number less than 0.";
+        }
+    }
+</script>
 </body>
 </html>

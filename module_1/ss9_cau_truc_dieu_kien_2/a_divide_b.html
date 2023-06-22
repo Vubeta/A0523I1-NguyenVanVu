@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra a chia hết cho b </title>
 </head>
 <body>
-$END$
+<h2>Bài 1: Kiểm tra a chia hết cho b</h2>
+<table>
+    <tr>
+        <td><label>Giá trị số a: </label></td>
+        <td><input type="number" id="a_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số b: </label></td>
+        <td><input type="number" id="b_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai1"></p>
+<script>
+    const a_Input = document.getElementById("a_Input");
+    const b_Input = document.getElementById("b_Input");
+    const result_Bai1 = document.getElementById("result_Bai1");
+    a_Input.addEventListener('input', run_Bai1);
+    b_Input.addEventListener('input', run_Bai1);
+    function run_Bai1() {
+        let a_Value = parseFloat(a_Input.value);
+        let b_Value = parseFloat(b_Input.value);
+        if (isNaN(a_Value) || isNaN(b_Value)) {
+            result_Bai1.textContent = "Please fill in all the data.";
+            return;
+        }
+        if (a_Value % b_Value == 0) {
+            result_Bai1.textContent = "a is divisible by b.";
+        } else {
+            result_Bai1.textContent = "a is not divisible by b.";
+        }
+    }
+</script>
 </body>
 </html>

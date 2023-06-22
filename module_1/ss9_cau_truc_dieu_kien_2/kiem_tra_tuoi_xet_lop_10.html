@@ -2,9 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra điều kiện tuổi vào lớp 10</title>
 </head>
 <body>
-$END$
+<h2>Bài 2: Kiểm tra điều kiện tuổi vào lớp 10</h2>
+<label>Tuổi học sinh: </label>
+<input type="number" id="age_Student"/>
+<p id="result_Bai2"></p>
+<script>
+    const age_Input = document.getElementById("age_Student");
+    const result_Bai2 = document.getElementById("result_Bai2");
+    age_Input.addEventListener('input', run_Bai2);
+    function run_Bai2() {
+        let age_Value = parseFloat(age_Input.value);
+        if (isNaN(age_Value)) {
+            result_Bai2.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(age_Value) || age_Value <= 0) {
+            result_Bai2.textContent = "Please fill in the correct age format.";
+            return;
+        } else if (age_Value >= 15) {
+            result_Bai2.textContent = "Students are eligible for 10th grade.";
+        } else {
+            result_Bai2.textContent = "Students are not eligible for 10th grade.";
+        }
+    }
+</script>
 </body>
 </html>
