@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giá trị lớn nhất của 3 số nguyên</title>
+</head>
+<body>
+<h2>Bài 4: Giá trị lớn nhất của 3 số nguyên</h2>
+<table>
+    <tr>
+        <td><label>Giá trị số nguyên a: </label></td>
+        <td><input type="number" id="numa_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số nguyên b: </label></td>
+        <td><input type="number" id="numb_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số nguyên c: </label></td>
+        <td><input type="number" id="numc_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai4"></p>
+<script>
+    const numa_Input = document.getElementById("numa_Input");
+    const numb_Input = document.getElementById("numb_Input");
+    const numc_Input = document.getElementById("numc_Input");
+    const result_Bai4 = document.getElementById("result_Bai4");
+    numa_Input.addEventListener('input', run_Bai4);
+    numb_Input.addEventListener('input', run_Bai4);
+    numc_Input.addEventListener('input', run_Bai4);
+    function run_Bai4() {
+        let numa_IntegerValue = parseFloat(numa_Input.value);
+        let numb_IntegerValue = parseFloat(numb_Input.value);
+        let numc_IntegerValue = parseFloat(numc_Input.value);
+        if (isNaN(numa_IntegerValue) || isNaN(numb_IntegerValue) ||isNaN(numc_IntegerValue)) {
+            result_Bai4.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(numa_IntegerValue) || !Number.isInteger(numb_IntegerValue) || !Number.isInteger(numc_IntegerValue)) {
+            result_Bai4.textContent = "Please fill in the correct integer number format.";
+            return;
+        } else {
+            result_Bai4.textContent = Math.max(numa_IntegerValue, numb_IntegerValue, numc_IntegerValue) + " is the maximum number.";
+        }
+    }
+</script>
+</body>
+</html>
