@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu trúc điều kiện 1</title>
+</head>
+<body>
+<!--Bai 1-->
+<h2>Bài 1: Kiểm tra a chia hết cho b</h2>
+<table>
+    <tr>
+        <td><label>Giá trị số a: </label></td>
+        <td><input type="number" id="a_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số b: </label></td>
+        <td><input type="number" id="b_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai1"></p>
+<hr/>
+<!--Bai 2-->
+<h2>Bài 2: Kiểm tra điều kiện tuổi vào lớp 10</h2>
+<label>Tuổi học sinh: </label>
+<input type="number" id="age_Student"/>
+<p id="result_Bai2"></p>
+<hr/>
+<!--Bai 3-->
+<h2>Bài 3: Kiểm tra số nguyên lớn hay nhỏ hơn 0</h2>
+<label>Số nguyên: </label>
+<input type="number" id="num_Integer"/>
+<p id="result_Bai3"></p>
+<hr/>
+<!--Bai 4-->
+<h2>Bài 4: Giá trị lớn nhất của 3 số nguyên</h2>
+<table>
+    <tr>
+        <td><label>Giá trị số nguyên a: </label></td>
+        <td><input type="number" id="numa_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số nguyên b: </label></td>
+        <td><input type="number" id="numb_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị số nguyên c: </label></td>
+        <td><input type="number" id="numc_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai4"></p>
+<hr/>
+<!--Bai 5-->
+<h2>Bài 5: Xếp hạng học lực của học sinh</h2>
+<table>
+    <tr>
+        <td><label>Điểm bài kiểm tra: </label></td>
+        <td><input type="number" id="score_Test"/></td>
+    </tr>
+    <tr>
+        <td><label>Điểm thi giữa kì: </label></td>
+        <td><input type="number" id="score_MidtermExem"/></td>
+    </tr>
+    <tr>
+        <td><label>Điểm thi cuối kì: </label></td>
+        <td><input type="number" id="score_FinalExem"/></td>
+    </tr>
+</table>
+<p id="result_Bai5"></p>
+<hr/>
+<!--Bai 6-->
+<h2>Bài 6: Tính hoa hồng nhận được từ doanh số bán hàng</h2>
+<label>Doanh số bán hàng: </label>
+<input type="number" id="num_Sales"/>
+<label>$</label>
+<p id="result_Bai6"></p>
+<hr/>
+<!--Bai 6-->
+<h2>Bài 7: Tính cước điện thoại cho hộ gia đình</h2>
+<label>Tổng thời gian gọi: </label>
+<input type="number" id="num_Minutes"/>
+<label>phút</label>
+<p id="result_Bai7"></p>
+<script>
+    //Bai 1
+    const a_Input = document.getElementById("a_Input");
+    const b_Input = document.getElementById("b_Input");
+    const result_Bai1 = document.getElementById("result_Bai1");
+    a_Input.addEventListener('input', run_Bai1);
+    b_Input.addEventListener('input', run_Bai1);
+    function run_Bai1() {
+        let a_Value = parseFloat(a_Input.value);
+        let b_Value = parseFloat(b_Input.value);
+        if (isNaN(a_Value) || isNaN(b_Value)) {
+            result_Bai1.textContent = "Please fill in all the data.";
+            return;
+        }
+        if (a_Value % b_Value == 0) {
+            result_Bai1.textContent = "a is divisible by b.";
+        } else {
+            result_Bai1.textContent = "a is not divisible by b.";
+        }
+    }
+    //Bai 2
+    const age_Input = document.getElementById("age_Student");
+    const result_Bai2 = document.getElementById("result_Bai2");
+    age_Input.addEventListener('input', run_Bai2);
+    function run_Bai2() {
+        let age_Value = parseFloat(age_Input.value);
+        if (isNaN(age_Value)) {
+            result_Bai2.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(age_Value) || age_Value <= 0) {
+            result_Bai2.textContent = "Please fill in the correct age format.";
+            return;
+        } else if (age_Value >= 15) {
+            result_Bai2.textContent = "Students are eligible for 10th grade.";
+        } else {
+            result_Bai2.textContent = "Students are not eligible for 10th grade.";
+        }
+    }
+    //Bai 3
+    const num_Integer = document.getElementById("num_Integer");
+    const result_Bai3 = document.getElementById("result_Bai3");
+    num_Integer.addEventListener('input',run_Bai3);
+    function run_Bai3() {
+        let num_IntegerValue = parseFloat(num_Integer.value);
+        if (isNaN(num_IntegerValue)) {
+            result_Bai3.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(num_IntegerValue)) {
+            result_Bai3.textContent = "Please fill in the correct integer number format.";
+            return;
+        } else if (num_IntegerValue > 0) {
+            result_Bai3.textContent = "Integer number greater than 0.";
+        } else if (num_IntegerValue == 0) {
+            result_Bai3.textContent = "Integer number equal to 0.";
+        } else {
+            result_Bai3.textContent = "Integer number less than 0.";
+        }
+    }
+    // Bai 4
+    const numa_Input = document.getElementById("numa_Input");
+    const numb_Input = document.getElementById("numb_Input");
+    const numc_Input = document.getElementById("numc_Input");
+    const result_Bai4 = document.getElementById("result_Bai4");
+    numa_Input.addEventListener('input', run_Bai4);
+    numb_Input.addEventListener('input', run_Bai4);
+    numc_Input.addEventListener('input', run_Bai4);
+    function run_Bai4() {
+        let numa_IntegerValue = parseFloat(numa_Input.value);
+        let numb_IntegerValue = parseFloat(numb_Input.value);
+        let numc_IntegerValue = parseFloat(numc_Input.value);
+        if (isNaN(numa_IntegerValue) || isNaN(numb_IntegerValue) ||isNaN(numc_IntegerValue)) {
+            result_Bai4.textContent = "Please fill in all the data.";
+            return;
+        } else if (!Number.isInteger(numa_IntegerValue) || !Number.isInteger(numb_IntegerValue) || !Number.isInteger(numc_IntegerValue)) {
+            result_Bai4.textContent = "Please fill in the correct integer number format.";
+            return;
+        } else {
+            result_Bai4.textContent = Math.max(numa_IntegerValue, numb_IntegerValue, numc_IntegerValue) + " is the maximum number.";
+        }
+    }
+    // Bai 5
+    const score_Test = document.getElementById("score_Test");
+    const score_MidtermExem = document.getElementById("score_MidtermExem");
+    const score_FinalExem = document.getElementById("score_FinalExem");
+    const result_Bai5 = document.getElementById("result_Bai5");
+    score_Test.addEventListener('input', run_Bai5);
+    score_MidtermExem.addEventListener('input', run_Bai5);
+    score_FinalExem.addEventListener('input', run_Bai5);
+    function run_Bai5() {
+        let score_TestValue = parseFloat(score_Test.value);
+        let score_MidtermExemValue = parseFloat(score_MidtermExem.value);
+        let score_FinalExemValue = parseFloat(score_FinalExem.value);
+        if (isNaN(score_TestValue) || isNaN(score_MidtermExemValue) ||isNaN(score_FinalExemValue)) {
+            result_Bai5.textContent = "Please fill in all the data.";
+            return;
+        } else if (score_TestValue<0 || score_TestValue>10 || score_MidtermExemValue<0 || score_MidtermExemValue>10 || score_FinalExemValue<0 || score_FinalExemValue>10)  {
+            result_Bai5.textContent = "Please fill in the correct score format (0<Score<10).";
+            return;
+        } else {
+            let score_Average = score_TestValue*0.3+score_MidtermExemValue*0.3+score_FinalExemValue*0.4;
+            if (score_Average >=9) {
+                result_Bai5.textContent = "Excellent Academic Performance";
+            } else if (score_Average >=8) {
+                result_Bai5.textContent = "Good Academic Performance";
+            } else if (score_Average >=7) {
+                result_Bai5.textContent = "Academic Pretty";
+            } else if (score_Average >=5) {
+                result_Bai5.textContent = "Average Academic Performance";
+            } else {
+                result_Bai5.textContent = "Weak Academic Performance";
+            }
+        }
+    }
+    //Bai 6
+    const num_Sales = document.getElementById("num_Sales");
+    const result_Bai6 = document.getElementById("result_Bai6");
+    num_Sales.addEventListener('input',run_Bai6);
+    function run_Bai6() {
+        let num_SalesValue = parseFloat(num_Sales.value);
+        let commission;
+        if (isNaN(num_SalesValue)) {
+            result_Bai6.textContent = "Please fill in all the data.";
+            return;
+        } else if (num_SalesValue < 1000) {
+            commission = num_SalesValue*0.05;
+        } else if (num_SalesValue < 5000) {
+            commission = num_SalesValue*0.07;
+        } else if (num_SalesValue < 10000) {
+            commission = num_SalesValue*0.1;
+        } else {
+            commission = num_SalesValue*0.15;
+        }
+        result_Bai6.textContent = "The amount of commission received is " + commission + "$";
+    }
+    //Bai 7
+    const num_Minutes = document.getElementById("num_Minutes");
+    const result_Bai7 = document.getElementById("result_Bai7");
+    num_Minutes.addEventListener('input',run_Bai7);
+    function run_Bai7() {
+        let num_MinutesValue = parseFloat(num_Minutes.value);
+        if (isNaN(num_MinutesValue)) {
+            result_Bai7.textContent = "Please fill in all the data.";
+            return;
+        } else if (num_MinutesValue < 0) {
+            result_Bai7.textContent = "Please fill in the correct call time format (Call time >= 0).";
+            return;
+        } else {
+            result_Bai7.textContent = num_MinutesValue*1000 + "VNĐ";
+        }
+    }
+</script>
+</body>
+</html>
