@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+<h2>Bài 6: Giải phương trình bậc 1</h2>
+<p>Phương trình bậc 1 có dạng: ax+b = 0.</p>
+<table>
+    <tr>
+        <td><label>Hệ số a: </label></td>
+        <td><input type="number" id="a_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Hệ số b: </label></td>
+        <td><input type="number" id="b_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai6"></p>
+<script>
+    const a_Input = document.getElementById("a_Input");
+    const b_Input = document.getElementById("b_Input");
+    const result_Bai6 = document.getElementById("result_Bai6");
+    a_Input.addEventListener('input', run_Bai6);
+    b_Input.addEventListener('input', run_Bai6);
+    function run_Bai6() {
+        let a_Value = parseFloat(a_Input.value);
+        let b_Value = parseFloat(b_Input.value);
+        let result;
+        if (isNaN(a_Value) || isNaN(b_Value)) {
+            result_Bai6.textContent = "Vui lòng nhập đầy đủ thông tin.";
+            return;
+        }
+        if (a_Value == 0) {
+            if (b_Value == 0) {
+                result_Bai6.textContent = "Phương trình có vô số nghiệm.";
+            } else {
+                result_Bai6.textContent = "Phương trình vô nghiệm.";
+            }
+        } else {
+            result = -b_Value / a_Value;
+            result_Bai6.textContent = "Nghiệm của phương trình là: x = " + result;
+        }
+    }
+</script>
+</body>
+</html>
