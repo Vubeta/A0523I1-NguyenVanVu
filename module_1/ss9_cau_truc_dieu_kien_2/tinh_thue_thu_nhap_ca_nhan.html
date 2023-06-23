@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<h2>Bài 11: Chương trình tính thuế thu nhập cá nhân</h2>
+<label>Thu nhập cá nhân hiện tại: </label>
+<input type="number" id="num_Income"/>
+<label>VNĐ</label>
+<p id="result_Bai11"></p>
+<script>
+    const income_Input = document.getElementById("num_Income");
+    const result_Bai11 = document.getElementById("result_Bai11");
+    const mucthue = [[5000000,0.05],[10000000,0.1],[18000000,0.15],[32000000,0.2],[52000000,0.25],[80000000,0.3],0.35];
+    let result;
+    income_Input.addEventListener('input', run_Bai11);
+    function run_Bai11() {
+        let income_Value = parseFloat(income_Input.value);
+        if (isNaN(income_Value)) {
+            result_Bai11.textContent = "Vui lòng điền thu nhập cá nhân hiện tại.";
+            return;
+        } else if (income_Value < 0) {
+            result_Bai11.textContent = "Vui lòng nhập lại thu nhập cá nhân hiện tại >= 0.";
+            return;
+        } else if (income_Value <= 80000000) {
+            for (let i = 0; i<mucthue.length-1; i++) {
+                if (income_Value <= mucthue[i][0]) {
+                    result = income_Value*mucthue[i][1];
+                    break;
+                }
+            }
+        } else {
+            result = income_Value*mucthue[mucthue.length-1];
+        }
+        result_Bai11.textContent = "Thuế thu nhập cá nhân là :" + `${result} VNĐ`;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tính giá điện</title>
+</head>
+<body>
+<h2>Bài 10: Chương trình tính giá điện</h2>
+<label>Số chữ điện: </label>
+<input type="number" id="num_Elec"/>
+<p id="result_Bai10"></p>
+<script>
+    const elec_Input = document.getElementById("num_Elec");
+    const result_Bai10 = document.getElementById("result_Bai10");
+    const don_gia_1 = 1500;
+    const don_gia_2 = 2000;
+    const don_gia_3 = 2500;
+    const don_gia_4 = 3000;
+    let result;
+    elec_Input.addEventListener('input', run_Bai10);
+    function run_Bai10() {
+        let elec_Value = parseFloat(elec_Input.value);
+        if (isNaN(elec_Value)) {
+            result_Bai10.textContent = "Vui lòng nhập đầy đủ thông tin.";
+            return;
+        } else if (elec_Value <0) {
+            result_Bai10.textContent = "Vui lòng nhập đúng số chữ điện.";
+            return;
+        } else if (elec_Value <= 100) {
+            result = elec_Value * don_gia_1;
+        } else if (elec_Value <= 200) {
+            result = 100*don_gia_1 + (elec_Value-100)*don_gia_2;
+        } else if (elec_Value <= 300) {
+            result = 100*(don_gia_1+don_gia_2) + (elec_Value-200)*don_gia_3;
+        } else {
+            result = 100*(don_gia_1+don_gia_2+don_gia_3) + (elec_Value-300)*don_gia_4;
+        }
+        result_Bai10.textContent = "Giá điện: " + `${result} VNĐ`;
+    }
+</script>
+</body>
+</html>

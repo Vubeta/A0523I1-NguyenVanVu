@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trình tính lãi ngân hàng</title>
+</head>
+<body>
+<h2>Bài 12: Chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng</h2>
+<table>
+    <tr>
+        <td><label>Số tiền vay ban đầu: </label></td>
+        <td><input type="number" id="num_MoneyStart"/></td>
+        <td>VNĐ</td>
+    </tr>
+    <tr>
+        <td><label>Thời gian vay: </label></td>
+        <td><input type="number" id="num_Months"/></td>
+        <td>tháng</td>
+    </tr>
+    <tr>
+        <td><label>Lãi xuất hàng tháng: </label></td>
+        <td><input type="number" id="num_Interest"/></td>
+        <td>%</td>
+    </tr>
+</table>
+<p id="result_Bai12"></p>
+<script>
+    const num_MoneyStart = document.getElementById("num_MoneyStart");
+    const num_Months = document.getElementById("num_Months");
+    const num_Interest = document.getElementById("num_Interest");
+    const result_Bai12 = document.getElementById("result_Bai12");
+    num_MoneyStart.addEventListener('input',run_Bai12);
+    num_Months.addEventListener('input',run_Bai12);
+    num_Interest.addEventListener('input',run_Bai12);
+    function run_Bai12() {
+        let num_MoneyStartValue = parseFloat(num_MoneyStart.value);
+        let num_MonthsValue = parseFloat(num_Months.value);
+        let num_InterestValue = parseFloat(num_Interest.value);
+        if (isNaN(num_MoneyStartValue) || isNaN(num_MonthsValue) || isNaN(num_InterestValue)) {
+            result_Bai12.textContent = "Vui lòng nhập đầy đủ thông tin.";
+            return;
+        } else if (num_MoneyStartValue < 0 || num_MonthsValue < 0 || num_InterestValue < 0) {
+            result_Bai12.textContent = "Vui lòng nhập đúng thông tin.";
+            return;
+        } else {
+            let soTienCuoiCung = num_MoneyStartValue;
+            let soTienLai = 0;
+            for (let i=0; i < num_MonthsValue; i++) {
+                soTienLai += soTienCuoiCung * (num_InterestValue/100); //tiền lãi = số tiền cần trả lúc đó * lãi xuất
+                soTienCuoiCung += soTienCuoiCung * (num_InterestValue/100); //tiền cần trả = tiền (đã *lãi xuất) cộng dần qua từng tháng
+            }
+            result_Bai12.textContent = `Kết quả: Tổng số tiền phải trả là ${soTienCuoiCung.toFixed(0)} VNĐ với số tiền lãi là ${soTienLai.toFixed(0)} VNĐ`;
+        }
+    }
+</script>
+</body>
+</html>

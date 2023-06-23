@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra có phải là tuổi của một người</title>
+</head>
+<body>
+<h2>Bài 8: Kiểm tra có phải là tuổi của một người</h2>
+<label>Tuổi: </label>
+<input type="number" id="num_Age"/>
+<p id="result_Bai8"></p>
+<script>
+    const age_Input = document.getElementById("num_Age");
+    const result_Bai8 = document.getElementById("result_Bai8");
+    age_Input.addEventListener('input', run_Bai8);
+    function run_Bai8() {
+        let age_Value = parseFloat(age_Input.value);
+        if (isNaN(age_Value)) {
+            result_Bai8.textContent = "Vui lòng điền tuổi.";
+            return;
+        } else if (!Number.isInteger(age_Value) || age_Value <= 0 || age_Value >= 120) {
+            result_Bai8.textContent = "Kết quả: Không phải là tuổi của một người.";
+        } else {
+            result_Bai8.textContent = "Kết quả: Là tuổi của một người.";
+        }
+    }
+</script>
+</body>
+</html>

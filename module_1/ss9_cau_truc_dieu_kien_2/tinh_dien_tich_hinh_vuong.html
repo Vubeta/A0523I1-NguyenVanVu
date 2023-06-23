@@ -19,6 +19,8 @@
         if (isNaN(a_LengthValue)) {
             result_Bai3.textContent = "Vui lòng nhập vào độ dài cạnh hình vuông (m).";
             return;
+        } else if (a_LengthValue<=0) {
+            result_Bai3.textContent = "Vui lòng nhập vào độ dài cạnh hình vuông > 0.";
         } else {
             result = Math.pow(a_LengthValue,2);
             result_Bai3.innerHTML = "Diện tích hình vuông là " + result + ' (m<sup>2</sup>)';

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra có phải là cạnh của một tam giác</title>
+</head>
+<body>
+<h2>Bài 9: Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</h2>
+<table>
+    <tr>
+        <td><label>Giá trị a: </label></td>
+        <td><input type="number" id="numa_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị b: </label></td>
+        <td><input type="number" id="numb_Input"/></td>
+    </tr>
+    <tr>
+        <td><label>Giá trị c: </label></td>
+        <td><input type="number" id="numc_Input"/></td>
+    </tr>
+</table>
+<p id="result_Bai9"></p>
+<script>
+    const numa_Input = document.getElementById("numa_Input");
+    const numb_Input = document.getElementById("numb_Input");
+    const numc_Input = document.getElementById("numc_Input");
+    const result_Bai9 = document.getElementById("result_Bai9");
+    numa_Input.addEventListener('input', run_Bai9);
+    numb_Input.addEventListener('input', run_Bai9);
+    numc_Input.addEventListener('input', run_Bai9);
+    function run_Bai9() {
+        let numa_Value = parseFloat(numa_Input.value);
+        let numb_Value = parseFloat(numb_Input.value);
+        let numc_Value = parseFloat(numc_Input.value);
+        if (isNaN(numa_Value) || isNaN(numb_Value) ||isNaN(numc_Value)) {
+            result_Bai9.textContent = "Vui lòng điền đầy đủ thông tin.";
+            return;
+        } else if (!numa_Value>0 || !numb_Value>0 || !numc_Value>0 || (numa_Value+numb_Value)<=numc_Value || (numb_Value+numc_Value)<=numa_Value || (numa_Value+numc_Value)<=numb_Value) {
+            result_Bai9.textContent = "Kết quả: 3 số a,b,c trên không phải là cạnh của một tam giác.";
+        } else {
+            result_Bai9.textContent = "Kết quả: 3 số a,b,c trên là cạnh của một tam giác.";
+        }
+    }
+</script>
+</body>
+</html>
