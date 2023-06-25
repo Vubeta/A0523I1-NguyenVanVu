@@ -5,6 +5,264 @@
     <title>Ứng dụng máy tính</title>
 </head>
 <body>
+<style>
+    /*Y tuong o day la: xem button la container, the div la thung hang (o day chi co 1 thung), the span la do vat trong thung (o day 3 co do vat)*/
+    .custom-formula {
+        width: 634.21px;
+        height: 70px;
+        border-radius: 4px;
+        background-color: white;
+        margin: 0 10px;
+        border: 1px solid silver;
+    }
 
+    .custom-button_0 {
+        display: flex; /*bo tri theo dang Container*/
+        align-items: center; /*can giua cac phan tu theo chieu doc cua Container, vi co 1 thung hang nen no se chi can giua so voi top & bottom cua Container*/
+        width: 176.28px;
+        height: 33.6px;
+        padding: 0 10px;
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .custom-button {
+        display: flex; /*bo tri theo dang Container*/
+        align-items: center; /*can giua cac phan tu theo chieu doc cua Container, vi co 1 thung hang nen no se chi can giua so voi top & bottom cua Container*/
+        width: 83.15px;
+        height: 33.6px;
+        padding: 0 10px;
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+    }
+
+    .button-content {
+        display: flex;
+        justify-content: space-between; /*khoang cach giua cac phan tu la bang nhau, phan tu dau luon nam o left va phan tu cuoi luon nam o right*/
+        flex-grow: 1; /*thay doi kich thuoc cua thung hang div to bang kich thuoc cua Container*/
+        margin: 0 5px; /*margin-top = margin-bottom = 0; margin-left = margin-right = 5px*/
+    }
+
+    .button-label {
+        flex-grow: 1; /*thay doi kich thuoc cua cac do vat label to deu nhau va tong kich thuoc se bang voi kich thuoc cua thung hang*/
+        text-align: center; /*canh giua noi dung cua do vat*/
+    }
+    
+</style>
+<table class="custom-formula">
+    <tr>
+        <td align="right" id="cal_Ans" style="font-size: 17px; color: silver; padding-right: 10px">0</td>
+    </tr>
+    <tr>
+        <td align="right" id="cal_Formula" style="font-size: 30px; padding-right: 10px">0</td>
+    </tr>
+</table>
+<table cellspacing="7.98">
+    <tr>
+        <td colspan="2">
+            <button class="custom-button_0">
+                <div class="button-content">
+                    <span class="button-label">Rad</span>
+                    <span class="button-label">|</span>
+                    <span class="button-label">Deg</span>
+                </div>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">x!</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">(</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">)</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">%</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">AC</span>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">Inv</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">sin</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">ln</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">7</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">8</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">9</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">&divide;</span>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">&pi;</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">cos</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">log</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">4</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">5</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">6</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">x</span>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">e</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">tan</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">&radic;</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">1</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">2</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">3</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">-</span>
+            </button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">Ans</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">EXP</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">x<sup>y</sup></span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">0</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">.</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">=</span>
+            </button>
+        </td>
+        <td>
+            <button class="custom-button" onclick="input_Data(this)">
+                <span class="button-label">+</span>
+            </button>
+        </td>
+    </tr>
+</table>
+<script>
+    const formula = document.getElementById("cal_Formula");
+    let isFirstButtonPressed = false;
+    function input_Data(button) {
+        let value = button.innerText;
+        if (!isFirstButtonPressed) {
+            formula.innerText = value;
+            isFirstButtonPressed = true;
+        } else {
+            formula.innerHTML += " " + value;
+        }
+    }
+</script>
 </body>
 </html>

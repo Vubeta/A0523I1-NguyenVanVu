@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Bảng cửu chương</title>
 </head>
 <body>
-$END$
+<h2>Bảng cửu chương</h2>
+<table id="bang_CuuChuong" cellspacing="2px" border="1px">
+</table>
+<script>
+    const bang_CuuChuong = document.getElementById("bang_CuuChuong");
+    let result;
+    for (let i=1 ; i<=9 ; i++) {
+        const row = document.createElement("tr");
+        for (let j=2; j<=9 ; j++) {
+            result = j*i;
+            const cell = document.createElement("td");
+            cell.style.width = "100px";
+            cell.textContent = `${j}x${i}=${result}`;
+            row.appendChild(cell);
+        }
+        bang_CuuChuong.appendChild(row)
+    }
+</script>
 </body>
 </html>

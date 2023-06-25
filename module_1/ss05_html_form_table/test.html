@@ -2,9 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Custom Button Alignment</title>
+    <style>
+        /*Y tuong o day la: xem button la container, the div la thung hang (o day chi co 1 thung), the span la do vat trong thung (o day 3 co do vat)*/
+        .custom-button_0 {
+            display: flex; /*bo tri theo dang Container*/
+            align-items: center; /*can giua cac phan tu theo chieu doc cua Container, vi co 1 thung hang nen no se chi can giua so voi top & bottom cua Container*/
+            width: 200px;
+            height: 40px;
+            padding: 0 10px;
+            background-color: #f2f2f2;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .button-content {
+            display: flex;
+            justify-content: space-between; /*khoang cach giua cac phan tu la bang nhau, phan tu dau luon nam o left va phan tu cuoi luon nam o right*/
+            flex-grow: 1; /*thay doi kich thuoc cua thung hang div to bang kich thuoc cua Container*/
+            margin: 0 -5px; /*margin-top = margin-bottom = 0; margin-left = margin-right = -5px*/
+        }
+
+        .button-label {
+            flex-grow: 1; /*thay doi kich thuoc cua cac do vat label to deu nhau va tong kich thuoc se bang voi kich thuoc cua thung hang*/
+            text-align: center; /*canh giua noi dung cua do vat*/
+        }
+    </style>
 </head>
 <body>
-$END$
+<button class="custom-button_0">
+    <div class="button-content">
+        <span class="button-label">Rad</span>
+        <span>|</span>
+        <span class="button-label">Deg</span>
+    </div>
+</button>
+<script>
+    function a(evt) {
+        window.addEventListener('key')
+    }
+</script>
 </body>
 </html>
