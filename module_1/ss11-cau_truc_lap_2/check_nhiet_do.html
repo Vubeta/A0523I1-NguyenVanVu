@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra nhiệt độ</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập vào nhiệt độ hiện tại: ");
+    a_Value = parseFloat(a);
+    if (isNaN(a_Value)) {
+        alert("Giá trị nhập vào không hợp lệ!");
+    } else {
+        if (a > 100) {
+            alert("Bạn nên giảm nhiệt độ");
+        } else if (a < 20) {
+            alert("Bạn nên tăng nhiệt độ");
+        }
+    }
+</script>
+</body>
+</html>
