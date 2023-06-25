@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<h2>Hiển thị các số nguyên tố đầu tiên </h2>
+<label>Số lượng số nguyên tố mong muốn: </label>
+<input type="number" id="num_Input">
+<p id="result"></p>
+<script>
+    const num_Input = document.getElementById("num_Input");
+    const result = document.getElementById("result");
+    num_Input.addEventListener("input",xuLy);
+    function xuLy() {
+        let num_Value = parseFloat(num_Input.value);
+        let soLuong = 0;
+        let soNguyenTo = 2;
+        if (!Number.isInteger(num_Value) || num_Value<=0) {
+            result.textContent = "Vui lòng nhập lại số lượng số nguyên tố mong muốn.";
+            return;
+        } else {
+            result.textContent = `${num_Value} số nguyên tố đầu tiên là: `;
+            while (soLuong < num_Value) {
+                if (check_Num(soNguyenTo)) {
+                    if (num_Value-soLuong==1) {
+                        result.textContent += `${soNguyenTo}`;
+                    } else {
+                        result.textContent += `${soNguyenTo}; `;
+                    }
+                    soNguyenTo++;
+                    soLuong++;
+                } else {
+                    soNguyenTo++;
+                }
+            }
+        }
+    }
+    function check_Num(number) {
+        for (let i = 2; i<=Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
