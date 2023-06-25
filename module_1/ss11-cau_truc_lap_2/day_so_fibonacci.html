@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị 20 số fibonacci đầu tiên</title>
+</head>
+<body>
+<h2>Hiển thị 20 số fibonacci đầu tiên</h2>
+<script>
+    let demSO = 1;
+    let result1 = 0;
+    let result2 = 1;
+    let result;
+    do {
+        if (result1==0) {
+            document.writeln(result1);
+        }
+        document.writeln(result2);
+        result = result1 + result2;
+        result1 = result2;
+        result2 = result;
+        demSO++
+    } while (demSO < 20);
+</script>
+</body>
+</html>
