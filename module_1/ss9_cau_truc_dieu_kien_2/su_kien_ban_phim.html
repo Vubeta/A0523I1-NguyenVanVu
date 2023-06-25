@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Di chuyển hình ảnh</title>
+</head>
+<body onload="getKeyDown()" style="position: relative;">
+<img src="https://cafefcdn.com/thumb_w/640/203337114487263232/2022/3/3/photo1646280815645-1646280816151764748403.jpg" id="pic" style="position: absolute; top: 0px; left: 0px">
+<script>
+    const obj_Pic = document.getElementById("pic");
+    function moveTop() {
+        obj_Pic.style.top = parseInt(obj_Pic.style.top) - 5 + 'px';
+    }
+    function moveDown() {
+        obj_Pic.style.top = parseInt(obj_Pic.style.top) + 5 + 'px';
+    }
+    function moveLeft() {
+        obj_Pic.style.left = parseInt(obj_Pic.style.left) - 5 + 'px';
+    }
+    function moveRight() {
+        obj_Pic.style.left = parseInt(obj_Pic.style.left) + 5 + 'px';
+    }
+    function do_Move(key_Value) {
+        switch (key_Value.keyCode) {
+            case 37:
+                moveLeft();
+                break;
+            case 38:
+                moveTop();
+                break;
+            case 39:
+                moveRight();
+                break;
+            case 40:
+                moveDown();
+                break;
+        }
+    }
+    function getKeyDown() {
+        window.addEventListener('keydown',do_Move);
+    }
+</script>
+</body>
+</html>
