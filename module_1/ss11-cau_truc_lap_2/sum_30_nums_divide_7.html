@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng của 30 số chia hết cho 7 đầu tiên</title>
+</head>
+<body>
+<h2>Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.</h2>
+<script>
+    let demSO = 0;
+    let result = 0;
+    let sum = 0;
+    while (demSO<30) {
+        result+=7;
+        if (30-demSO==1) {
+            document.write(result + " = ");
+        } else {
+            document.write(result + " + ");
+        }
+        demSO++;
+        sum += result;
+    }
+    document.write(sum);
+</script>
+</body>
+</html>

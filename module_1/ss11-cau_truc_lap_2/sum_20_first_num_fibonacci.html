@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng của 20 số đầu tiên trong dãy fibonacci.</title>
+</head>
+<body>
+<h2>Tính tổng của 20 số đầu tiên trong dãy fibonacci.</h2>
+<script>
+    let demSO = 1;
+    let result1 = 0;
+    let result2 = 1;
+    let result;
+    let sum = 0;
+    do {
+        if (result1==0) {
+            document.writeln(result1 + " + " + result2 + " + ");
+            sum += result1;
+        } else if (20-demSO==1) {
+            document.writeln(result2 + " = ");
+        } else {
+            document.writeln(result2 + " + ");
+        }
+        sum += result2;
+        result = result1 + result2;
+        result1 = result2;
+        result2 = result;
+        demSO++;
+    } while (demSO < 20);
+    document.write(sum);
+</script>
+</body>
+</html>
