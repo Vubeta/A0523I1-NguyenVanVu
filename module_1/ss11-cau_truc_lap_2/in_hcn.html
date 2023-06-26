@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In hình chữ nhật</title>
+</head>
+<body>
+<script>
+    for (let i=1; i<=7; i++) {
+        for (let j=1; j<=21; j++) {
+            if(i==1 || i==7) {
+                document.write(`<strong>*</strong>`);
+            } else if (j==1 || j==21) {
+                document.write(`<strong>*</strong>`);
+            } else {
+                document.write(`<strong style="color: white">*</strong>`);
+            }
+        }
+        document.write(`<br/>`);
+    }
+</script>
+</body>
+</html>
