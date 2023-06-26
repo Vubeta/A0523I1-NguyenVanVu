@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>In tam giác vuông</title>
+</head>
+<body>
+<script>
+    for (let i=1; i<=5; i++) {
+        for (let j=0; j<i ; j++) {
+            document.write(`<strong>*</strong>`);
+        }
+        document.write(`<br/>`);
+    }
+//----------------------------------------------
+    for (let i=0; i<3; i++) {
+        document.write(`<br/>`);
+    }
+    //----------------------------------------------
+    for (let i=0; i<=4; i++) {
+        for (let j=5; j>i ; j--) {
+            document.write(`<strong>*</strong>`);
+        }
+        document.write(`<br/>`);
+    }
+    //----------------------------------------------
+    for (let i=0; i<3; i++) {
+        document.write(`<br/>`);
+    }
+    //----------------------------------------------
+    for (let i=5; i>=1; i--) {
+        for (let j=1; j<=5; j++) {
+            if(j>=i) {
+                document.write(`<strong>*</strong>`);
+            } else {
+                document.write(`<strong style="color: white">*</strong>`);
+            }
+        }
+        document.write(`<br/>`);
+    }
+    //----------------------------------------------
+    for (let i=0; i<3; i++) {
+        document.write(`<br/>`);
+    }
+//----------------------------------------------
+    for (let i=1; i<=5; i++) {
+        for (let j=1; j<=5; j++) {
+            if(j>=i) {
+                document.write(`<strong>*</strong>`);
+            } else {
+                document.write(`<strong style="color: white">*</strong>`);
+            }
+        }
+        document.write(`<br/>`);
+    }
+</script>
+</body>
+</html>
