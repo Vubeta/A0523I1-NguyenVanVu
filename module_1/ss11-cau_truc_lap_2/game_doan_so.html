@@ -12,13 +12,27 @@
     function xuLy() {
         let a = parseInt(prompt("Với khoảng muốn đoán (a; b). Nhập a: "));
         let b = parseInt(prompt("Với khoảng muốn đoán (a; b). Nhập b: "));
+        let num_turns = 3;
         if (a > b) {
             [a,b] = [b,a];
         }
         let num_Random = Math.floor(Math.random() * (b-a+1)) + a;
         let c = parseInt(prompt("Số bạn đoán là: "));
         while (c !== num_Random) {
+            if (num_turns==1) {
+                alert("Bạn đã thua cuộc!");
+                if (button_Properties == false) {
+                    button_Properties = true;
+                    button_Input.innerHTML = "Chơi lại";
+                }
+                return;
+            } else if (c > num_Random) {
+                alert("Số random nhỏ hơn số bạn đoán");
+            } else if (c < num_Random) {
+                alert("Số random lớn hơn số bạn đoán");
+            }
             c = parseInt(prompt("Số bạn đoán là: "));
+            num_turns--;
         }
         alert("Chúc mừng bạn đã đoán trúng!");
         if (button_Properties == false) {
