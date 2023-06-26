@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game đoán số</title>
+</head>
+<body>
+<button id="button_Input" onclick="xuLy()">Chơi</button>
+<script>
+    const button_Input = document.getElementById("button_Input");
+    let button_Properties = false;
+    function xuLy() {
+        let a = parseInt(prompt("Với khoảng muốn đoán (a; b). Nhập a: "));
+        let b = parseInt(prompt("Với khoảng muốn đoán (a; b). Nhập b: "));
+        if (a > b) {
+            [a,b] = [b,a];
+        }
+        let num_Random = Math.floor(Math.random() * (b-a+1)) + a;
+        let c = parseInt(prompt("Số bạn đoán là: "));
+        while (c !== num_Random) {
+            c = parseInt(prompt("Số bạn đoán là: "));
+        }
+        alert("Chúc mừng bạn đã đoán trúng!");
+        if (button_Properties == false) {
+            button_Properties = true;
+            button_Input.innerHTML = "Chơi lại";
+        }
+    }
+</script>
+</body>
+</html>
