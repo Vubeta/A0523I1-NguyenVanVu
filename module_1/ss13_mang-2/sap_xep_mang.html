@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Check if integer exists in array?</title>
+    <title>Sort array descending</title>
 </head>
 <body>
 <script>
@@ -12,12 +12,7 @@
         nums_List.push(Math.floor(Math.random()*(20-(-20)+1)) + (-20));
     }
     document.write(`Array includes 10 integer numbers: ${nums_List}<br/>`);
-    document.write(`With V = ${num_Random} then `);
-    if (nums_List.includes(num_Random)) {
-        document.write("V is in the array");
-    } else {
-        document.write("V is not in the array");
-    }
+    document.write(`Array after sort descending: ${nums_List.sort((a,b) => b-a)}`);
 </script>
 </body>
 </html>

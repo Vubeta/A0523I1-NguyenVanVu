@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kiểm tra số nguyên có tồn tại hay không</title>
+    <title>Check if integer exists in array, remove it</title>
 </head>
 <body>
 <script>
@@ -16,7 +16,7 @@
     if (nums_List.includes(num_Random)) {
         document.write("V is in the array");
         nums_List.splice(nums_List.indexOf(num_Random),1);
-        nums_List.push(0);
+        nums_List[nums_List.length-1] = 0;
         document.write(`<br/>Now, Array includes: ${nums_List}`);
     } else {
         document.write("V is not in the array");
