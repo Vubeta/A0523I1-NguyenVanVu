@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên lớn nhất mảng và vị trí của nó</title>
+</head>
+<body>
+<script>
+    const nums_List = new Array();
+    for (let i = 0; i < 10; i++) {
+        do {
+            nums_List[i] = (Math.floor(Math.random() * (20 - 0 + 1)) + 0);
+        } while (nums_List.indexOf(nums_List[i]) != i);
+    }
+    const result_List = nums_List.slice();
+    result_List.sort((a,b) => a-b);
+    document.write(`Mảng số nguyên gồm 10 phần tử: ${nums_List}<br/>`);
+    document.write(`Số nguyên lớn nhất là ${result_List[result_List.length-1]} và vị trí trong mảng là ${nums_List.indexOf(result_List[result_List.length-1])}`);
+</script>
+</body>
+</html>
