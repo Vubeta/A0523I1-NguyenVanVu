@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<h2>Bài 1</h2>
+<label>Mảng: </label>
+<span id="result1_Bai1"></span>
+<br/>
+<label>Kết quả nối các phần tử trong mảng: </label>
+<span id="result2_Bai1"></span>
+<br/><hr/>
+<h2>Bài 2</h2>
+<label>Số: </label>
+<input type="number" id="num_Input"/>
+<p id="result_Bai2"></p>
+<br/><hr/>
+<h2>Bài 3</h2>
+<label>Nội dung: </label>
+<input type="text" id="text_Input"/>
+<p id="result_Bai3"></p>
+<script>
+    //Bai 1
+    const result1_Bai1 = document.getElementById("result1_Bai1")
+    const result2_Bai1 = document.getElementById("result2_Bai1")
+    myColor = ["Red", "Green", "White", "Black"];
+    result1_Bai1.textContent = myColor;
+    result2_Bai1.textContent = myColor.join(',');
+    //Bai 2
+    const num_Input = document.getElementById("num_Input");
+    const result_Bai2 = document.getElementById("result_Bai2");
+    num_Input.addEventListener('input', run_Bai2);
+    function run_Bai2() {
+        let num_Value = parseFloat(num_Input.value);
+        if (isNaN(num_Value)) {
+            result_Bai2.textContent = "Vui lòng điền nội dung.";
+            return;
+        } else {
+            list_nums = num_Input.value.split('').map(Number);
+            for (i=1; i<list_nums.length; i++) {
+                if (list_nums[i-1]%2==0 && list_nums[i]%2==0) {
+                    list_nums.splice(i,0,'-');
+                }
+            }
+            result_Bai2.textContent = list_nums.join('');
+        }
+    }
+    //Bai 3
+    const text_Input = document.getElementById("text_Input");
+    const result_Bai3 = document.getElementById("result_Bai3");
+    text_Input.addEventListener('input', run_Bai3);
+    function run_Bai3() {
+        if (text_Input.value == '') {
+            result_Bai3.textContent = "Vui lòng điền nội dung.";
+            return;
+        } else {
+            list_texts = text_Input.value.split('');
+            for (let i=0; i<list_texts.length; i++) {
+                if (list_texts[i] == list_texts[i].toUpperCase()) {
+                    list_texts[i] = list_texts[i].toLowerCase();
+                } else if (list_texts[i] == list_texts[i].toLowerCase()) {
+                    list_texts[i] = list_texts[i].toUpperCase();
+                }
+            }
+            result_Bai3.textContent = list_texts.join('');
+        }
+    }
+</script>
+</body>
+</html>
