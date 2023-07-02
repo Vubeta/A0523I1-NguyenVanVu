@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm</title>
+</head>
+<body>
+<script>
+    const nums_List = new Array();
+    let count = 0;
+    for (let i=0; i<15; i++) {
+        nums_List.push(Math.floor(Math.random()*(20-(-20)+1)) + (-20));
+    }
+    document.write(`Chuỗi 15 số nguyên gồm: ${nums_List}<br/>`);
+
+    for (let i of nums_List) {
+        if (i<0) {
+            count++;
+        }
+    }
+    document.write(`Có ${count} số nguyên âm.`);
+</script>
+</body>
+</html>

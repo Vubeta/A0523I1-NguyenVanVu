@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên có trong mảng</title>
+</head>
+<body>
+<script>
+    const nums_List = new Array();
+    const num_Random = Math.floor(Math.random()*(20-(-20)+1)) + (-20);
+    for (let i=0; i<10; i++) {
+        nums_List.push(Math.floor(Math.random()*(20-(-20)+1)) + (-20));
+    }
+    document.write(`Array includes 10 integer numbers: ${nums_List}<br/>`);
+    document.write(`With V = ${num_Random} then `);
+    if (nums_List.includes(num_Random)) {
+        document.write("V is in the array");
+    } else {
+        document.write("V is not in the array");
+    }
+</script>
+</body>
+</html>
