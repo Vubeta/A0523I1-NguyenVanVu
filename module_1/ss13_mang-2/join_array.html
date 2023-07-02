@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Join array</title>
+</head>
+<body>
+<script>
+    const a = new Array();
+    const b = new Array();
+    for (let i=0; i<10; i++) {
+        a.push(Math.floor(Math.random()*(20-(-20)+1)) + (-20));
+        b.push(Math.floor(Math.random()*(20-(-20)+1)) + (-20));
+    }
+    const c = a.concat(b);
+    document.write(`Array a includes 10 integer numbers: ${a}<br/>`);
+    document.write(`Array b includes 10 integer numbers: ${b}<br/>`);
+    document.write(`Array c includes 20 integer numbers: ${c}<br/>`);
+</script>
+</body>
+</html>
