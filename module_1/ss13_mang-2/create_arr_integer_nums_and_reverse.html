@@ -2,9 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Đảo ngược các phần tử trong mảng</title>
 </head>
 <body>
-$END$
+<script>
+    const nums_List = new Array();
+    for (let i=0; i<15; i++) {
+        nums_List.push(Math.floor(Math.random()*(20-0+1)) + 0);
+    }
+    document.write(`Mảng số nguyên gồm 15 phần tử: ${nums_List}<br/>`);
+    document.write(`Mảng sau khi đảo ngược các phần tử: ${nums_List.reverse()}`);
+</script>
 </body>
 </html>
