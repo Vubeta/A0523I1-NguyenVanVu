@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số nguyên lớn nhất và giá trị trung bình của các số nguyên</title>
+</head>
+<body>
+<script>
+    const nums_List = new Array();
+    let sum_Num=0;
+    for (let i=0; i<15; i++) {
+        nums_List.push(Math.floor(Math.random()*(20-0+1)) + 0);
+    }
+    const result_List = nums_List.slice();
+    result_List.sort((a,b) => a-b);
+    document.write(`Mảng số nguyên gồm 15 phần tử là: ${nums_List}<br/>`);
+    document.write(`Số nguyên lớn nhất là: ${result_List[result_List.length-1]}<br/>`);
+    document.write("Giá trị trung bình của các phần tử trong mảng là: ")
+    for (let i=0; i<nums_List.length; i++) {
+        sum_Num += nums_List[i];
+    }
+    document.write((sum_Num/nums_List.length).toFixed(2));
+</script>
+</body>
+</html>
