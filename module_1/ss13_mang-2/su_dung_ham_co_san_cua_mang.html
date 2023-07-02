@@ -38,7 +38,7 @@
             result_Bai2.textContent = "Vui lòng điền nội dung.";
             return;
         } else {
-            list_nums = num_Input.value.split('').map(Number);
+            let list_nums = num_Input.value.split('').map(Number);
             for (i=1; i<list_nums.length; i++) {
                 if (list_nums[i-1]%2==0 && list_nums[i]%2==0) {
                     list_nums.splice(i,0,'-');
