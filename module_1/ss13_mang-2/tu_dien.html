@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h2>Từ điển</h2>
+<label>Tra cứu</label>
+<input type="text" id="text_Search">
+<p id="result"></p>
+<table border="1px" cellspacing="0" cellpadding="2px" id="table_Data">
+    <tr style="background-color: silver;">
+        <th style="width: 100px;">Tiếng Anh</th>
+        <th style="width: 100px;">Tiếng Việt</th>
+    </tr>
+</table>
+<script>
+    text_English = ['Hello', 'Image', 'Jackfruit', 'Star apple', 'Starfruit'];
+    text_Vietnamese = ['Xin chào', 'Hình ảnh', 'Trái mít', 'Trái vú sữa', 'Trái khế'];
+    const text_Search = document.getElementById("text_Search");
+    const result = document.getElementById("result");
+    const table_Data = document.getElementById("table_Data");
+
+    // Table
+    for (let i=0; i<text_English.length; i++) {
+        const row = document.createElement('tr');
+        const cell_E = document.createElement('td');
+        const cell_V = document.createElement('td');
+        cell_E.textContent = text_English[i];
+        cell_V.textContent = text_Vietnamese[i];
+        row.append(cell_E, cell_V);
+        table_Data.appendChild(row);
+        }
+
+    // Search
+    text_Search.addEventListener('input',data_Search);
+    function data_Search() {
+        if(text_Search.value=='') {
+            result.textContent = "";
+        } else {
+            for (let i=0; i<text_English.length; i++) {
+                if(text_Search.value.toLowerCase() == text_English[i].toLowerCase()) {
+                    result.textContent = `${text_English[i]} có nghĩa là ${text_Vietnamese[i]}`;
+                    return;
+                } else {
+                    result.textContent = "";
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
