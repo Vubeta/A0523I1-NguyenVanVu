@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thay thế ký tự trong mảng</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập vào chuỗi của bạn: ");
+    while(a == '') {
+        alert("Nhập dữ liệu cho chuỗi của bạn");
+        a = prompt("Nhập vào chuỗi của bạn: ");
+    }
+
+    const b = a.split('');
+
+    for (let i=0; i<b.length; i++) {
+        if (b[i]=='-') {
+            b[i] = '_';
+        }
+    }
+
+    document.write(`Chuỗi của bạn đã nhập: ${a}<br/>`);
+    document.write(`Chuỗi sau khi xử lý: ${b.join('')}`);
+</script>
+</body>
+</html>

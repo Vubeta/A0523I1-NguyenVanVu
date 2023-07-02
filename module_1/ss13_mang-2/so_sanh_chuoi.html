@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh chuỗi</title>
+</head>
+<body>
+<script>
+    let a = prompt("Nhập vào chuỗi thứ nhất: ");
+    while(a == '') {
+        alert("Nhập dữ liệu cho chuỗi thứ nhất");
+        a = prompt("Nhập vào chuỗi thứ nhất: ");
+    }
+    let b = prompt("Nhập vào chuỗi thứ hai: ");
+    while(b == '') {
+        alert("Nhập dữ liệu cho chuỗi thứ hai");
+        b = prompt("Nhập vào chuỗi thứ hai: ");
+    }
+
+    if (a === b) {
+        alert("Chuỗi thứ nhất giống chuỗi thứ hai");
+    } else {
+        alert("Chuỗi thứ nhất không giống chuỗi thứ hai");
+    }
+</script>
+</body>
+</html>
