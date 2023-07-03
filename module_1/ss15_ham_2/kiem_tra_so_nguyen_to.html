@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<h2>Kiểm tra số nguyên tố </h2>
+<label>Nhập vào số cần kiểm tra: </label>
+<input type="number" id="num_Input">
+<p id="result"></p>
+<script>
+    const num_Input = document.getElementById("num_Input");
+    const result = document.getElementById("result");
+    num_Input.addEventListener("input",xuLy);
+
+    function isPrime(number) {
+        for (let i = 2; i<=Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function xuLy() {
+        let num_Value = parseFloat(num_Input.value);
+        if (!Number.isInteger(num_Value) || num_Value<=0) {
+            result.textContent = "Vui lòng nhập lại số cần kiểm tra.";
+            return;
+        } else {
+            if (isPrime(num_Value)) {
+                result.textContent = `${num_Value} là một số nguyên tố`;
+            } else {
+                result.textContent = `${num_Value} không phải là một số nguyên tố`;
+            }
+        }
+    }
+</script>
+</body>
+</html>
