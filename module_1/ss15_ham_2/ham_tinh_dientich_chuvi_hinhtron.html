@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm tính diện tích, chu vi hình tròn</title>
+</head>
+<body>
+<h2>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn</h2>
+<label>Nhập bán kính hình tròn: </label>
+<input type="number" id="num_Input"/>
+<label>m</label>
+<p id="result_Bai2"></p>
+<script>
+    const num_Input = document.getElementById("num_Input");
+    const result_Bai2 = document.getElementById("result_Bai2");
+    num_Input.addEventListener('input', run_Bai2);
+    function run_Bai2() {
+        let num_Value = parseFloat(num_Input.value);
+        if (isNaN(num_Value)) {
+            result_Bai2.textContent = "Vui lòng điền số.";
+            return;
+        } else {
+            result_Bai2.innerHTML = `Hình tròn có chu vi là ${cal_ChuVi(num_Value).toFixed(2)}m & Diện tích là ${cal_DienTich(num_Value).toFixed(2)}m<sup>2</sup>`;
+        }
+    }
+
+    function cal_ChuVi(radius) {
+        return 2*Math.PI*radius;
+    }
+
+    function cal_DienTich(radius) {
+        return Math.PI*Math.pow(radius, 2);
+    }
+</script>
+</body>
+</html>
