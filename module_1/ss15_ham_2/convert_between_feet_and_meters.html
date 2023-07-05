@@ -2,9 +2,44 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Convert between feet and meter(s)</title>
 </head>
 <body>
-$END$
+<h2>Convert between feet and meter(s)</h2>
+<input type="number" id="num_Input"/>
+<select id="select_Unit">
+    <option value="feet" selected>feet</option>
+    <option value="meter">meters</option>
+</select>
+<p id="result"></p>
+<script>
+    function footToMeter(foot) {
+        const meter = 0.305 * foot;
+        return meter;
+    }
+
+    function meterToFoot(meter) {
+        const foot = 3.279 * meter;
+        return foot;
+    }
+
+    const num_Input = document.getElementById("num_Input");
+    const select_Unit = document.getElementById("select_Unit");
+    const result = document.getElementById("result");
+    num_Input.addEventListener('input',solving_Action);
+    select_Unit.addEventListener('input',solving_Action);
+
+    function solving_Action() {
+        let num_InputValue = parseFloat(num_Input.value);
+        if (isNaN(num_InputValue)) {
+            result.textContent = "Please enter the number";
+            return;
+        } else if (select_Unit.value == "feet") {
+            result.textContent = `${num_InputValue} feet = ${footToMeter(num_InputValue)} meter(s)`;
+        } else {
+            result.textContent = `${num_InputValue} meter(s) = ${meterToFoot(num_InputValue)} feet`;
+        }
+    }
+</script>
 </body>
 </html>
