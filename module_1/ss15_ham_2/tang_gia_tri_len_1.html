@@ -9,7 +9,10 @@
     function tang_GiaTri(number) {
         return parseFloat(number)+1;
     }
-    const num = prompt("Nhập số: ");
+    let num = prompt("Nhập số: ");
+    while (isNaN(parseFloat(num))) {
+        num = prompt("Nhập số: ");
+    }
     alert(tang_GiaTri(num));
 </script>
 </body>

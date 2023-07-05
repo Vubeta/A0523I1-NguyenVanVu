@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>So sánh 2 tham số trong hàm</title>
+</head>
+<body>
+<script>
+    function compare_2Nums(num1, num2) {
+        if (num1 > num2) {
+            alert(`${num1} > ${num2}`);
+        } else {
+            alert(num1+num2);
+        }
+    }
+
+    let a = prompt('Nhập số thứ nhất: ');
+    while (isNaN(parseFloat(a))) {
+        a = prompt('Nhập số thứ nhất: ');
+    }
+
+    let b = prompt('Nhập số thứ hai: ');
+    while (isNaN(parseFloat(b))) {
+        b = prompt('Nhập số thứ hai: ');
+    }
+
+    compare_2Nums(parseFloat(a), parseFloat(b));
+</script>
+</body>
+</html>
