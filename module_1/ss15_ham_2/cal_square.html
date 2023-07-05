@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính bình phương số bất kỳ</title>
+</head>
+<body>
+<h2>Bài 1: Hàm tính bình phương của một số bất kỳ được đưa vào</h2>
+<label>Nhập số: </label>
+<input type="number" id="num_Input"/>
+<p id="result_Bai1"></p>
+<script>
+    const num_Input = document.getElementById("num_Input");
+    const result_Bai1 = document.getElementById("result_Bai1");
+    num_Input.addEventListener('input', run_Bai1);
+    function run_Bai1() {
+        let num_Value = parseFloat(num_Input.value);
+        if (isNaN(num_Value)) {
+            result_Bai1.textContent = "Vui lòng điền số.";
+            return;
+        } else {
+            result_Bai1.innerHTML = `${num_Value}<sup>2</sup> = ${cal_Square(num_Value)}`;
+        }
+    }
+
+    function cal_Square(number) {
+        return Math.pow(number,2);
+    }
+</script>
+</body>
+</html>
