@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Duyệt mảng</title>
+</head>
+<body>
+<script>
+    arr1 = new Array('Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus');
+    arr2 = new Array('Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo');
+    let text_Input = prompt("Nhập tên ngôi sao:");
+    while(!(arr1.includes(text_Input))) {
+        text_Input = prompt("Không tim thấy tên ngôi sau mà bạn đã nhập, vui lòng nhập lại: ");
+    }
+    alert(`Ngôi sao ${text_Input} có tên chòm sao tương ứng là ${arr2[arr1.indexOf(text_Input)]}`);
+</script>
+</body>
+</html>
