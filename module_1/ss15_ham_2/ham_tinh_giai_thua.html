@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào.</title>
+</head>
+<body>
+<label>Số nguyên dương cần tính giai thừa: </label>
+<input type="number" id="num_Int"/>
+<p id="result_Bai3"></p>
+<script>
+    const num_Input = document.getElementById("num_Int");
+    const result_Bai3 = document.getElementById("result_Bai3");
+    num_Input.addEventListener('input', run_Bai3);
+    function run_Bai3() {
+        let num_Value = parseFloat(num_Input.value);
+        if (isNaN(num_Value) || num_Value<0) {
+            result_Bai3.textContent = "Vui lòng nhập lại số nguyên dương.";
+            return;
+        } else {
+            result_Bai3.textContent = `Kết quả: ${num_Value}! = ${cal_GiaiThua(num_Value)}`;
+        }
+    }
+
+    function cal_GiaiThua(number) {
+        let result = 1;
+        if(number == 0) {
+            return 1;
+        } else {
+            for (let i=1; i<=number; i++) {
+                result *= i;
+            }
+            return result;
+        }
+    }
+</script>
+</body>
+</html>
