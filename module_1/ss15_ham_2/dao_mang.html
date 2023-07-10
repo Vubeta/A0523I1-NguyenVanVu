@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng số nguyên</title>
+</head>
+<body>
+<script>
+    let arr = new Array();
+    for (let i=0; i<10; i++) {
+        arr.push(Math.floor(Math.random()*(20-(-20)+1)) + -20);
+    }
+    dao_Mang(arr);
+
+    function dao_Mang(array_Name) {
+        document.write(`Mảng ban đầu gồm: ${array_Name}<br/>`);
+        document.write(`Mảng sau đảo ngược gồm: ${array_Name.reverse()}`);
+    }
+</script>
+</body>
+</html>
