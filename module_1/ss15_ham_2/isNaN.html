@@ -14,16 +14,28 @@
     const result_Bai4 = document.getElementById("result_Bai4");
     text_Input.addEventListener('input',run_Bai4);
     function run_Bai4() {
-        let text_InputValue = parseFloat(text_Input.value);
         if (text_Input.value == '') {
             result_Bai4.textContent = "Vui lòng nhập nội dung";
             return;
-        }
-        if (!isNaN(text_InputValue) && text_Input.value.length == text_InputValue.toString().length) {
-            result_Bai4.textContent = `${text_Input.value} là một số`;
         } else {
-            result_Bai4.textContent = `${text_Input.value} không phải là một số`;
+            result_Bai4.textContent = text_Input.value + " " + check_IsNumber(text_Input.value);
         }
+    }
+
+    function check_IsNumber(text_Value) {
+        arr = text_Value.split('');
+        for (let i=0; i<arr.length; i++) {
+            if (i==0 && arr[i]=='-') {
+                if(arr.length == 1) {
+                    return "không là một số";
+                } else {
+                    break;
+                }
+            } else if (isNaN(parseFloat(arr[i]))) {
+                return "không là một số";
+            }
+        }
+        return "là một số";
     }
 </script>
 </body>

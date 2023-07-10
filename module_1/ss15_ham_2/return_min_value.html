@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên có giá trị nhỏ nhất</title>
+</head>
+<body>
+<h2>Bài 5: Tìm số nguyên có giá trị nhỏ nhất</h2>
+<label>Số nguyên thứ 1: </label>
+<input type="number" id="num1_Input" oninput="xuLy()"/>
+<br/>
+<label>Số nguyên thứ 2: </label>
+<input type="number" id="num2_Input" oninput="xuLy()"/>
+<br/>
+<label>Số nguyên thứ 3: </label>
+<input type="number" id="num3_Input" oninput="xuLy()"/>
+<p id="result_Bai5"></p>
+<script>
+    function xuLy() {
+        let num1_Value = parseFloat(document.getElementById("num1_Input").value);
+        let num2_Value = parseFloat(document.getElementById("num2_Input").value);
+        let num3_Value = parseFloat(document.getElementById("num3_Input").value);
+        if (isNaN(num1_Value) || isNaN(num2_Value) || isNaN(num3_Value)) {
+            result_Bai5.textContent = "Vui lòng nhập lại là số nguyên.";
+            return;
+        }
+        let result = min_Integer(num1_Value, num2_Value, num3_Value);
+        result_Bai5.textContent = `Số nguyên có giá trị nhỏ nhất là ${result}`;
+    }
+    function min_Integer() {
+        let sort_Arr = new Array();
+        for (let i=0; i<arguments.length; i++) {
+           sort_Arr.push(arguments[i]);
+        }
+        sort_Arr.sort((a,b) => a-b);
+        return sort_Arr[0];
+    }
+</script>
+</body>
+</html>
