@@ -16,10 +16,13 @@
             result_Bai6.textContent = "Nhập lại là một số.";
             return;
         }
-        if (Number.isInteger(num_Value) && num_Value>0) {
-            result_Bai6.textContent = `${num_Value} là một số nguyên dương`;
+        result_Bai6.textContent = check_SoNguyenDuong(num_Value);
+    }
+    function check_SoNguyenDuong(number) {
+        if (Number.isInteger(number) && number>0) {
+            return `${number} là một số nguyên dương`;
         } else {
-            result_Bai6.textContent = `${num_Value} không phải là một số nguyên dương`;
+            return `${number} không phải là một số nguyên dương`;
         }
     }
 </script>
