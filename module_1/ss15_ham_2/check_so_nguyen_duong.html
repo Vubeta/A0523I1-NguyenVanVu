@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên dương </title>
+</head>
+<body>
+<h2>Bài 4: Kiểm tra có phải số nguyên dương không</h2>
+<label>Nhập vào một số: </label>
+<input type="number" id="num_Input" oninput="xuLy()"/>
+<p id="result_Bai6"></p>
+<script>
+    function xuLy() {
+        let num_Value = parseFloat(document.getElementById("num_Input").value);
+        if (isNaN(num_Value)) {
+            result_Bai6.textContent = "Nhập lại là một số.";
+            return;
+        }
+        if (Number.isInteger(num_Value) && num_Value>0) {
+            result_Bai6.textContent = `${num_Value} là một số nguyên dương`;
+        } else {
+            result_Bai6.textContent = `${num_Value} không phải là một số nguyên dương`;
+        }
+    }
+</script>
+</body>
+</html>
