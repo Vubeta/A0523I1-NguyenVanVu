@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đổi vị trí 2 số</title>
+</head>
+<body>
+<h2>Bài 7: Đổi vị trí 2 số</h2>
+<label>Nhập vào số thứ 1: </label>
+<input type="number" id="num1_Input" oninput="xuLy()"/>
+<br/>
+<label>Nhập vào số thứ 2: </label>
+<input type="number" id="num2_Input" oninput="xuLy()"/>
+<p id="result_Bai7"></p>
+<script>
+    function xuLy() {
+        let num1_Value = parseFloat(document.getElementById("num1_Input").value);
+        let num2_Value = parseFloat(document.getElementById("num2_Input").value);
+        if (!Number.isInteger(num1_Value) || !Number.isInteger(num2_Value)) {
+            result_Bai7.textContent = "Vui lòng nhập lại số nguyên.";
+            return;
+        }
+        result_Bai7.textContent = change_Location(num1_Value, num2_Value);
+    }
+    function change_Location(a,b) {
+        const c = a;
+        a = b;
+        b = c;
+        return `Sau khi đổi vị trí, số thứ 1 là ${a} và số thứ 2 là ${b}`;
+    }
+</script>
+</body>
+</html>
