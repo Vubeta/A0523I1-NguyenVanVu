@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra sự tồn tại của ký tự trong mảng</title>
+</head>
+<body>
+<script>
+    let arr_CharText = new Array();
+    let arr_CharNum = new Array();
+    //Add characters in arr
+    for (let i=97; i<=122; i++) {
+        arr_CharText.push(String.fromCharCode(i));
+    }
+    //Add numbers in arr
+    for (let i=0; i<=9; i++) {
+        arr_CharNum.push(i);
+    }
+    const arr = arr_CharText.concat(arr_CharNum);
+    const arr_Len = arr.length;
+    const random_Value = arr[Math.floor(Math.random()*(arr_Len-0+1))+0];
+    // Create array includes random index of
+    let random_Arr = new Array();
+    for (let i=0; i<20; i++) {
+        random_Arr.push(arr[Math.floor(Math.random()*(arr_Len-0+1))+0]);
+    }
+    //Display
+    document.write("Mảng ký tự: " + random_Arr + "<br/>");
+    document.write("Ký tự bất kỳ: " + random_Value + "<br/>");
+    //Check isExistes
+    document.write(isExists_CharInArr(random_Arr, random_Value));
+
+    function isExists_CharInArr(arr, char) {
+        return `Vị trí của ký tự ${char} trong mảng ký tự là ${arr.indexOf(char)}`;
+    }
+</script>
+</body>
+</html>
