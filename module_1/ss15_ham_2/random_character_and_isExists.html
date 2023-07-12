@@ -31,7 +31,18 @@
     document.write(isExists_CharInArr(random_Arr, random_Value));
 
     function isExists_CharInArr(arr, char) {
-        return `Vị trí của ký tự ${char} trong mảng ký tự là ${arr.indexOf(char)}`;
+        let count = 0;
+        for (let i=0; i<arr.length; i++) {
+            if (char == arr[i]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            return `Số lần xuất hiện ký tự ${char} trong mảng ký tự là -1`;
+        } else {
+            return `Số lần xuất hiện ký tự ${char} trong mảng ký tự là ${count}`;
+        }
+
     }
 </script>
 </body>
