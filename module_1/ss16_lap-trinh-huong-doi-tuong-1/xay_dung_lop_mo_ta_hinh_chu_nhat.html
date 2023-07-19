@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+<p id="textContent"></p>
+<button onclick="fixHCN()">Thay đổi kích thước HCN</button>
+<br/><br/>
+<canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid silver;"></canvas>
+<script>
+    const contentText = document.getElementById("textContent");
+    class HinhChuNhat {
+        constructor(a,b) {
+            this.numLength = a;
+            this.numWidth = b;
+        }
+        //get data
+        getLength() {
+            return this.numLength;
+        }
+        getWidth() {
+            return this.numWidth;
+        }
+        //set data
+        setLength(valueLength) {
+            this.numLength = valueLength;
+        }
+        setWidth(valueWidth) {
+            this.numWidth = valueWidth;
+        }
+        //calculate
+        calArea() {
+            return this.numLength*this.numWidth;
+        }
+        calPerimeter() {
+            return 2*(this.numLength+this.numWidth);
+        }
+    };
+
+    function createRecMain() {
+        let myCanvas = document.getElementById("myCanvas");
+        let rectangle = new HinhChuNhat(50,60);
+        runSizeRec(myCanvas.getContext("2d"), rectangle, myCanvas);
+        return [myCanvas.getContext("2d"),rectangle,myCanvas];
+    }
+
+    let objRec = createRecMain();
+
+    function fixHCN() {
+        objRec[1].setLength(parseFloat(prompt("Nhập chiều dài hình chữ nhật")));
+        objRec[1].setWidth(parseFloat(prompt("Nhập chiều rộng hình chữ nhật")));
+        runSizeRec(objRec[0], objRec[1], objRec[2]);
+    }
+
+    function runSizeRec(canvas2D, retangleObj, canvasMain) {
+        canvas2D.clearRect(0, 0, canvasMain.width, canvasMain.height);
+        canvas2D.beginPath();
+        canvas2D.fillStyle = 'rgb(246,30,30)';
+        canvas2D.fillRect(50,50,retangleObj.getLength(),retangleObj.getWidth());
+        contentText.textContent = `Với HCN có chiều dài & chiều rộng lần lượt là
+                                    ${retangleObj.getLength()} & ${retangleObj.getWidth()}.
+                                    Diện tích HCN là ${retangleObj.calArea()}
+                                    & chu vi HCN là ${retangleObj.calPerimeter()}`;
+    }
+</script>
+</body>
+</html>
