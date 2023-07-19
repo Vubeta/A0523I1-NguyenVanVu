@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<label> Nhiệt độ (độ C): </label>
+<input type="number" id="temperature" value="25" oninput="createtTemperature()"/>
+<p id="resultText"></p>
+<body>
+<script>
+    class Temperature {
+        constructor(doC) {
+            this.doC = doC;
+        }
+
+        getDoC() {
+            return this.doC;
+        }
+
+        setDoC(doCValue){
+            if(doCValue<-273) {
+                throw new Error("Nhiệt độ ở độ C không được nhỏ hơn -273")
+            }
+            this.doC = doCValue;
+        }
+
+        checkDoC(){
+            this.setDoC(this.doC);
+        }
+
+        convertDoCToDoF() {
+            return this.doC*1.8+32;
+        }
+        convertDoCToDoK(){
+            return this.doC+273.15;
+        }
+    };
+
+    const resultShow = document.getElementById("resultText");
+
+    function createtTemperature() {
+        try {
+            const temperatureInput = parseFloat(document.getElementById("temperature").value);
+            const temperature = new Temperature(temperatureInput);
+            temperature.checkDoC();
+            resultShow.textContent = `Nhiệt độ ở ${temperatureInput} độ C tương ứng với
+                                    ${temperature.convertDoCToDoF().toFixed(3)} độ F và
+                                    ${temperature.convertDoCToDoK().toFixed(3)} độ K`;
+        } catch (error) {
+            resultShow.textContent = error.message;
+        }
+    }
+
+    createtTemperature();
+</script>
+</body>
+</html>
