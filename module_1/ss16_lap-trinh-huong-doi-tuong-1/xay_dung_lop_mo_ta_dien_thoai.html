@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+    <link rel="stylesheet" href="xay_dung_lop_mo_ta_dien_thoai.css">
+</head>
+<body>
+    <div class="custom-container">
+        <table class="custom-border" cellpadding="0px" id="mobileMain1">
+            <caption>Bảng 1</caption>
+            <tr style="height: 10px">
+                <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;">
+                    <p name="pinPercent">30%</p>
+                </td>
+            </tr>
+            <tr>
+                <td name="contentMain" class="hide" align="right" valign="top">
+                    <h1 id="mobileNameMain1" name="mobileNameMain" class="hide centerTwoDirection">iPhone 14 Pro Max</h1>
+                    <pre class="hide" name="contentTempMain">DRAFT MESSAGE</pre>
+                    <pre class="hide" name="contentSentMain">SENT MESSAGE</pre>
+                    <pre class="hide" name="contentInboxMain">INBOX MESSAGE</pre>
+                    <h2 class="hide" name="statusMobile"></h2>
+                </td>
+            </tr>
+            <tr style="height: 100px">
+                <td name="draftMessageZone" class ="hide">
+                    <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
+                    <button name="mobile1" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
+                </td>
+            </tr>
+        </table>
+        <table class="custom-border" style="border: none">
+            <!--        <caption>Bảng a</caption>-->
+            <tr>
+                <td><button onclick="turnPower(this)" name="mobile1">ON/OFF</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnDraft(this)" name="mobile1">DRAFT MESSAGE</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnInbox(this)" name="mobile1">INBOX</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnSent(this)" name="mobile1">SENT</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnCharging(this)" name="mobile1">CHARGING</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="checkStatusMobile(this)" name="mobile1">CHECK STATUS MOBILE</button></td>
+            </tr>
+        </table>
+        <table class="custom-border" style="border: none">
+            <!--        <caption>Bảng b</caption>-->
+            <tr>
+                <td><button onclick="turnPower(this)" name="mobile2">ON/OFF</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnDraft(this)" name="mobile2">DRAFT MESSAGE</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnInbox(this)" name="mobile2">INBOX</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnSent(this)" name="mobile2">SENT</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="turnCharging(this)" name="mobile2">CHARGING</button></td>
+            </tr>
+            <tr>
+                <td><button onclick="checkStatusMobile(this)" name="mobile2">CHECK STATUS MOBILE</button></td>
+            </tr>
+        </table>
+        <table class="custom-border" cellpadding="0px" id="mobileMain2">
+            <caption>Bảng 2</caption>
+            <tr style="height: 10px">
+                <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;">
+                    <p name="pinPercent">30%</p>
+                </td>
+            </tr>
+            <tr>
+                <td name="contentMain" class="hide" align="right">
+                    <h1 name="mobileNameMain" class="centerTwoDirection">Galaxy S23 Ultra</h1>
+                    <pre class="hide" name="contentTempMain">DRAFT MESSAGE</pre>
+                    <pre class="hide" name="contentSentMain">SENT MESSAGE</pre>
+                    <pre class="hide" name="contentInboxMain">INBOX MESSAGE</pre>
+                    <h2 class="hide" name="statusMobile"></h2>
+                </td>
+            </tr>
+            <tr style="height: 100px">
+                <td name="draftMessageZone" class ="hide">
+                    <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
+                    <button name="mobile2" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="xay_dung_lop_mo_ta_dien_thoai.js"></script>
+    <script>
+        const mobileMain1 = document.getElementById("mobileMain1");
+        const mobileMain2 = document.getElementById("mobileMain2");
+
+        let iPhone = new Mobile("iPhone",mobileMain1);
+        let SamSung = new Mobile("SamSung",mobileMain2);
+
+        function turnPower(button) {
+            if (button.name == "mobile1") {
+                iPhone.powerPhone();
+            } else {
+                SamSung.powerPhone();
+            }
+        }
+
+        function turnDraft(button) {
+            if (button.name == "mobile1") {
+                iPhone.getMemoryMessTemp();
+            } else {
+                SamSung.getMemoryMessTemp();
+            }
+        }
+        
+        function turnInbox(button) {
+            if (button.name == "mobile1") {
+                iPhone.getMemoryMessInbox();
+            } else {
+                SamSung.getMemoryMessInbox();
+            }
+        }
+
+        function turnSent(button) {
+            if (button.name == "mobile1") {
+                iPhone.getMemoryMessSent();
+            } else {
+                SamSung.getMemoryMessSent();
+            }
+        }
+
+        function turnCharging(button) {
+            if (button.name == "mobile1") {
+                iPhone.chargingPhone();
+            } else {
+                SamSung.chargingPhone();
+            }
+        }
+
+        function checkStatusMobile(button) {
+            if (button.name == "mobile1") {
+                iPhone.checkStatusPhone();
+            } else {
+                SamSung.checkStatusPhone();
+            }
+        }
+
+        //Gửi tin nhắn đến điện thoại khác
+        function sendMessToMobileOther(button) {
+            if(button.name == "mobile1") {
+                SamSung.setMemoryMessInbox(iPhone.contentMessTemp.value);
+                iPhone.setMemoryMessSent(iPhone.contentMessTemp.value);
+                iPhone.contentMessTemp.value = '';
+            } else {
+                iPhone.setMemoryMessInbox(SamSung.contentMessTemp.value);
+                SamSung.setMemoryMessSent(SamSung.contentMessTemp.value);
+                SamSung.contentMessTemp.value = '';
+            }
+        }
+    </script>
+</body>
+</html>

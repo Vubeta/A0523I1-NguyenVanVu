@@ -1,0 +1,41 @@
+.custom-border {
+    width: 350px;
+    height: 600px;
+    border-radius: 4px;
+    border: 2px black solid;
+}
+.custom-container {
+    display: flex;
+    justify-content: space-between;
+}
+.custom-button-mobile2 {
+    text-align: right;
+}
+.container {
+    width: 200px; /* Kích thước cố định của container */
+    height: 30px;
+    border: 1px solid black; /* Biên viền để hiển thị kích thước cố định */
+    overflow: auto; /* Nếu nội dung vượt quá kích thước, hiển thị thanh cuộn */
+}
+.hide {
+    display: none;
+}
+.showDraft {
+    border-top: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.hideDraft {
+    display: none;
+}
+.hideMobile {
+    display: none;
+}
+.centerTwoDirection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

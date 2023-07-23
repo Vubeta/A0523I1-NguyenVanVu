@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Table</title>
+</head>
+<body>
+<style>
+    .custom-border {
+        width: 350px;
+        height: 600px;
+        border-radius: 4px;
+        border: 2px black solid;
+    }
+    .custom-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .custom-button-mobile2 {
+        text-align: right;
+    }
+    .container {
+        width: 200px; /* Kích thước cố định của container */
+        height: 30px;
+        border: 1px solid black; /* Biên viền để hiển thị kích thước cố định */
+        overflow: auto; /* Nếu nội dung vượt quá kích thước, hiển thị thanh cuộn */
+    }
+    .hide {
+        display: none;
+    }
+</style>
+<table class="custom-border" cellpadding="0px" id="mobileMain1">
+    <caption>Bảng 1</caption>
+    <tr style="height: 10px">
+        <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;"><p id="pinValue1">30%</p></td>
+    </tr>
+    <tr>
+        <td class="hide">
+            <ul class="container">
+                <li>Phần tử 1</li>
+                <li>Phần tử 2</li>
+                <li>Phần tử 3</li>
+                <li>Phần tử 4</li>
+                <li>Phần tử 5</li>
+                <!-- Thêm các phần tử của mảng vào đây -->
+            </ul>
+        </td>
+    </tr>
+    <tr style="height: 100px">
+        <td class ="hide" style="border-top: 1px solid black; display: flex; align-items: center; justify-content: center; height: 100%;">
+            <textarea cols="30" rows="5"></textarea>
+            <button style="width: 90px; height: 80%;">Send</button>
+        </td>
+    </tr>
+</table>
+
+<br/>
+
+<table class="custom-border" cellpadding="0px" id="mobileMain2">
+    <caption>Bảng 1</caption>
+    <tr style="height: 10px">
+        <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;"><p id="pinValue2">30%</p></td>
+    </tr>
+    <tr>
+        <td class="hide">
+            <ul class="container">
+                <li>Phần tử 1</li>
+                <li>Phần tử 2</li>
+                <li>Phần tử 3</li>
+                <li>Phần tử 4</li>
+                <li>Phần tử 5</li>
+                <!-- Thêm các phần tử của mảng vào đây -->
+            </ul>
+        </td>
+    </tr>
+    <tr style="height: 100px">
+        <td class ="hide" style="border-top: 1px solid black; display: flex; align-items: center; justify-content: center; height: 100%;">
+            <textarea cols="30" rows="5"></textarea>
+            <button style="width: 90px; height: 80%;">Send</button>
+        </td>
+    </tr>
+</table>
+
+<br/>
+
+<button name="mobile1" onclick="turnPower(this)">ON/OFF</button>
+<br/>
+<button name="mobile2" onclick="turnPower(this)">ON/OFF</button>
+<script>
+
+    class Mobile {
+        constructor(idPhone, statusOn, mobileMain) {
+            this.idPhone = idPhone;
+            this.statusOn = statusOn;
+            this.mobileMain = mobileMain;
+        }
+        powerPhone() {
+            let columns = this.mobileMain.getElementsByTagName("td");
+            if (this.statusOn == false) {
+                this.statusOn = true;
+                for (let i=0; i < columns.length; i++) {
+                    columns[i].classList.remove("hide");
+                }
+            } else {
+                this.statusOn = false;
+                for (let i=0; i < columns.length; i++) {
+                    columns[i].classList.add("hide");
+                }
+            }
+        }
+    };
+
+    const mobile1 = document.getElementById("mobileMain1");
+    const mobile2 = document.getElementById("mobileMain2");
+    let iPhone = new Mobile("iPhone", false, mobile1);
+    let SamSung = new Mobile("iPhone", false, mobile2);
+
+    function turnPower(button) {
+        if (button.name == "mobile1") {
+            iPhone.powerPhone();
+        } else {
+            SamSung.powerPhone();
+        }
+    }
+</script>
+</body>
+</html>
