@@ -52,7 +52,7 @@
             moveDown();
             return;
         }
-        setTimeout(this.moveRight.bind(this), hero.speed);
+        setTimeout(moveRight, hero.speed);
     }
 
     function moveDown() {
@@ -63,7 +63,7 @@
             moveLeft();
             return;
         }
-        setTimeout(this.moveDown.bind(this), hero.speed);
+        setTimeout(moveDown, hero.speed);
     }
 
     function moveLeft() {
@@ -74,7 +74,7 @@
             moveTop();
             return;
         }
-        setTimeout(this.moveLeft.bind(this), hero.speed);
+        setTimeout(moveLeft, hero.speed);
     }
 
     function moveTop() {
@@ -85,7 +85,7 @@
             moveRight();
             return;
         }
-        setTimeout(this.moveTop.bind(this), hero.speed);
+        setTimeout(moveTop, hero.speed);
     }
 
     moveRight();
