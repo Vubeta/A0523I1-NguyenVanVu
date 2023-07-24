@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects</title>
+</head>
+<body>
+<div id="game"></div>
+<script>
+    function Hero(image, top, left, size, speed){
+        this.image = image;
+        this.top = top;
+        this.left = left;
+        this.size = size;
+        this.speed = speed;
+
+        this.getHeroElement = function(){
+            return '<img width="'+ this.size + '"' +
+                ' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px;position:absolute;" />';
+        }
+
+        this.moveRight = function(){
+            this.left += 20;
+            console.log('ok: ' + this.left);
+        }
+
+        this.moveLeft = function () {
+            this.left -= 20;
+            console.log('ok: ' + this.left) ;
+        }
+
+        this.moveTop = function () {
+            this.top -= 20;
+            console.log('ok: ' + this.top);
+        }
+
+        this.moveDown = function () {
+            this.top += 20;
+            console.log('ok: ' + this.top);
+        }
+    }
+
+    var hero = new Hero('https://cafefcdn.com/thumb_w/640/203337114487263232/2022/3/3/photo1646280815645-1646280816151764748403.jpg', 50, 30, 400,100);
+
+    function moveRight() {
+        if (hero.left < window.innerWidth - hero.size) {
+            hero.moveRight();
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+        } else {
+            moveDown();
+            return;
+        }
+        setTimeout(this.moveRight.bind(this), hero.speed);
+    }
+
+    function moveDown() {
+        if (hero.top < window.innerHeight - hero.size) {
+            hero.moveDown();
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+        } else {
+            moveLeft();
+            return;
+        }
+        setTimeout(this.moveDown.bind(this), hero.speed);
+    }
+
+    function moveLeft() {
+        if (hero.left >= 30) {
+            hero.moveLeft();
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+        } else {
+            moveTop();
+            return;
+        }
+        setTimeout(this.moveLeft.bind(this), hero.speed);
+    }
+
+    function moveTop() {
+        if (hero.top >= 50) {
+            hero.moveTop();
+            document.getElementById('game').innerHTML = hero.getHeroElement();
+        } else {
+            moveRight();
+            return;
+        }
+        setTimeout(this.moveTop.bind(this), hero.speed);
+    }
+
+    moveRight();
+
+</script>
+</body>
+</html>
