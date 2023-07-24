@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor(weight) {
+                this.weight = weight;
+            }
+
+            decrease() {
+                let weightNext = parseInt(this.weight)-1;
+                this.weight = weightNext;
+            }
+
+            isEmpty() {
+                if(this.weight>0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            getWeight() {
+                return this.weight;
+            }
+        }
+
+        class Human {
+            constructor(name, gender, weight) {
+                this.name = name;
+                this.gender = gender;
+                this.weight = weight;
+            }
+
+            isMale() {
+                if(this.gender==true) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            setGender(boolean) {
+                this.gender = boolean;
+            }
+
+            checkAplle(Apple) {
+                if(!Apple.isEmpty()) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+
+            eat(Apple) {
+                Apple.decrease();
+                this.weight++;
+            }
+
+            say(String) {
+                console.log(String);
+            }
+
+            getName() {
+                return this.name;
+            }
+
+            setName(String) {
+                this.name = String;
+            }
+
+            getWeight() {
+                return this.weight;
+            }
+
+            setWeight(int) {
+                this.weight = int;
+            }
+        }
+        apple = new Apple(10);
+        adam = new Human("Adam", true, 60);
+        eva = new Human("Eva", false, 40);
+
+        conversation1 = ["Hello Eva", "How are you?", "You are beautiful", "Apple is delicious, right?", "Apple is almost gone, will you eat more?"];
+        conversation2 = ["Hi Adam", "Well, I'm fine", "Thank you", "That's right", "Yes, I will"];
+
+        function startConversation(i) {
+            if(i<conversation1.length) {
+                adam.eat(apple);
+                setTimeout(function() {
+                    adam.say(conversation1[i]);
+                    setTimeout(function() {
+                        eva.eat(apple);
+                        setTimeout(function() {
+                            eva.say(conversation2[i]);
+                            setTimeout(function () {
+                                startConversation(i+1);
+                            },1000);
+                        },1000);
+                    },1000);
+                },1000);
+            }
+        }
+        startConversation(0);
+    </script>
+</body>
+</html>
