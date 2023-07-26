@@ -3,35 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Xây dựng lớp mô tả điện thoại</title>
-    <link rel="stylesheet" href="xay_dung_lop_mo_ta_dien_thoai.css">
+<!--    <link rel="stylesheet" href="xay_dung_lop_mo_ta_dien_thoai.css">-->
 </head>
 <body>
+    <style>
+        .custom-border {
+            width: 350px;
+            height: 600px;
+            border-radius: 4px;
+            border: 2px black solid;
+        }
+        .custom-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        }
+    </style>
     <div class="custom-container">
         <table class="custom-border" cellpadding="0px" id="mobileMain1">
-            <caption>Bảng 1</caption>
+            <caption>Điện thoại 1</caption>
             <tr style="height: 10px">
-                <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;">
-                    <p name="pinPercent">30%</p>
+                <td align="right" valign="top" style="border-bottom: 1px solid black; display: none">
+                    <p class="pinPercent">30%</p>
                 </td>
             </tr>
             <tr>
-                <td name="contentMain" class="hide" align="right" valign="top">
-                    <h1 id="mobileNameMain1" name="mobileNameMain" class="hide centerTwoDirection">iPhone 14 Pro Max</h1>
-                    <pre class="hide" name="contentTempMain">DRAFT MESSAGE</pre>
-                    <pre class="hide" name="contentSentMain">SENT MESSAGE</pre>
-                    <pre class="hide" name="contentInboxMain">INBOX MESSAGE</pre>
-                    <h2 class="hide" name="statusMobile"></h2>
+                <td data-name="contentMain" align="right" valign="top" style="display: none">
+                    <h1 class="mobileNameMain" style="display: none">iPhone 14 Pro Max</h1>
+                    <pre class="contentShowMain" style="display: none">DRAFT MESSAGE</pre>
+                    <h2 class="statusMobile" style="display: none"></h2>
                 </td>
             </tr>
             <tr style="height: 100px">
-                <td name="draftMessageZone" class ="hide">
+                <td data-name="draftMessageZone" style="display: none">
                     <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
                     <button name="mobile1" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
                 </td>
             </tr>
         </table>
         <table class="custom-border" style="border: none">
-            <!--        <caption>Bảng a</caption>-->
+            <!--        <caption>Bảng điều khiển điện thoại 1</caption>-->
             <tr>
                 <td><button onclick="turnPower(this)" name="mobile1">ON/OFF</button></td>
             </tr>
@@ -51,8 +62,29 @@
                 <td><button onclick="checkStatusMobile(this)" name="mobile1">CHECK STATUS MOBILE</button></td>
             </tr>
         </table>
+        <table class="custom-border" cellpadding="0px" id="mobileMain2">
+            <caption>Điện thoại 2</caption>
+            <tr style="height: 10px">
+                <td align="right" valign="top" style="border-bottom: 1px solid black; display: none">
+                    <p class="pinPercent">30%</p>
+                </td>
+            </tr>
+            <tr>
+                <td data-name="contentMain" align="right" valign="top" style="display: none">
+                    <h1 class="mobileNameMain" style="display: none">iPhone 14 Pro Max</h1>
+                    <pre class="contentShowMain" style="display: none">DRAFT MESSAGE</pre>
+                    <h2 class="statusMobile" style="display: none"></h2>
+                </td>
+            </tr>
+            <tr style="height: 100px">
+                <td data-name="draftMessageZone" style="display: none">
+                    <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
+                    <button name="mobile2" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
+                </td>
+            </tr>
+        </table>
         <table class="custom-border" style="border: none">
-            <!--        <caption>Bảng b</caption>-->
+            <!--        <caption>Bảng điều khiển điện thoại 2</caption>-->
             <tr>
                 <td><button onclick="turnPower(this)" name="mobile2">ON/OFF</button></td>
             </tr>
@@ -72,37 +104,14 @@
                 <td><button onclick="checkStatusMobile(this)" name="mobile2">CHECK STATUS MOBILE</button></td>
             </tr>
         </table>
-        <table class="custom-border" cellpadding="0px" id="mobileMain2">
-            <caption>Bảng 2</caption>
-            <tr style="height: 10px">
-                <td class="hide" align="right" valign="top" style="border-bottom: 1px solid black;">
-                    <p name="pinPercent">30%</p>
-                </td>
-            </tr>
-            <tr>
-                <td name="contentMain" class="hide" align="right">
-                    <h1 name="mobileNameMain" class="centerTwoDirection">Galaxy S23 Ultra</h1>
-                    <pre class="hide" name="contentTempMain">DRAFT MESSAGE</pre>
-                    <pre class="hide" name="contentSentMain">SENT MESSAGE</pre>
-                    <pre class="hide" name="contentInboxMain">INBOX MESSAGE</pre>
-                    <h2 class="hide" name="statusMobile"></h2>
-                </td>
-            </tr>
-            <tr style="height: 100px">
-                <td name="draftMessageZone" class ="hide">
-                    <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
-                    <button name="mobile2" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
-                </td>
-            </tr>
-        </table>
     </div>
     <script src="xay_dung_lop_mo_ta_dien_thoai.js"></script>
     <script>
         const mobileMain1 = document.getElementById("mobileMain1");
         const mobileMain2 = document.getElementById("mobileMain2");
 
-        let iPhone = new Mobile("iPhone",mobileMain1);
-        let SamSung = new Mobile("SamSung",mobileMain2);
+        let iPhone = new Mobile("iPhone 14 Pro Max",mobileMain1);
+        let SamSung = new Mobile("Galaxy S23 Ultra",mobileMain2);
 
         function turnPower(button) {
             if (button.name == "mobile1") {
@@ -119,7 +128,7 @@
                 SamSung.getMemoryMessTemp();
             }
         }
-        
+
         function turnInbox(button) {
             if (button.name == "mobile1") {
                 iPhone.getMemoryMessInbox();
@@ -163,6 +172,20 @@
                 SamSung.setMemoryMessSent(SamSung.contentMessTemp.value);
                 SamSung.contentMessTemp.value = '';
             }
+        }
+
+        function getCurrentDateTime() {
+            const currentDate = new Date();
+
+            const year = currentDate.getFullYear();
+            const month = String(currentDate.getMonth() + 1).padStart(2, "0"); // Tháng trong đối tượng Date được đếm từ 0 - 11
+            const day = String(currentDate.getDate()).padStart(2, "0");
+            const hours = String(currentDate.getHours()).padStart(2, "0");
+            const minutes = String(currentDate.getMinutes()).padStart(2, "0");
+            const seconds = String(currentDate.getSeconds()).padStart(2, "0");
+
+            const dateTimeString = `${day}/${month}/${year} ${hours}:${minutes}:${seconds}`;
+            return dateTimeString;
         }
     </script>
 </body>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả điện thoại</title>
+</head>
+<body>
+<style>
+    .custom-border {
+        width: 350px;
+        height: 600px;
+        border-radius: 4px;
+        border: 2px black solid;
+    }
+    .custom-container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .custom-button-mobile2 {
+        text-align: right;
+    }
+    .container {
+        width: 200px; /* Kích thước cố định của container */
+        height: 30px;
+        border: 1px solid black; /* Biên viền để hiển thị kích thước cố định */
+        overflow: auto; /* Nếu nội dung vượt quá kích thước, hiển thị thanh cuộn */
+    }
+    .hide {
+        display: none;
+    }
+    .showDraft {
+        border-top: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+    .hideDraft {
+        display: none;
+    }
+    .hideMobile {
+        display: none;
+    }
+    .centerTwoDirection {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+</style>
+<div class="custom-container">
+    <table class="custom-border" cellpadding="0px" id="mobileMain1">
+        <caption>Bảng 1</caption>
+        <tr style="height: 10px">
+            <td align="right" valign="top" style="border-bottom: 1px solid black; display: none">
+                <p class="pinPercent">30%</p>
+            </td>
+        </tr>
+        <tr>
+            <td data-name="contentMain" align="right" valign="top" style="display: none">
+                <h1 class="mobileNameMain" style="display: none">iPhone 14 Pro Max</h1>
+                <pre class="contentShowMain" style="display: none">DRAFT MESSAGE</pre>
+                <h2 class="statusMobile" style="display: none"></h2>
+            </td>
+        </tr>
+        <tr style="height: 100px">
+            <td data-name="draftMessageZone" style="display: none">
+                <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
+                <button name="mobile1" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
+            </td>
+        </tr>
+    </table>
+    <table class="custom-border" style="border: none">
+        <!--        <caption>Bảng a</caption>-->
+        <tr>
+            <td><button onclick="turnPower(this)" name="mobile1">ON/OFF</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnDraft(this)" name="mobile1">DRAFT MESSAGE</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnInbox(this)" name="mobile1">INBOX</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnSent(this)" name="mobile1">SENT</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnCharging(this)" name="mobile1">CHARGING</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="checkStatusMobile(this)" name="mobile1">CHECK STATUS MOBILE</button></td>
+        </tr>
+    </table>
+    <table class="custom-border" style="border: none">
+        <!--        <caption>Bảng b</caption>-->
+        <tr>
+            <td><button onclick="turnPower(this)" name="mobile2">ON/OFF</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnDraft(this)" name="mobile2">DRAFT MESSAGE</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnInbox(this)" name="mobile2">INBOX</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnSent(this)" name="mobile2">SENT</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="turnCharging(this)" name="mobile2">CHARGING</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="checkStatusMobile(this)" name="mobile2">CHECK STATUS MOBILE</button></td>
+        </tr>
+    </table>
+    <table class="custom-border" cellpadding="0px" id="mobileMain2">
+        <caption>Bảng 2</caption>
+        <tr style="height: 10px">
+            <td align="right" valign="top" style="border-bottom: 1px solid black; display: none">
+                <p class="pinPercent">30%</p>
+            </td>
+        </tr>
+        <tr>
+            <td data-name="contentMain" align="right" valign="top" style="display: none">
+                <h1 class="mobileNameMain" style="display: none">iPhone 14 Pro Max</h1>
+                <pre class="contentShowMain" style="display: none">DRAFT MESSAGE</pre>
+                <h2 class="statusMobile" style="display: none"></h2>
+            </td>
+        </tr>
+        <tr style="height: 100px">
+            <td data-name="draftMessageZone" style="display: none">
+                <textarea cols="30" rows="5" name="contentMessTemp"></textarea>
+                <button name="mobile2" onclick="sendMessToMobileOther(this)" style="width: 90px; height: 80%;">Send</button>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    class Mobile {
+        constructor(idPhone, mobileMain) {
+            this.idPhone = idPhone;
+            this.mobileMain = mobileMain;
+            this.memoryMessTemp = [];
+            this.memoryMessInbox = [];
+            this.memoryMessSent = [];
+            this.statusOn = false;
+            this.statusDraftTemp = false;
+            this.statusPinCharging = false;
+
+            this.columns = this.mobileMain.getElementsByTagName("td");
+            this.pinPercent = this.mobileMain.querySelector(".pinPercent");
+            this.mobileNameMain = this.mobileMain.querySelector(".mobileNameMain");
+            this.contentTempMain = this.mobileMain.querySelector(".contentTempMain");
+            this.contentSentMain = this.mobileMain.querySelector(".contentSentMain");
+            this.contentInboxMain = this.mobileMain.querySelector(".contentInboxMain");
+            this.draftMessageZone = this.mobileMain.querySelector("td[data-name='draftMessageZone']");
+            this.contentMessTemp = this.mobileMain.querySelector("[name='contentMessTemp']");
+            this.contentMain = this.mobileMain.querySelector("td[data-name='contentMain']");
+            this.statusMobile = this.mobileMain.querySelector(".statusMobile");
+        }
+
+        //Ẩn tên điện thoại ở màn hình chính
+        hideMobileNameMain() {
+            this.mobileNameMain.style.display = "none";
+            this.mobileNameMain.classList.remove("centerTwoDirection");
+        }
+
+        showMobileNameMain() {
+            this.contentMain.style.display = "block";
+            this.mobileNameMain.style.display = "block";
+            this.mobileNameMain.classList.add("centerTwoDirection");
+        }
+
+        //Ngoại trừ object[...], còn lại đều ẩn đi
+        hideAdvanced() {
+            const arrayObjects = [this.hideMobileNameMain, this.showMobileNameMain];
+
+            arrayObjects[1].call(this);
+        }
+    }
+    const mobileMain1 = document.getElementById("mobileMain1");
+    const mobileMain2 = document.getElementById("mobileMain2");
+
+    let iPhone = new Mobile("iPhone",mobileMain1);
+    let SamSung = new Mobile("SamSung",mobileMain2);
+
+    iPhone.hideAdvanced();
+</script>
+</body>
+</html>

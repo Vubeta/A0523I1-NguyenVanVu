@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+</head>
+<body>
+<div class="mobileMain1">
+    <h1 class="mobileNameMain">Mobile Name Main 1</h1>
+    <p>Some content here</p>
+</div>
+<div class="mobileMain2">
+    <h1 class="mobileNameMain">Mobile Name Main 2</h1>
+    <p>Some other content here</p>
+</div>
+<script>
+const mobileObject1 = document.querySelector(".mobileMain1");
+const mobileObject2 = document.querySelector(".mobileMain2");
+
+class Mobile {
+    constructor(mobile) {
+        this.mobile = mobile;
+
+        this.mobileName = this.mobile.querySelector(".mobileNameMain");
+    }
+
+    hideName() {
+        this.mobileName.style.display="none";
+    }
+}
+
+mobile1 = new Mobile(mobileObject1);
+    mobile1.hideName();
+mobile2 = new Mobile(mobileObject2);
+</script>
+</body>
+</html>
