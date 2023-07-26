@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    const arrVowelChar = ['o', 'u', 'i', 'a', 'e', 'O', 'U', 'I', 'A', 'E'];
+    let valueInput = prompt("Please enter a char: ");
+    while (valueInput.length > 1 || valueInput == '') {
+        alert("Please enter a char again");
+        valueInput = prompt("Please enter a char: ");
+    }
+    if (arrVowelChar.includes(valueInput)) {
+        alert(valueInput + " is a vowel character");
+    } else {
+        alert(valueInput + " is a consonant character");
+    }
+</script>
+</body>
+</html>

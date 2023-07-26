@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    const salaryNum = parseFloat(prompt("Please enter your salary: "));
+    let taxNum = 0;
+    let salaryFinal = 0;
+    if (salaryNum > 15000000) {
+        taxNum = salaryNum*20/100;
+        salaryFinal = salaryNum-taxNum;
+    } else if (salaryNum>=7) {
+        taxNum = salaryNum*10/100;
+        salaryFinal = salaryNum-taxNum;
+    } else {
+        taxNum = salaryNum*5/100;
+        salaryFinal = salaryNum-taxNum;
+    }
+    alert("Your income tax is " + taxNum);
+    alert("Your final salary is " + salaryFinal);
+</script>
+</body>
+</html>
