@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    const A = new Array(5);
+    const B = new Array(5);
+
+    for (let i=0; i<A.length; i++) {
+        A[i] = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
+        B[i] = Math.floor(Math.random() * (9 - 0 + 1)) + 0;
+    }
+
+    let C = new Array();
+
+    for (let i=0; i<A.length; i++) {
+        if(!A.includes(B[i]) && !C.includes(B[i])) {
+            C.push(B[i]);
+        }
+    }
+
+    C.sort((a,b) => a-b);
+
+    document.write(`Mảng A: [${A}]<br/>`);
+    document.write(`Mảng B: [${B}]<br/>`);
+    document.write(`missingValue(A,B) = [${C}]`);
+</script>
+</body>
+</html>
