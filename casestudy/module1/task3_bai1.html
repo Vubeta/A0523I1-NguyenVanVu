@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    const a = new Array(5);
+    const b = new Array(5);
+
+    for (let i=0; i<a.length; i++) {
+        a[i] = Math.floor(Math.random()*(9-0+1)) + 0;
+
+        if(i!=0) {
+            b[i] = b[i-1] + a[i];
+        } else {
+            b[i] = a[i];
+        }
+    }
+    document.write(`Mảng a: [${a}]<br/>`);
+    document.write(`Mảng b: [${b}]`);
+</script>
+</body>
+</html>
