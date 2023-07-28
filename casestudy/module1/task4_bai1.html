@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<input type="text" id="strInput" placeholder="Please enter string here" oninput="solving()">
+<p id="result1"></p>
+<script>
+    const strInput = document.getElementById("strInput");
+    const result1 = document.getElementById("result1");
+
+    let arr1 = new Array();
+    function solving() {
+        arr1 = strInput.value.split("");
+        deleleDoubleSpaceInArr(arr1); //delete double space
+        upperCaseFirstString(arr1);
+        result1.textContent = arr1;
+    }
+
+    function deleleDoubleSpaceInArr(arr) {
+        for (let i=1; i<arr.length; i++) {
+            if (arr[i-1]==" " && arr[i]==" ") {
+                arr.splice(i,1);
+                break;
+            } else if (i==arr.length-1) {
+                return;
+            }
+        }
+        deleleDoubleSpaceInArr(arr);
+    }
+
+    function upperCaseFirstString(arr) {
+        for (let i=0; i<arr.length; i++) {
+            if(i==0 || arr[i-1]==" ") {
+                arr[i] = arr[i].toUpperCase();
+            } else {
+                arr[i] = arr[i].toLowerCase();
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
