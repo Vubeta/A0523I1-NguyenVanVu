@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    const textInput = prompt("Please enter the string here");
+    const arr1 = textInput.split("");
+    let arr2 = [];
+    let result;
+
+    arr2.push(arr1[0]);
+    for (let i=1; i<arr1.length; i++) {
+        if(!arr2.includes(arr1[i])) {
+            arr2.push(arr1[i]);
+        }
+    }
+
+    if(arr2.length < 1) {
+        result = "There are not any same characters.";
+    } else if (arr2.length == 1) {
+        result = "There is a same character: " + arr2[0];
+    } else {
+        result = "There are " + arr2.length + " same characters: " + arr2;
+    }
+    alert(result);
+</script>
+</body>
+</html>
