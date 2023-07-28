@@ -7,16 +7,23 @@
 <body>
 <input type="text" id="strInput" placeholder="Please enter string here" oninput="solving()">
 <p id="result1"></p>
+<p id="result2"></p>
+<p id="result3"></p>
 <script>
     const strInput = document.getElementById("strInput");
     const result1 = document.getElementById("result1");
+    const result2 = document.getElementById("result2");
+    const result3 = document.getElementById("result3");
 
     let arr1 = new Array();
     function solving() {
         arr1 = strInput.value.split("");
         deleleDoubleSpaceInArr(arr1); //delete double space
-        upperCaseFirstString(arr1);
-        result1.textContent = arr1;
+        upperCaseFirstString(arr1); //upper fisrt string
+        const stringText = arr1.join("");
+        result1.textContent = "Chuỗi ban đầu: " + strInput.value;
+        result2.textContent = "Chuỗi sau chuẩn hóa: " + stringText;
+        result3.textContent = "Chữ dài nhất trong chuỗi ban đầu: " + longestString(strInput.value);
     }
 
     function deleleDoubleSpaceInArr(arr) {
@@ -39,6 +46,18 @@
                 arr[i] = arr[i].toLowerCase();
             }
         }
+    }
+
+    function longestString(stringText) {
+        const arr = stringText.split(" ");
+        let indexNum=0;
+
+        for (let i=1; i<arr.length; i++) {
+            if(arr[indexNum].length<arr[i].length) {
+                indexNum = i
+            }
+        }
+        return arr[indexNum];
     }
 
 </script>
