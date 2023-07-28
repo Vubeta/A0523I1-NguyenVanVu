@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<input type="number" id="inputNum" oninput="numInput()" style="width: 200px" placeholder="Please order number in menu">
+<button id="solvingBtn" onclick="orderDrink()">Order</button>
+<p id="billLocation"></p>
+<br/><br/>
+<table id="menuTable" border="black 1px" cellspacing="0px">
+    <tr>
+        <th>No</th>
+        <th>Name of drink</th>
+    </tr>
+</table>
+<script>
+    const inputNum = document.getElementById("inputNum")
+    function numInput() {
+        let inputNumValue = inputNum.value;
+        if(isNaN(inputNumValue) || inputNumValue<1 || inputNumValue>7) {
+            inputNum.value = "";
+        }
+    }
+
+    const menuTable = document.getElementById("menuTable");
+    menu = new Array("Cafe", "Cam vắt", "Nước ép cà rốt",
+                    "Nước ép cà chua", "Nước lọc", "Nước dừa", "Thoát gọi món");
+    price = new Array("10000 VNĐ", "20000 VNĐ", "15000 VNĐ",
+                    "15000 VNĐ", "5000 VNĐ", "10000 VNĐ");
+    for (let i=0; i<menu.length; i++) {
+        let row = document.createElement("tr");
+        let cellNo = document.createElement("td");
+        let cellName = document.createElement("td");
+        cellNo.textContent = i+1;
+        cellNo.style.textAlign = "center";
+        cellName.textContent = menu[i];
+        row.append(cellNo, cellName);
+        menuTable.appendChild(row);
+    }
+
+    const billLocation = document.getElementById("billLocation");
+
+    function orderDrink() {
+        if(inputNum.value==7) {
+            return;
+        }
+        let countCup = prompt(`Giá mỗi ${menu[inputNum.value-1]} là ${price[inputNum.value-1]}. Quý khách muốn gọi bao nhiêu ly?`);
+        alert(`Số tiền quý khách cần thanh toán là ${parseInt(price[inputNum.value-1])*parseInt(countCup)} VNĐ`);
+    }
+</script>
+</body>
+</html>
