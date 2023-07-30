@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    const row = parseInt(prompt("Please enter the row number for the matrix: "));
+    const column = parseInt(prompt("Please enter the column number for the matrix: "));
+    let arr = new Array(row);
+    let sum = 0;
+    let arrShow = [];
+
+    for (let i=0; i<row; i++) {
+        arr[i] = new Array(column);
+        for (let j=0; j<column; j++) {
+            arr[i][j] = Math.floor(Math.random()*(9-0+0)) + 0;
+            if (arr[i][j] % 2 == 0) {
+                sum += arr[i][j];
+            }
+        }
+    }
+
+    for (let i=0; i<row; i++) {
+        if (row==1) {
+            arrShow[i] = "[(" + arr[i] + ")]";
+        } else if(i==0) {
+            arrShow[i] = "[(" + arr[i] + ")";
+        } else if (i==row-1) {
+            arrShow[i] = "(" + arr[i] + ")]";
+        } else {
+            arrShow[i] = "(" + arr[i] + ")";
+        }
+    }
+
+    document.write(arrShow.join("<br/>"));
+    document.write("<br/>");
+    document.write("Tổng các số chẵn trong mảng 2 chiều trên là: " + sum);
+</script>
+</body>
+</html>

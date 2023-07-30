@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    const row = parseInt(prompt("Please enter the row number for the matrix: "));
+    const column = parseInt(prompt("Please enter the column number for the matrix: "));
+    let arr = new Array(row);
+    let arrShow = [];
+    let arrFinal = [];
+
+    for (let i=0; i<row; i++) {
+        arr[i] = new Array(column);
+        for (let j=0; j<column; j++) {
+            arr[i][j] = Math.floor(Math.random()*(9-0+0)) + 0;
+            if (checkSoNguyenTo(arr[i][j])) {
+                arrFinal.push(arr[i][j]);
+            }
+        }
+    }
+
+    for (let i=0; i<row; i++) {
+        if (row==1) {
+            arrShow[i] = "[(" + arr[i] + ")]";
+        } else if(i==0) {
+            arrShow[i] = "[(" + arr[i] + ")";
+        } else if (i==row-1) {
+            arrShow[i] = "(" + arr[i] + ")]";
+        } else {
+            arrShow[i] = "(" + arr[i] + ")";
+        }
+    }
+
+    document.write(arrShow.join("<br/>"));
+    document.write("<br/>");
+    document.write("Có " + arrFinal.length + " số nguyên tố trong mảng trên: " + arrFinal.join(", ") + ".");
+
+    function checkSoNguyenTo(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i<=Math.sqrt(number); i++) {
+            if (number % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

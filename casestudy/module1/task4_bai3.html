@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    const strInput1 = prompt("Please enter the first string here: ");
+    const strInput2 = prompt("Please enter the second string here: ");
+
+    const arr1 = strInput1.split("");
+    const arr2 = strInput2.split("");
+    let arr3 = []; //Mảng chứa tất cả các ký tự chung
+    let arrFinal = []; //Mảng chỉ chứa các ký tự chung (đã lọc bỏ các ký tự trùng nhau)
+    let arrFinalCount = [];
+
+    for (let i=0; i<arr1.length; i++) {
+        if (arr2.includes(arr1[i])) {
+            arr3.push(arr1[i]);
+        }
+    }
+
+    for (let i=0; i<arr3.length; i++) {
+        if(!arrFinal.includes(arr3[i])) {
+            arrFinal.push(arr3[i]);
+            arrFinalCount.push(countElements(arr3[i],arr3));
+        }
+    }
+
+    alert("Two strings have " + arrFinal.length + " same characters: " + result(arrFinal, arrFinalCount));
+
+    function countElements(element,arr) {
+        let count = 0;
+        for (let i=0; i<arr.length; i++) {
+            if (arr[i] == element) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function result(arr,arrCount) {
+        let arrFinal = [];
+        for (let i=0; i<arr.length; i++) {
+            arrFinal.push(`${arrCount[i]} char ${arr[i]}`);
+        }
+        return arrFinal.join(", ");
+    }
+</script>
+</body>
+</html>

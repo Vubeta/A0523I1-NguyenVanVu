@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 6 - Bài 1</title>
+</head>
+<body>
+<button id="addStudentBtn" onclick="addStudent()">Thêm mới học viên</button>
+<button id="fixInforStudentBtn" onclick="fixInforStudent()">Sửa thông tin học viên</button>
+<button id="deleteStudentBtn" onclick="deleteStudent()">Xóa học viên</button>
+<table id="fixStudentTable" style="display: none">
+    <tr>
+        <th>Mã học viên</th>
+        <th>Tên</th>
+        <th>Lớp</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+    </tr>
+    <tr>
+        <td><input type="text" name="inforStudentUpdate0"></td>
+        <td><input type="text" name="inforStudentUpdate1"></td>
+        <td><input type="text" name="inforStudentUpdate2"></td>
+        <td><input type="text" name="inforStudentUpdate3"></td>
+        <td><input type="text" name="inforStudentUpdate4"></td>
+    </tr>
+</table>
+<br/>
+<button id="updateInforStudentBtn" onclick="updateInfor()" style="display: none">Cập nhật thông tin đã sửa</button>
+<br/><br/>
+<table id="tableStudent" border="1px black" cellspacing="0px">
+</table>
+<script>
+    class inforStudent {
+        constructor(idStudent, nameStudent, classStudent, mailStudent, dateStudent, moduleStudy) {
+            this.idStudent = idStudent;
+            this.nameStudent = nameStudent;
+            this.classStudent = classStudent;
+            this.mailStudent = mailStudent;
+            this.dateStudent = dateStudent;
+            this.moduleStudy = moduleStudy;
+        }
+    }
+
+    const tableStudent = document.getElementById("tableStudent");
+    const fixStudentTable = document.getElementById("fixStudentTable");
+    const addStudentBtn = document.getElementById("addStudentBtn");
+    const fixInforStudentBtn = document.getElementById("fixInforStudentBtn");
+    const deleteStudentBtn = document.getElementById("deleteStudentBtn");
+    const updateInforStudentBtn = document.getElementById("updateInforStudentBtn");
+    const updateInforStudent = fixStudentTable.querySelector("td[data-name='inforStudent']");
+    const inforStudentUpdate0 = fixStudentTable.querySelector("[name='inforStudentUpdate0']");
+    const inforStudentUpdate1 = fixStudentTable.querySelector("[name='inforStudentUpdate1']");
+    const inforStudentUpdate2 = fixStudentTable.querySelector("[name='inforStudentUpdate2']");
+    const inforStudentUpdate3 = fixStudentTable.querySelector("[name='inforStudentUpdate3']");
+    const inforStudentUpdate4 = fixStudentTable.querySelector("[name='inforStudentUpdate4']");
+    let studentList = [];
+    studentList.push(new inforStudent("HV-0001","Nguyễn Văn A", "C1022G1", "nguyenvana@gmail.com", "01/01/2004", 1));
+    studentList.push(new inforStudent("HV-0002","Nguyễn Văn B", "C1122G1", "nguyenvanb@gmail.com", "02/02/2004", 1));
+    studentList.push(new inforStudent("HV-0003","Nguyễn Thị C", "C1222G1", "nguyenthic@gmail.com", "03/03/2004", 1));
+    displayData();
+
+    function addStudent() {
+        let studentCurrent = [];
+        studentCurrent[0] = prompt("Vui lòng nhập mã học viên: ");
+        studentCurrent[1] = prompt("Vui lòng nhập tên học viên: ");
+        studentCurrent[2] = prompt("Vui lòng nhập lớp của học viên: ");
+        studentCurrent[3] = prompt("Vui lòng nhập email học viên: ");
+        studentCurrent[4] = prompt("Vui lòng nhập ngày sinh học viên: ");
+        let studentInput = new inforStudent(studentCurrent[0],studentCurrent[1],
+                                            studentCurrent[2],studentCurrent[3],
+                                            studentCurrent[4],1);
+        studentList.push(studentInput);
+        displayData();
+    }
+
+    function fixInforStudent() {
+        let isExists = false;
+        let objectSolving;
+        const idStudentInput = prompt("Vui lòng nhập mã học viên cần sửa thông tin: ");
+        for (let i=0; i<studentList.length; i++) {
+            if(idStudentInput == studentList[i].idStudent) {
+                isExists = true;
+                objectSolving = studentList[i];
+            }
+        }
+        if (isExists == false) {
+            alert("Mã học viên không tồn tại");
+            return;
+        } else {
+            fixStudentTable.style.removeProperty("display");
+            addStudentBtn.style.display = "none";
+            deleteStudentBtn.style.display = "none";
+            updateInforStudentBtn.style.removeProperty("display");
+            inforStudentUpdate0.value = objectSolving.idStudent;
+            inforStudentUpdate1.value = objectSolving.nameStudent;
+            inforStudentUpdate2.value = objectSolving.classStudent;
+            inforStudentUpdate3.value = objectSolving.mailStudent;
+            inforStudentUpdate4.value = objectSolving.dateStudent;
+        }
+    }
+
+    function deleteStudent() {
+        let isExists = false;
+        let indexObjectSolving;
+        const idStudentInput = prompt("Vui lòng nhập mã học viên cần sửa thông tin: ");
+        for (let i=0; i<studentList.length; i++) {
+            if(idStudentInput == studentList[i].idStudent) {
+                isExists = true;
+                indexObjectSolving = i;
+            }
+        }
+        if (isExists == false) {
+            alert("Mã học viên không tồn tại");
+            return;
+        } else {
+            determineFinal = confirm("Bạn có chắc chắn muốn xóa thông tin học viên có mã số " + idStudentInput + " không?");
+            if(determineFinal == true) {
+                studentList.splice(indexObjectSolving,1);
+                displayData();
+            }
+        }
+    }
+
+    function displayData() {
+        tableStudent.innerHTML = "";
+        const row0 = document.createElement("tr");
+        const header0 = document.createElement("th");
+        const header1 = document.createElement("th");
+        const header2 = document.createElement("th");
+        const header3 = document.createElement("th");
+        const header4 = document.createElement("th");
+        header0.textContent = "Mã học viên";
+        header1.textContent = "Tên";
+        header2.textContent = "Lớp";
+        header3.textContent = "Email";
+        header4.textContent = "Ngày sinh";
+        row0.append(header0,header1,header2,header3,header4);
+        tableStudent.appendChild(row0);
+
+        for (let i=0; i<studentList.length; i++) {
+            const row = document.createElement("tr");
+            const col0 = document.createElement("td");
+            const col1 = document.createElement("td");
+            const col2 = document.createElement("td");
+            const col3 = document.createElement("td");
+            const col4 = document.createElement("td");
+            col0.textContent = studentList[i].idStudent;
+            col1.textContent = studentList[i].nameStudent;
+            col2.textContent = studentList[i].classStudent;
+            col3.textContent = studentList[i].mailStudent;
+            col4.textContent = studentList[i].dateStudent;
+            row.append(col0,col1,col2,col3,col4);
+            tableStudent.appendChild(row);
+        }
+    }
+
+    function updateInfor() {
+        for (let i=0; i<studentList.length; i++) {
+            if(inforStudentUpdate0.value == studentList[i].idStudent) {
+                studentList[i].idStudent = inforStudentUpdate0.value;
+                studentList[i].nameStudent = inforStudentUpdate1.value;
+                studentList[i].classStudent = inforStudentUpdate2.value;
+                studentList[i].mailStudent = inforStudentUpdate3.value;
+                studentList[i].dateStudent = inforStudentUpdate4.value;
+                displayData();
+                fixStudentTable.style.display = "none";
+                addStudentBtn.style.removeProperty("display");
+                deleteStudentBtn.style.removeProperty("display");
+                updateInforStudentBtn.style.display = "none";
+            }
+        }
+    }
+
+    function checkID(iDObject) {
+        const iDValue = iDObject.value;
+        //dieu kien 1
+        if(iDValue.length != 7) {
+            alert("Mã học viên có định dạng là HV-XXXX với XXXX là 4 chữ số")
+            iDObject.value = "";
+        }
+        //dieu kien 2
+        for (let i=0; i<studentList.length; i++) {
+            if(iDValue == studentList[i].idStudent) {
+                alert("Mã học viên có định dạng là HV-XXXX với XXXX là 4 chữ số")
+                iDObject.value = "";
+            }
+        }
+        //dieu kien 3
+        const arr = iD.split("");
+        if (arr[0]!="H" || arr[1]!="V" || arr[2]!="-" || isNaN(parseInt(arr[3]))==true ||
+            isNaN(parseInt(arr[3]))==true || isNaN(parseInt(arr[3]))==true || isNaN(parseInt(arr[3]))==true) {
+            alert("Mã học viên có định dạng là HV-XXXX với XXXX là 4 chữ số")
+            iDObject.value = "";
+        }
+    }
+
+    function checkNameInput(nameInputObject) {
+        if(nameInputObject.value.length>50) {
+            let arr = nameInputObject.split("");
+            arr.pop();
+            nameInputObject.value = arr.join("");
+        }
+    }
+
+    function checkModule(moduleInputObject) {
+        const moduleValue = moduleInputObject.value;
+        if (number.isInteger(moduleValue) || moduleValue<1 || moduleValue>6) {
+            moduleInputObject.value = "";
+        }
+    }
+</script>
+</body>
+</html>
