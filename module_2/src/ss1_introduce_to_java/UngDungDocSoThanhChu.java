@@ -2,7 +2,7 @@ package ss1_introduce_to_java;
 
 import java.util.Scanner;
 
-public class bai2_ung_dung_doc_so_thanh_chu {
+public class UngDungDocSoThanhChu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập số đo chiều cao cần đọc: ");
