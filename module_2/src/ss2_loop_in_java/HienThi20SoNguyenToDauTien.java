@@ -3,20 +3,20 @@ package ss2_loop_in_java;
 import java.util.Scanner;
 
 public class HienThi20SoNguyenToDauTien {
-    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the count number of integer: ");
-        int countPrimeNumInput = Integer.parseInt(scanner.nextLine());
-        int integerNum = 0;
-        int countPrimeNum = 0;
-        int[] arrPrimeNum = new int[countPrimeNumInput];
+        int numbers = Integer.parseInt(scanner.nextLine());
+        int N = 0;
+        int count = 0;
+        int[] arrPrimeNum = new int[numbers];
         do {
-            if(checkPrimeNum(integerNum)) {
-                arrPrimeNum[countPrimeNum] = integerNum;
-                countPrimeNum++;
+            if(checkPrimeNum(N)) {
+                arrPrimeNum[count] = N;
+                count++;
             }
-            integerNum++;
-        } while (countPrimeNum<countPrimeNumInput);
+            N++;
+        } while (count<numbers);
         for (int primeNum: arrPrimeNum) {
             System.out.print(primeNum + " ");
         }
