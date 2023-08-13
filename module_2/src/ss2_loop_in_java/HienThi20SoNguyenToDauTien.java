@@ -5,17 +5,17 @@ import java.util.Scanner;
 public class HienThi20SoNguyenToDauTien {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the count number of integer: ");
+        System.out.print("Enter the quantity of first prime numbers: ");
         int numbers = Integer.parseInt(scanner.nextLine());
-        int N = 0;
+        int n = 0;
         int count = 0;
         int[] arrPrimeNum = new int[numbers];
         do {
-            if(checkPrimeNum(N)) {
-                arrPrimeNum[count] = N;
+            if(checkPrimeNum(n)) {
+                arrPrimeNum[count] = n;
                 count++;
             }
-            N++;
+            n++;
         } while (count<numbers);
         for (int primeNum: arrPrimeNum) {
             System.out.print(primeNum + " ");
