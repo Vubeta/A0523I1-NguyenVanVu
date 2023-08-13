@@ -2,7 +2,7 @@ package ss3_array_and_method_in_java;
 
 import java.util.Scanner;
 
-public class TimPhanTuLonNhatTrongMangHaiChieu {
+public class TinhTongCacSoOMotCotXacDinh {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -15,7 +15,7 @@ public class TimPhanTuLonNhatTrongMangHaiChieu {
             int cols = Integer.parseInt(scanner.nextLine());
             arr[i] = new float[cols];
             for (int j = 0; j < arr[i].length; j++) {
-                System.out.print("Enter the number for [" + i + "][" + j + "]: ");
+                System.out.print("Enter the number for [" + i + "][" + j + "]");
                 arr[i][j] = Float.parseFloat(scanner.nextLine());
             }
         }
@@ -39,18 +39,19 @@ public class TimPhanTuLonNhatTrongMangHaiChieu {
         }
         System.out.print("]");
 
+        //input from user
+        System.out.print("\nEnter the column number (index) which you want to calculate sum: ");
+        int colIndex = Integer.parseInt(scanner.nextLine());
+
         //processing and outputting result
-        float maxValue = arr[0][0];
-        int indexRow=0, indexCol=0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr[i].length; j++) {
-                if(arr[i][j] > maxValue) {
-                    maxValue = arr[i][j];
-                    indexRow = i;
-                    indexCol = j;
-                }
+        float sum = 0;
+        if(colIndex<0 || colIndex>=arr.length) {
+            System.out.print("\nThe column number (index) is not exist.");
+        } else {
+            for (float element: arr[colIndex]) {
+                sum+=element;
             }
         }
-        System.out.println("\nMax value is " + maxValue + " with its index is [" + indexRow + "][" + indexCol + "]");
+        System.out.print("\nSum of column " + colIndex + " is: " + sum);
     }
 }
