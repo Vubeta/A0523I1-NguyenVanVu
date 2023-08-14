@@ -49,7 +49,7 @@ public class UngDungDocSoThanhChu {
     public static String convertTeenstoWords(int number) {
         switch(number) {
             case 10: return "ten";
-            case 11: return "eleven";
+            case 11: return "elevent";
             case 12: return "twelve";
             case 13: return "thirteen";
             case 14: return "fourteen";
