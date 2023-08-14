@@ -7,9 +7,9 @@ public class CalAreaOfRectangle {
         Scanner scanner = new Scanner(System.in);
         float width, height;
         System.out.print("Enter width: ");
-        width = Float.parseFloat(scanner.nextLine());
+        width = scanner.nextFloat();
         System.out.print("Enter height: ");
-        height = Float.parseFloat(scanner.nextLine());
+        height = scanner.nextFloat();
         System.out.print("Area is: " + width*height);
     }
 }
