@@ -6,9 +6,9 @@ public class GreatestCommonFactor {
     public static void main(String[] args) {
         int a, b, temp;
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter a: ");
+        System.out.print("Enter a: ");
         a = input.nextInt();
-        System.out.println("Enter b: ");
+        System.out.print("Enter b: ");
         b = input.nextInt();
 
         a = Math.abs(a);
