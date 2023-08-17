@@ -27,11 +27,11 @@ public class TinhTongCacSoOMotCotXacDinh {
             System.out.print("[");
             for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j]);
-                if(j<arr[i].length-1) {
+                if (j < arr[i].length - 1) {
                     System.out.print(",");
                 }
             }
-            if(i<arr.length-1) {
+            if (i < arr.length - 1) {
                 System.out.print("],");
             } else {
                 System.out.print("]");
@@ -45,11 +45,11 @@ public class TinhTongCacSoOMotCotXacDinh {
 
         //processing and outputting result
         float sum = 0;
-        if(colIndex<0 || colIndex>=arr.length) {
+        if (colIndex < 0 || colIndex >= arr.length) {
             System.out.print("\nThe column number (index) is not exist.");
         } else {
-            for (float element: arr[colIndex]) {
-                sum+=element;
+            for (float element : arr[colIndex]) {
+                sum += element;
             }
         }
         System.out.print("\nSum of column " + colIndex + " is: " + sum);

@@ -14,8 +14,8 @@ public class TimGiaTriNhoNhatTrongMang {
         }
         int minNum = arr[0];
 
-        for (int element: arr) {
-            if(element<minNum) {
+        for (int element : arr) {
+            if (element < minNum) {
                 minNum = element;
             }
         }

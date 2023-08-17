@@ -24,11 +24,11 @@ public class TinhTongCacSoODuongCheoChinhCuaMaTranVuong {
             System.out.print("[");
             for (int j = 0; j < arr[i].length; j++) {
                 System.out.print(arr[i][j]);
-                if(j<arr[i].length-1) {
+                if (j < arr[i].length - 1) {
                     System.out.print(",");
                 }
             }
-            if(i<arr.length-1) {
+            if (i < arr.length - 1) {
                 System.out.print("],");
             } else {
                 System.out.print("]");
@@ -37,9 +37,9 @@ public class TinhTongCacSoODuongCheoChinhCuaMaTranVuong {
         System.out.print("]");
 
         //processing and outputting result
-        float sum=0;
+        float sum = 0;
         for (int i = 0; i < arr.length; i++) {
-            sum+=arr[i][i];
+            sum += arr[i][i];
         }
         System.out.print("Sum of numbers on the main diagonal of a square matrix: " + sum);
     }

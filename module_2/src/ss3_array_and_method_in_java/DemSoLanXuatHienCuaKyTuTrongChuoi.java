@@ -11,7 +11,7 @@ public class DemSoLanXuatHienCuaKyTuTrongChuoi {
         char charInput = scanner.nextLine().charAt(0);
         int count = 0;
         for (int i = 0; i < strInput.length(); i++) {
-            if(strInput.charAt(i) == charInput) {
+            if (strInput.charAt(i) == charInput) {
                 count++;
             }
         }

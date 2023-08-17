@@ -7,7 +7,7 @@ public class GopMang {
         Scanner scanner = new Scanner(System.in);
         int[] arr1 = new int[3];
         int[] arr2 = new int[5];
-        int[] arrFinal = new int[arr1.length+ arr2.length];
+        int[] arrFinal = new int[arr1.length + arr2.length];
 
         System.out.println("First array includes " + arr1.length + " element(s): ");
         for (int i = 0; i < arr1.length; i++) {
@@ -22,23 +22,23 @@ public class GopMang {
         }
 
         for (int i = 0; i < arrFinal.length; i++) {
-            if(i<arr1.length) {
+            if (i < arr1.length) {
                 arrFinal[i] = arr1[i];
             } else {
-                arrFinal[i] = arr2[i-arr1.length];
+                arrFinal[i] = arr2[i - arr1.length];
             }
         }
 
         System.out.print("\nFirst array includes: ");
-        for (int element: arr1) {
+        for (int element : arr1) {
             System.out.print(element + " ");
         }
         System.out.print("\nSecond array includes: ");
-        for (int element: arr2) {
+        for (int element : arr2) {
             System.out.print(element + " ");
         }
         System.out.print("\nFinal array includes: ");
-        for (int element: arrFinal) {
+        for (int element : arrFinal) {
             System.out.print(element + " ");
         }
     }
