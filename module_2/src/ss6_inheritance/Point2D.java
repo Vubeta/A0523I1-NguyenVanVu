@@ -86,15 +86,15 @@ class Point3D extends Point2D {
 
 class TestPoint2DAndPoint3D {
     public static void main(String[] args) {
-        Point2D point2D = new Point2D(3.0f,5.0f);
+        Point2D point2D = new Point2D(3.0f, 5.0f);
 
-        Point3D point3D = new Point3D(5.0f,7.0f,9.0f);
+        Point3D point3D = new Point3D(5.0f, 7.0f, 9.0f);
 
         System.out.println(point2D);
         System.out.println(point3D);
 
-        point2D.setXY(7.0f,13.0f);
-        point3D.setXYZ(17.0f,31.0f,23.0f);
+        point2D.setXY(7.0f, 13.0f);
+        point3D.setXYZ(17.0f, 31.0f, 23.0f);
 
         System.out.println(point2D);
         System.out.println(point3D);
