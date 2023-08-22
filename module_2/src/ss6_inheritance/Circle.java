@@ -6,7 +6,7 @@ public class Circle {
     protected double area = 1.0;
 
     public double getRadius() {
-        return radius;
+        return this.radius;
     }
 
     public void setRadius(double radius) {
@@ -14,7 +14,7 @@ public class Circle {
     }
 
     public String getColor() {
-        return color;
+        return this.color;
     }
 
     public void setColor(String color) {
@@ -41,7 +41,7 @@ class Cylinder extends Circle {
     private double volume = 1.0;
 
     public double getHeight() {
-        return height;
+        return this.height;
     }
 
     public void setHeight(double height) {
@@ -49,17 +49,17 @@ class Cylinder extends Circle {
     }
 
     public double getVolume() {
-        this.volume = this.getArea() * this.height;
+        this.volume = super.getArea() * this.height;
         return this.volume;
     }
 
     @Override
     public String toString() {
         return "Cylinder{" +
-                "radius=" + this.getRadius() +
-                ", color='" + this.getColor() + '\'' +
+                "radius=" + super.getRadius() +
+                ", color='" + super.getColor() + '\'' +
                 ", height=" + this.getHeight() +
-                ", area=" + String.format("%.3f", this.getArea()) +
+                ", area=" + String.format("%.3f", super.getArea()) +
                 ", volume=" + String.format("%.3f", this.getVolume()) +
                 '}';
     }
