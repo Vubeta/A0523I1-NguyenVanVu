@@ -3,7 +3,7 @@ package ss6_inheritance;
 class Circle {
     private double radius = 1.0;
     private String color = "red";
-    protected double area = 1.0;
+    private double area = 1.0;
 
     public double getRadius() {
         return this.radius;
