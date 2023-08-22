@@ -1,6 +1,6 @@
 package ss6_inheritance;
 
-public class Circle {
+class Circle {
     private double radius = 1.0;
     private String color = "red";
     protected double area = 1.0;
@@ -65,7 +65,7 @@ class Cylinder extends Circle {
     }
 }
 
-class TestCircleAndCylinder {
+public class CircleAndCylinder {
     public static void main(String[] args) {
         Circle circle = new Circle();
         circle.setRadius(7.0);

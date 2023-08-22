@@ -1,6 +1,6 @@
 package ss6_inheritance;
 
-public class Point2D {
+class Point2D {
     private float x = 0.0f;
     private float y = 0.0f;
 
@@ -84,7 +84,7 @@ class Point3D extends Point2D {
     }
 }
 
-class TestPoint2DAndPoint3D {
+public class Point2DAndPoint3D {
     public static void main(String[] args) {
         Point2D point2D = new Point2D(3.0f, 5.0f);
 
