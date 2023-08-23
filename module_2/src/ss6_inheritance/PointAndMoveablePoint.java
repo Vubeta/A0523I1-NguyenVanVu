@@ -3,11 +3,11 @@ package ss6_inheritance;
 public class PointAndMoveablePoint {
     public static void main(String[] args) {
         Point point = new Point();
-        point.setXY(4.0f,11.0f);
+        point.setXY(4.0f, 11.0f);
 
         MovablePoint movablePoint = new MovablePoint();
-        movablePoint.setXY(7.0f,23.0f);
-        movablePoint.setSpeed(13.0f,51.0f);
+        movablePoint.setXY(7.0f, 23.0f);
+        movablePoint.setSpeed(13.0f, 51.0f);
 
         System.out.println(point);
         System.out.println(movablePoint);
@@ -115,8 +115,8 @@ class MovablePoint extends Point {
     }
 
     public MovablePoint move() {
-        super.setX(super.getX()+this.xSpeed);
-        super.setY(super.getY()+this.ySpeed);
+        super.setX(super.getX() + this.xSpeed);
+        super.setY(super.getY() + this.ySpeed);
         return this;
     }
 }
