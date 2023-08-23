@@ -1,6 +1,6 @@
 package ss6_inheritance;
 
-public class MoveAndMovablePoint {
+public class PointAndMoveablePoint {
     public static void main(String[] args) {
         Point point = new Point();
         point.setXY(4.0f,11.0f);
