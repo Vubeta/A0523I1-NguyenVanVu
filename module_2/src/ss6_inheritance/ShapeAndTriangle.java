@@ -1,16 +1,45 @@
 package ss6_inheritance;
 
+import java.util.Scanner;
+
 public class ShapeAndTriangle {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double[] sizeTriangle = new double[3];
+        String color = "";
+        do {
+            System.out.println("Please enter size of triangle below");
+            System.out.print("Side 1: ");
+            sizeTriangle[0] = Double.parseDouble(scanner.nextLine());
+            System.out.print("Side 2: ");
+            sizeTriangle[1] = Double.parseDouble(scanner.nextLine());
+            System.out.print("Side 3: ");
+            sizeTriangle[2] = Double.parseDouble(scanner.nextLine());
+        } while (sizeTriangle[0] + sizeTriangle[1] <= sizeTriangle[2] ||
+                sizeTriangle[1] + sizeTriangle[2] <= sizeTriangle[0] ||
+                sizeTriangle[0] + sizeTriangle[2] <= sizeTriangle[1]);
+        System.out.print("Please enter the color of triangle: ");
+        color = scanner.nextLine();
+
         Triangle triangle = new Triangle();
-        triangle.setSide1(7.0);
-        triangle.setSide2(4.0);
-        triangle.setSide3(5.0);
+        triangle.setSide1(sizeTriangle[0]);
+        triangle.setSide2(sizeTriangle[1]);
+        triangle.setSide3(sizeTriangle[2]);
+        triangle.setColor(color);
         System.out.println(triangle);
     }
 }
 
 class Shape {
+    private String color = "red";
+
+    public String getColor() {
+        return this.color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
 }
 
 class Triangle extends Shape {
@@ -52,13 +81,13 @@ class Triangle extends Shape {
     }
 
     public double getArea() {
-        double p = 0.5*(this.side1+this.side2+this.side3);
-        double area = Math.pow(p*(p-this.side1)*(p-this.side2)*(p-this.side3),0.5);
+        double p = 0.5 * (this.side1 + this.side2 + this.side3);
+        double area = Math.pow(p * (p - this.side1) * (p - this.side2) * (p - this.side3), 0.5);
         return area;
     }
 
     public double getPerimeter() {
-        return this.side1+this.side2+this.side3;
+        return this.side1 + this.side2 + this.side3;
     }
 
     @Override
@@ -67,6 +96,7 @@ class Triangle extends Shape {
                 "side1=" + this.side1 +
                 ", side2=" + this.side2 +
                 ", side3=" + this.side3 +
+                ", color=" + super.getColor() +
                 ", area=" + this.getArea() +
                 ", perimeter=" + this.getPerimeter() +
                 '}';
