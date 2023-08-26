@@ -11,11 +11,11 @@ class TestResizeable {
         shapes[1] = new Rectangle(3.0, 7.0, "Red", false);
         shapes[2] = new Square(6.0, "Green", true);
 
-        for (Object shape : shapes) {
+        for (Shape shape : shapes) {
             System.out.println(shape);
         }
 
-        for (Object shape : shapes) {
+        for (Shape shape : shapes) {
             String shapeType = shape.getClass().getSimpleName();
             double areaBefore = 0.0;
             double areaAfter = 0.0;
