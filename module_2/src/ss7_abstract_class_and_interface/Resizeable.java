@@ -16,20 +16,28 @@ class TestResizeable {
         }
 
         for (Object shape : shapes) {
+            String shapeType = shape.getClass().getSimpleName();
+            double areaBefore = 0.0;
+            double areaAfter = 0.0;
             double percent = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
             if (shape instanceof Circle) {
-                System.out.print("Before crease size, area of circle is " + String.format("%.2f", ((Circle) shape).getArea()) + ". ");
-                ((Circle) shape).resize(percent);
-                System.out.println("After crease size " + percent + "%, area of circle is " + String.format("%.2f", ((Circle) shape).getArea()));
-            } else if (shape instanceof Rectangle) {
-                System.out.print("Before crease size, area of rectangle is " + String.format("%.2f", ((Rectangle) shape).getArea()) + ". ");
-                ((Rectangle) shape).resize(percent);
-                System.out.println("After crease size " + percent + "%, area of rectangle is " + String.format("%.2f", ((Rectangle) shape).getArea()));
+                Circle object = (Circle) shape;
+                areaBefore = object.getArea();
+                object.resize(percent);
+                areaAfter = object.getArea();
             } else if (shape instanceof Square) {
-                System.out.print("Before crease size, area of square is " + String.format("%.2f", ((Square) shape).getArea()) + ". ");
-                ((Square) shape).resize(percent);
-                System.out.println("After crease size " + percent + "%, are of square is " + String.format("%.2f", ((Square) shape).getArea()));
+                Square object = (Square) shape;
+                areaBefore = object.getArea();
+                object.resize(percent);
+                areaAfter = object.getArea();
+            } else if (shape instanceof Rectangle) {
+                Rectangle object = (Rectangle) shape;
+                areaBefore = ((Rectangle) shape).getArea();
+                object.resize(percent);
+                areaAfter = object.getArea();
             }
+            System.out.print("Before crease size, area of " + shapeType + " is " + String.format("%.2f", areaBefore) + ". ");
+            System.out.println("After crease size " + percent + "%, area of " + shapeType + " is " + String.format("%.2f", areaAfter));
         }
     }
 }
