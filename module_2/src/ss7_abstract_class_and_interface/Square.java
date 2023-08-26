@@ -1,6 +1,6 @@
 package ss7_abstract_class_and_interface;
 
-public class Square extends Rectangle {
+public class Square extends Rectangle implements Colorable {
     public Square() {
     }
 
@@ -42,5 +42,10 @@ public class Square extends Rectangle {
     @Override
     public void resize(double percent) {
         super.resize(percent);
+    }
+
+    @Override
+    public void howToColor() {
+        System.out.println("Color all four sides.");
     }
 }
