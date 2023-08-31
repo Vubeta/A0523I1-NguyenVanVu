@@ -10,13 +10,12 @@ public class ProductController {
     public static void displayMenu() {
         IProductService productService = new ProductService();
         boolean isExit = false;
-        do {
-            System.out.println("Please enter your option: ");
-            System.out.println("1. Display product(s)" +
+        do {System.out.println("1. Display product(s)" +
                                 "\n2. Add new product" +
                                 "\n3. Delete product" +
                                 "\n4. Find prodcut" +
                                 "\n5. Exit");
+            System.out.print("Please enter your option: ");
             int choice = Integer.parseInt(scanner.nextLine());
             switch (choice) {
                 case 1:

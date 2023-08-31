@@ -37,4 +37,26 @@ public class ProductRepository implements IProductRepository {
             break;
         }
     }
+
+    @Override
+    public float[] findProductByName(String nameProductUser) {
+        float[] ratePercent = new float[getListProduct().length];
+        char[] charsUser = nameProductUser.toCharArray();
+        float rateNum = 0.0f;
+        for (int i=0; i<getListProduct().length; i++) {
+            String nameProduct = getListProduct()[i].getName();
+            char[] charsCheck = nameProduct.toCharArray();
+            for (char charCheck : charsCheck) {
+                for (char charUser : charsUser) {
+                    if(charUser!=charCheck) {
+                        rateNum = 0.0f;
+                    } else if (charUser==charCheck) {
+                        rateNum += 1/nameProduct.length();
+                    }
+                }
+            }
+            ratePercent[i] = rateNum;
+        }
+        return ratePercent;
+    }
 }

@@ -43,6 +43,22 @@ public class ProductService implements IProductService {
 
     @Override
     public void find() {
-
+        Product[] products = productRepository.getListProduct();
+        System.out.print("Enter the name of product which you want to find: ");
+        String name = scanner.nextLine();
+        float[] rateList = productRepository.findProductByName(name);
+        float maxRate = 0.0f;
+        //max rate
+        for (float rate : rateList) {
+            if (rate > maxRate) {
+                maxRate = rate;
+            }
+        }
+        //show result
+        for (int i=0; i<rateList.length; i++) {
+            if (rateList[i] == maxRate) {
+                System.out.println(products[i]);
+            }
+        }
     }
 }
