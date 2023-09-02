@@ -6,5 +6,5 @@ public interface IProductRepository {
     Product[] getListProduct();
     void addProduct(Product product);
     void deleteProductById(int idProduct);
-    float[] findProductByName(String nameProduct);
+    void findProductByName(String nameProduct);
 }

@@ -10,12 +10,13 @@ import java.util.Scanner;
 public class ProductService implements IProductService {
     static Scanner scanner = new Scanner(System.in);
     private IProductRepository productRepository = new ProductRepository();
+
     @Override
     public void display() {
         Product[] products = productRepository.getListProduct();
-        for (int i = 0; i <products.length; i++) {
-            if(products[i] != null) {
-                System.out.println((i+1) + ". " + products[i]);
+        for (int i = 0; i < products.length; i++) {
+            if (products[i] != null) {
+                System.out.println((i + 1) + ". " + products[i]);
             }
         }
     }
@@ -30,7 +31,7 @@ public class ProductService implements IProductService {
         double price = Double.parseDouble(scanner.nextLine());
         System.out.print("Enter the detail of product: ");
         String detail = scanner.nextLine();
-        Product product = new Product(id,name,price,detail);
+        Product product = new Product(id, name, price, detail);
         productRepository.addProduct(product);
     }
 
@@ -43,22 +44,8 @@ public class ProductService implements IProductService {
 
     @Override
     public void find() {
-        Product[] products = productRepository.getListProduct();
         System.out.print("Enter the name of product which you want to find: ");
         String name = scanner.nextLine();
-        float[] rateList = productRepository.findProductByName(name);
-        float maxRate = 0.0f;
-        //max rate
-        for (float rate : rateList) {
-            if (rate > maxRate) {
-                maxRate = rate;
-            }
-        }
-        //show result
-        for (int i=0; i<rateList.length; i++) {
-            if (rateList[i] == maxRate) {
-                System.out.println(products[i]);
-            }
-        }
+        productRepository.findProductByName(name);
     }
 }
