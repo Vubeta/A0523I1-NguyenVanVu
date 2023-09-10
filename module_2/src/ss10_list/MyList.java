@@ -106,5 +106,10 @@ class MyListTest {
         System.out.println("list1[1] is " + list1.get(1));
         System.out.println("list1[2] is " + list1.get(2));
         System.out.println("list1[3] is " + list1.get(3));
+        System.out.println("list1[4] is " + list1.get(4));
+
+        System.out.println(list.contains(17));
+        System.out.println(list.contains(19));
+        System.out.println(list.contains(7));
     }
 }
