@@ -80,7 +80,7 @@ public class MyLinkedList<E> {
             return true;
         }
 
-        for (int i = 0; i < numNodes-1; i++) {
+        for (int i = 0; i < numNodes - 1; i++) {
             if (e.equals(temp.next.getData())) {
                 temp.next = temp.next.next;
                 numNodes--;

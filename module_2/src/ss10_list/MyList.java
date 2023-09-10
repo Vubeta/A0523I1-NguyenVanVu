@@ -102,11 +102,14 @@ class MyListTest {
         }
 
         MyList<Integer> list1 = list.clone();
-        System.out.println("list1[0] is " + list1.get(0));
-        System.out.println("list1[1] is " + list1.get(1));
-        System.out.println("list1[2] is " + list1.get(2));
-        System.out.println("list1[3] is " + list1.get(3));
-        System.out.println("list1[4] is " + list1.get(4));
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println("list[" + i + "] is " + list.get(i));
+        }
+
+        for (int i = 0; i < list1.size(); i++) {
+            System.out.println("list1[" + i + "] is " + list.get(i));
+        }
 
         System.out.println(list.contains(17));
         System.out.println(list.contains(19));
