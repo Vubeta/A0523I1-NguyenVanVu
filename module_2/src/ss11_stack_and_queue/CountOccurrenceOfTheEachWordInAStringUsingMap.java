@@ -13,11 +13,11 @@ public class CountOccurrenceOfTheEachWordInAStringUsingMap {
         String newString = userString.toLowerCase();
         String[] words = newString.split("\\s+");
         for (String word : words) {
-            word = word.replaceAll("[^a-zA-Z]","");
-            if(wordsTreeMap.containsKey(word)) {
-                wordsTreeMap.put(word,wordsTreeMap.get(word)+1);
+            word = word.replaceAll("[^a-zA-Z]", "");
+            if (wordsTreeMap.containsKey(word)) {
+                wordsTreeMap.put(word, wordsTreeMap.get(word) + 1);
             } else {
-                wordsTreeMap.put(word,1);
+                wordsTreeMap.put(word, 1);
             }
         }
         System.out.println(wordsTreeMap);
