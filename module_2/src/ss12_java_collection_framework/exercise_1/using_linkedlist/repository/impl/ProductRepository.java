@@ -1,14 +1,14 @@
-package ss12_java_collection_framework.excercise_1.repository.impl;
+package ss12_java_collection_framework.exercise_1.using_linkedlist.repository.impl;
 
-import ss12_java_collection_framework.excercise_1.model.Product;
-import ss12_java_collection_framework.excercise_1.repository.IProductRepository;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.model.Product;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.repository.IProductRepository;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Collections;
 import java.util.Comparator;
 
 public class ProductRepository implements IProductRepository {
-    private static ArrayList<Product> listProduct = new ArrayList<>();
+    private static LinkedList<Product> listProduct = new LinkedList<>();
 
     static {
         listProduct.add(new Product(1, "MacBook Air 2020", 18990000,
@@ -47,7 +47,7 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public ArrayList<Product> getListProduct() {
+    public LinkedList<Product> getListProduct() {
         return listProduct;
     }
 

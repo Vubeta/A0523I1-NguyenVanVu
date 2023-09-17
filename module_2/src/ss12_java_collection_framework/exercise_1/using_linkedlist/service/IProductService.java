@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.excercise_1.service;
+package ss12_java_collection_framework.exercise_1.using_linkedlist.service;
 
 public interface IProductService {
     void add();

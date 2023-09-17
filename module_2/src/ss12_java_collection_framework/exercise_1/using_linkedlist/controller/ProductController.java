@@ -1,7 +1,7 @@
-package ss12_java_collection_framework.excercise_1.controller;
+package ss12_java_collection_framework.exercise_1.using_linkedlist.controller;
 
-import ss12_java_collection_framework.excercise_1.service.IProductService;
-import ss12_java_collection_framework.excercise_1.service.impl.ProductService;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.service.IProductService;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.service.impl.ProductService;
 
 import java.util.Scanner;
 

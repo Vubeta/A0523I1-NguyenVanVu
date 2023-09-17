@@ -1,11 +1,11 @@
-package ss12_java_collection_framework.excercise_1.service.impl;
+package ss12_java_collection_framework.exercise_1.using_linkedlist.service.impl;
 
-import ss12_java_collection_framework.excercise_1.model.Product;
-import ss12_java_collection_framework.excercise_1.repository.IProductRepository;
-import ss12_java_collection_framework.excercise_1.repository.impl.ProductRepository;
-import ss12_java_collection_framework.excercise_1.service.IProductService;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.model.Product;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.repository.IProductRepository;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.repository.impl.ProductRepository;
+import ss12_java_collection_framework.exercise_1.using_linkedlist.service.IProductService;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class ProductService implements IProductService {
@@ -49,7 +49,7 @@ public class ProductService implements IProductService {
 
     @Override
     public void display() {
-        ArrayList<Product> products = productRepository.getListProduct();
+        LinkedList<Product> products = productRepository.getListProduct();
         for (int i = 0; i < products.size(); i++) {
             if (products.get(i) != null) {
                 System.out.println((i + 1) + ". " + products.get(i));
