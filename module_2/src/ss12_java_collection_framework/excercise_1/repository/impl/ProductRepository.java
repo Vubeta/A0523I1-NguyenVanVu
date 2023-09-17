@@ -1,7 +1,7 @@
-package ss12_java_collection_framework.repository.impl;
+package ss12_java_collection_framework.excercise_1.repository.impl;
 
-import ss12_java_collection_framework.model.Product;
-import ss12_java_collection_framework.repository.IProductRepository;
+import ss12_java_collection_framework.excercise_1.model.Product;
+import ss12_java_collection_framework.excercise_1.repository.IProductRepository;
 
 import java.util.ArrayList;
 import java.util.Collections;

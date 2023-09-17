@@ -1,4 +1,4 @@
-package ss12_java_collection_framework.service;
+package ss12_java_collection_framework.excercise_1.service;
 
 public interface IProductService {
     void add();

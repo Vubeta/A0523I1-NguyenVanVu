@@ -1,9 +1,9 @@
-package ss12_java_collection_framework.service.impl;
+package ss12_java_collection_framework.excercise_1.service.impl;
 
-import ss12_java_collection_framework.model.Product;
-import ss12_java_collection_framework.repository.IProductRepository;
-import ss12_java_collection_framework.repository.impl.ProductRepository;
-import ss12_java_collection_framework.service.IProductService;
+import ss12_java_collection_framework.excercise_1.model.Product;
+import ss12_java_collection_framework.excercise_1.repository.IProductRepository;
+import ss12_java_collection_framework.excercise_1.repository.impl.ProductRepository;
+import ss12_java_collection_framework.excercise_1.service.IProductService;
 
 import java.util.ArrayList;
 import java.util.Scanner;

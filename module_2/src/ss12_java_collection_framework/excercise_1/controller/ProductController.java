@@ -1,7 +1,7 @@
-package ss12_java_collection_framework.controller;
+package ss12_java_collection_framework.excercise_1.controller;
 
-import ss12_java_collection_framework.service.IProductService;
-import ss12_java_collection_framework.service.impl.ProductService;
+import ss12_java_collection_framework.excercise_1.service.IProductService;
+import ss12_java_collection_framework.excercise_1.service.impl.ProductService;
 
 import java.util.Scanner;
 
