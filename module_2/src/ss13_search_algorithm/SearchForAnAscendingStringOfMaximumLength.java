@@ -12,12 +12,12 @@ public class SearchForAnAscendingStringOfMaximumLength {
         for (int i = 0; i < userInput.length(); i++) {
             LinkedList<Character> list = new LinkedList<>();
             list.add(userInput.charAt(i));
-            for (int j = i+1; j < userInput.length(); j++) {
-                if (userInput.charAt(j)>list.getLast()) {
+            for (int j = i + 1; j < userInput.length(); j++) {
+                if (userInput.charAt(j) > list.getLast()) {
                     list.add(userInput.charAt(j));
                 }
             }
-            if(list.size()>arr.size()) {
+            if (list.size() > arr.size()) {
                 arr.clear();
                 arr.addAll(list);
             }
