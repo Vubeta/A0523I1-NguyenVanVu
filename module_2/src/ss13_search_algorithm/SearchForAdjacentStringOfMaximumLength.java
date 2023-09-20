@@ -7,9 +7,10 @@ public class SearchForAdjacentStringOfMaximumLength {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the string here: ");
-//        String userInput = scanner.nextLine();
+        String userInput = scanner.nextLine();
 //        String userInput = "abcabcdgabxy";
-        String userInput = "abcabcdgabmnsxyv";
+//        String userInput = "abcabcdgabmnsxy";
+//        String userInput = "abcabcdgaAbmnsxy";
         LinkedList<Character> arr = new LinkedList<>();
         LinkedList<Character> tempArr = new LinkedList<>();
 
@@ -26,9 +27,9 @@ public class SearchForAdjacentStringOfMaximumLength {
             if (arr.size() < tempArr.size()) {
                 arr.clear();
                 arr.addAll(tempArr);
-                tempArr.clear();
-                tempArr.add(userInput.charAt(i));
             }
+            tempArr.clear();
+            tempArr.add(userInput.charAt(i));
         }
 
         for (char c : arr) {
