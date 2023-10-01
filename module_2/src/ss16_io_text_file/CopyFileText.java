@@ -24,7 +24,7 @@ public class CopyFileText {
             System.out.println("The target file is exist, you want to overwrite? Y/N");
             String choice = scanner.nextLine();
             if (!choice.equalsIgnoreCase("Y")) {
-                System.out.println("Copy file is cancel.");
+                System.out.println("Copy file is canceled.");
                 return;
             }
         }
