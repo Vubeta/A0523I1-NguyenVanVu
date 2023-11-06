@@ -47,6 +47,9 @@ select cid, cname from customer where cid not in (select cid from `order`);
 
 -- Ex4. Hien thi mã hóa đon, ngày bán và giá tien cua tung hóa đon
 -- (giá mot hóa đon đuoc tính bang tung giá bán cua tung loai mat hàng xuat hien trong hóa đon. Giá bán cua tung loai đuoc tính = odQTY*pPrice)
-select oid, odate, op.odqty*op.pprice as total_price from `order` join (select oid, pid, odqty, p.pname, p.pprice from orderdetail join product p using (pid)) as op using (oid);
+select oid, odate, sum(op.odqty*op.pprice) as total_price 
+from `order` 
+join (select oid, pid, odqty, p.pname, p.pprice from orderdetail join product p using (pid)) op using (oid) 
+group by oid;
 -- list include orderdetail and product
 -- select oid, pid, odqty, p.pname, p.pprice from orderdetail join product p using (pid);
