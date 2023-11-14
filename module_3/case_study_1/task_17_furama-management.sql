@@ -198,12 +198,5 @@ VALUES
 (2,1,2),
 (2,12,2);
 
--- Task 16.	Xóa nhung Nhân viên chua tung lâp đuoc hop đông nào tu năm 2019 đên năm 2021.
-set sql_safe_updates = 0;
-delete from nhan_vien
-where nvid not in (select distinct hd.hdnhanvienid from hop_dong hd where year(hd.hdbegindate) between 2019 and 2021);
-set sql_safe_updates = 1;
-select * from nhan_vien;
-
--- step 1: list nhan_vien lap duoc hop dong tu năm 2019 đên năm 2021
--- select distinct hd.hdnhanvienid from hop_dong hd where year(hd.hdbegindate) between 2019 and 2021;
+-- Task 17.	Câp nhât thông tin nhung khách hàng có ten_loai_khach tu Platinum lên Diamond, 
+-- chi câp nhât nhung khách hàng đã tung đăt phòng voi Tông Tiên thanh toán trong năm 2021 là lon hon 10.000.000 VNĐ.
