@@ -198,21 +198,4 @@ VALUES
 (2,1,2),
 (2,12,2);
 
--- 15.	Hiên thi thông tin cua tat ca nhân viên bao gom ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, 
--- so_dien_thoai, dia_chi moi chi lâp đuoc toi đa 3 hop đông tu năm 2020 đên 2021.
-select
-	nv.nvid as ma_nhan_vien,
-    nv.nvhoten as ho_ten,
-    td.tdname as ten_trinh_do,
-    bp.bpname as ten_bo_phan,
-    nv.nvsdt as so_dien_thoai,
-    nv. nvdiachi as dia_chi
-from nhan_vien nv
-join trinh_do td on nv.nvtrinhdoid = td.tdid
-join bo_phan bp on nv.nvbophanid = bp.bpid
-join hop_dong hd on nv.nvid = hd.hdnhanvienid
-join (select hdnhanvienid, count(hdnhanvienid) as count_hd from hop_dong hd group by hdnhanvienid) hd_count on nv.nvid = hd_count.hdnhanvienid
-where count_hd <= 3;
-
--- step 1: list nhan vien lâp đuoc toi đa 3 hop đông tu năm 2020 đên 2021.
--- select hdnhanvienid, count(hdnhanvienid) as count_hd from hop_dong hd group by hdnhanvienid;
+-- Task 16.	Xóa nhung Nhân viên chua tung lâp đuoc hop đông nào tu năm 2019 đên năm 2021.
