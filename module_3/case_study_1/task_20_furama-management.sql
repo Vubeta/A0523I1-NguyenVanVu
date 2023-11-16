@@ -198,24 +198,5 @@ VALUES
 (2,1,2),
 (2,12,2);
 
--- Task 18.	Xóa nhung khách hàng có hop đông truoc năm 2021 (chú ý ràng buôc giua các bang).
--- list khách hàng có hop đông truoc năm 2021
-create temporary table temp_table1 as
-select distinct hdkhachhangid from hop_dong where year(hdbegindate)<2021;
--- list hop đông cua nhung khách hàng có hop đông truoc năm 2021
-create temporary table temp_table2 as
-select hd.hdid from hop_dong hd where hd.hdkhachhangid in (select * from temp_table1);
--- delete các hop đông chi tiêt liên quan
-delete from hop_dong_chi_tiet
-where hdcthdid in (select * from temp_table2);
--- delete các hop đông liên quan
-delete from hop_dong
-where hdid in (select * from temp_table2);
--- delete các khách hàng liên quan
-delete from khach_hang
-where khid in (select * from temp_table1);
--- clear memory
-drop temporary table if exists temp_table1;
-drop temporary table if exists temp_table2;
--- show list khách hàng
-select * from khach_hang;
+-- Task 20.	Hiên thi thông tin cua tât ca các nhân viên và khách hàng có trong hê thông, 
+-- thông tin hiên thi bao gôm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.

@@ -198,24 +198,18 @@ VALUES
 (2,1,2),
 (2,12,2);
 
--- Task 18.	Xóa nhung khách hàng có hop đông truoc năm 2021 (chú ý ràng buôc giua các bang).
--- list khách hàng có hop đông truoc năm 2021
-create temporary table temp_table1 as
-select distinct hdkhachhangid from hop_dong where year(hdbegindate)<2021;
--- list hop đông cua nhung khách hàng có hop đông truoc năm 2021
-create temporary table temp_table2 as
-select hd.hdid from hop_dong hd where hd.hdkhachhangid in (select * from temp_table1);
--- delete các hop đông chi tiêt liên quan
-delete from hop_dong_chi_tiet
-where hdcthdid in (select * from temp_table2);
--- delete các hop đông liên quan
-delete from hop_dong
-where hdid in (select * from temp_table2);
--- delete các khách hàng liên quan
-delete from khach_hang
-where khid in (select * from temp_table1);
+-- Task 19.	Câp nhât giá cho các dich vu đi kèm đuoc su dung trên 10 lân trong năm 2020 lên gâp đôi.
+-- list dich vu đi kèm đuoc su dung trên 10 lân trong năm 2020
+create temporary table temp_table as
+select dvdkid as ma_dvdk, ifnull(sum(soluong),0) as count_dkdk
+from dich_vu_di_kem
+join hop_dong_chi_tiet on hdctdvdkid = dvdkid
+where hdcthdid in (select hdid from hop_dong where year(hdbegindate)=2020)
+group by dvdkid
+having sum(soluong) > 10;
+-- tăng giá dich vu đi kèm liên quan
+update dich_vu_di_kem
+set dvdkprice = dvdkprice * 2
+where dvdkid in (select ma_dvdk from temp_table);
 -- clear memory
-drop temporary table if exists temp_table1;
-drop temporary table if exists temp_table2;
--- show list khách hàng
-select * from khach_hang;
+drop temporary table if exists temp_table;
