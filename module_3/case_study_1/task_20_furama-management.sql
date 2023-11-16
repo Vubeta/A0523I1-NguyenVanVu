@@ -200,3 +200,22 @@ VALUES
 
 -- Task 20.	Hiên thi thông tin cua tât ca các nhân viên và khách hàng có trong hê thông, 
 -- thông tin hiên thi bao gôm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
+select
+	nvid as id,
+    nvhoten as ho_ten,
+    nvemail as email,
+    nvsdt as so_dien_thoai,
+    nvngaysinh as ngay_sinh,
+    nvdiachi as dia_chi
+from nhan_vien
+
+union
+
+select
+	khid as id,
+    khhoten as ho_ten,
+    khemail as email,
+    khsdt as so_dien_thoai,
+    khngaysinh as ngay_sinh,
+    khdiachi as dia_chi
+from khach_hang;
