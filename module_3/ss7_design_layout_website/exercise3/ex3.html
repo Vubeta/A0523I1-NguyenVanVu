@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phát triển trang web xem hoạt hình trực tuyến</title>
+    <style>
+        .row {
+            display: flex;
+        }
+
+        .header {
+            background: #EEEEEE;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .header img {
+            height: 100%;
+            width: auto
+        }
+
+        .menu {
+            margin-top: 10px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #EEEEEE;
+        }
+
+        .menu ul li {
+            padding: 0 20px;
+            font-weight: bold;
+            font-family: Arial;
+            border-right: solid black 1px;
+            text-align: center;
+        }
+
+        .menu ul li:last-child {
+            border-right: none;
+        }
+
+        .left-content {
+            width: 25%;
+            background: #CCCCFF;
+            display: flex;
+            justify-content: center;
+        }
+
+        .img-container {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin: 5px 10px;
+        }
+
+        .img-container:hover {
+            cursor: pointer;
+        }
+
+        .img-container p {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .img-container p {
+            margin: 0px;
+            padding: 0px;
+            font-weight: bold;
+        }
+
+        .img-container span {
+            color: #666666;
+            font-size: small;
+        }
+
+        .right-content {
+            width: 75%;
+            background: #FFFFFF;
+            display: flex;
+            justify-content: center;
+        }
+
+        .detail-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .detail-content p {
+            margin: 15px;
+        }
+
+        .content {
+            display: none;
+        }
+
+        .highlight {
+            color: white;
+            background-color: #e74c3c; /* Màu đỏ */
+            padding: 4px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+<div class="header">
+        <h1 style="font-family: cursive; font-style: italic; margin-left: 5px">Phim <span class="highlight">Hoạt Hình</span></h1>
+</div>
+<div class="menu">
+    <ul style="list-style-type: none;" class="row">
+        <li>Phim hoạt hình</li>
+        <li>Phim hoạt hình yêu thích</li>
+        <li>Nhân vật hoạt hình</li>
+        <li>Góp ý</li>
+    </ul>
+</div>
+<div class="row" style="background: #FFFFFF; margin: 5px 0">
+    <div class="left-content">
+        <div style="margin: 5px;background: #EEEEEE;display: flex; justify-content: center; flex-direction: column;">
+            <!--    left-content 1-->
+            <div class="img-container" onclick="showContent('content1')">
+                <img src="https://i.ytimg.com/an_webp/mAjLE8ob8SI/mqdefault_6s.webp?du=3000&sqp=CKzJh6sG&rs=AOn4CLCWTKNz4FYFkWSk2gWem98PN8nYWQ"
+                     alt="Image 1">
+                <p>Khai Thác Trái Cây - <span>19,432,532 lượt xem</span></p>
+                <p style="color: #666666">POPS Kids</p>
+            </div>
+            <!--    left-content 2-->
+            <div class="img-container" onclick="showContent('content2')">
+                <img src="https://i.ytimg.com/an_webp/Bc-IOwlfOZY/mqdefault_6s.webp?du=3000&sqp=CMalh6sG&rs=AOn4CLCY7prfuLxDP0YA5Y9fXTnNQlqyjA"
+                     alt="Image 2">
+                <p> Tổng Hợp Bộ Hoạt Hình Doraemon Mùa 5 Hay Nhất - <span>34,457,918 lượt xem</span></p>
+                <p style="color: silver">POPS Kids</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-content">
+        <div class="content detail-content" id="content1">
+            <iframe
+                    width="560" height="315"
+                    src="https://www.youtube.com/embed/mAjLE8ob8SI?si=Skwv1YT5YHfVA8pr"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+            </iframe>
+            <div>
+                <p style="font-weight: bold">MẢNH ĐỜI KHÔNG TÁCH</p>
+                <p>
+                    Tình yêu đôi lứa hay tình cảm ruột thịt mới là thứ làm chúng ta day dứt nhất về sau
+                    cùng. Điều này tùy thuộc vào cảm nhận của riêng mỗi người. Có thể chúng ta còn
+                    trẻ, chúng ta còn nhiều thời gian để đổ lỗi cho thứ gọi là "sai lầm của tuổi trẻ".
+                    Nhưng thực ra mà nói, cuộc đời là một chuỗi những hành trình mà bước đi sau sẽ cần
+                    phải dựa vào chính bước đi từ phía trước. Tình yêu có thể trở thành ngốc nghếch
+                    và dằn vặt, cũng có thể đơn giản là một cái phủi tay như thể rằng ngày mai sẽ
+                    khác.
+
+                    Đến một lúc nào đó, chúng ta sẽ đột nhiên nhớ ra về tuổi trẻ của mình và thoải mái
+                    đối mặt lại với những nỗi đau mà bản thân từng trốn chạy. Đó là lúc mà tình yêu
+                    vốn dĩ chẳng còn là điều đặc biệt quan trọng như cách chúng ta từng nghĩ. Người cũ,
+                    tình cũ hay bất cứ những thứ gì cũ kỹ, có thể cũng chỉ đơn giản được gói trong
+                    một câu chuyện dửng dưng bên tách cà phê để hồi tưởng, hoặc một nụ cười thoáng
+                    qua nếu vô tình bắt gặp đâu đó trong dòng đời.
+                </p>
+            </div>
+        </div>
+        <div class="content detail-content" id="content2">
+            <iframe
+                    width="560" height="315"
+                    src="https://www.youtube.com/embed/Bc-IOwlfOZY?si=9atsz89AHUQn3uto"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+            </iframe>
+            <div>
+                <p style="font-weight: bold">BẦU TRỜI SAU CƠN MƯA</p>
+                <p>
+                    Vì công việc khá bận rộn nên tôi ngủ rất ít. Có khi một ngày tôi chỉ ngủ được hai đến ba tiếng đồng
+                    hồ. Bình thường khi nằm xuống chuẩn bị đi ngủ, tôi phát hiện ra bầu trời ngoài cửa sổ trong xanh kỳ
+                    lạ. Vậy là cơn buồn ngủ không kéo đến, tôi ngồi dậy lưng tựa vào thành giường ngắm sắc màu rực rỡ
+                    của bầu trời ngoài kia. Giống như một tấm lăng kính được gột rửa hết những giọt nước mưa trở nên
+                    sáng sủa lấp lánh, mang theo vẻ đẹp tinh khôi và ẩm ướt.
+
+                    Đó là khoảng thời gian an yên của tôi. Sáng sớm có gió lạnh lùa vào qua khe cửa kèm theo mùi hương
+                    thanh khiết của những hạt sương mai trong suốt đậu trên từng nhánh cây. Dòng xe ngoài phố mỗi lúc
+                    một nhiều, giai điệu của bài tập thể dục cất lên, tiếng bước chân rồi tiếng người tíu tít trò
+                    chuyện. Một ngày mới lại bắt đầu. Khoảng thời gian bình lặng ấy mang theo những nấc thang buồn bã và
+                    u ám, tất cả trôi qua chỉ trong tích tắc.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; background: #CCCCFF; height: 70px">
+    <span style="font-weight: bold">© 2023 - Thiết kế web bởi Vubeta</span>
+</div>
+<script>
+    function showContent(contentId) {
+        let listContent = document.querySelectorAll('[id^="content"]');
+        for (let i = 0; i < listContent.length; i++) {
+            if (!listContent[i].classList.contains("content")) {
+                listContent[i].classList.add("content");
+            }
+        }
+        let contentSelected = document.getElementById(contentId);
+        if (contentSelected) {
+            contentSelected.classList.remove("content");
+        }
+    }
+</script>
+</body>
+</html>
