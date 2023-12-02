@@ -62,15 +62,19 @@ public class ProductServiceImpl implements IProductService {
 
     //used for findProduct
     public List<String> getMatchingList(String productName) {
-        //create treemap
         Map<String,Product> products = PRODUCT_REPOSITORY.getAll();
-        String[] words = productName.split("\\s+");
+        //lower & split string
+        String[] words = productName.toLowerCase().split("\\s+");
+        //create treemap
         TreeMap<Integer,String> nums = new TreeMap<>();
+
         for (Map.Entry<String,Product> entry : products.entrySet()) {
             String key = entry.getKey();
             Product product = entry.getValue();
-            String[] wordsProduct = product.getProductName().split("\\s+");
-            nums.put(compareTwoArrays(words,wordsProduct),key);
+            String[] wordsProduct = product.getProductName().toLowerCase().split("\\s+");
+            int countSame = compareTwoArrays(words,wordsProduct);
+            if (countSame > 0)
+                nums.put(countSame,key);
         }
 
         // Lấy một NavigableMap với thứ tự giảm dần của key

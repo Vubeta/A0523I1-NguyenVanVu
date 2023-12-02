@@ -6,6 +6,6 @@
     <title>Ứng dụng quản lý khách hàng</title>
 </head>
 <body>
-
+<a href="/product-servlet">Hiển thị danh sách sản phẩm</a>
 </body>
 </html>
