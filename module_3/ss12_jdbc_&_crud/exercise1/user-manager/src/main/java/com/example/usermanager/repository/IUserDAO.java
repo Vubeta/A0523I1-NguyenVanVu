@@ -14,4 +14,7 @@ public interface IUserDAO {
     public boolean deleteUser(int id);
 
     public boolean updateUser(User user);
+
+    List<User> findUsers(String country);
+    List<User> sortList();
 }

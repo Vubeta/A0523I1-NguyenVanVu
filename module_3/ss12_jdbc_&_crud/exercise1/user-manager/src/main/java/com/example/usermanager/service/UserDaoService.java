@@ -32,4 +32,14 @@ public class UserDaoService implements IUserDAOService {
     public boolean updateUser(User user) {
         return USER_DAO.updateUser(user);
     }
+
+    @Override
+    public List<User> findUser(String country) {
+        return USER_DAO.findUsers(country);
+    }
+
+    @Override
+    public List<User> sortList() {
+        return USER_DAO.sortList();
+    }
 }

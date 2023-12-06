@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1a5052bb-4776-43dc-a605-1c3491ec3a5c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/user/find.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user-manager.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhAn/src/view/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../BenhAn/src/view/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/controller/BenhAnController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/model/BenhAn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/model/BenhAnThuong.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/model/BenhAnVip.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/repository/BenhAnRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/repository/IBenhAnRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/service/BenhAnService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/service/IBenhAnService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/utils/InputByUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/utils/ReadAndWrite.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BenhVien/src/view/BenhAnView.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/controller/TaiKhoanNganHangController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/controller/TaiKhoanNganHangController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanNganHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanNganHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanThanhToan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanThanhToan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanTietKiem.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/model/TaiKhoanTietKiem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/repository/ITaiKhoanNganHangRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/repository/ITaiKhoanNganHangRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/repository/TaiKhoanNganHangRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/repository/TaiKhoanNganHangRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/service/ITaiKhoanNganHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/service/ITaiKhoanNganHangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/service/TaiKhoanNganHangService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/service/TaiKhoanNganHangService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/utils/InputByUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/utils/InputByUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/utils/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/utils/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FinalExamModule2/src/view/TaiKhoanNganHangView.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FinalExamModule2/src/view/TaiKhoanNganHangView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/controller/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Booking.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Booking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Contract.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Contract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/model/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IBookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IBookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IEmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IEmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IFacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IFacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IPromotionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/IPromotionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/Repository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/Repository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/BookingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/BookingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/ContractRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/ContractRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/EmployeeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/FacilityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/FacilityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/PromotionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/repository/impl/PromotionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IBookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IBookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IEmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IEmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IFacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IFacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IPromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/IPromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/BookingService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/BookingService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/ContractService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/ContractService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/EmployeeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/EmployeeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/FacilityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/FacilityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/PromotionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/service/impl/PromotionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/BookingComparator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/BookingComparator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/CheckDate.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/CheckDate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/CheckInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/CheckInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/ConvertVariable.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/ConvertVariable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/utils/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../FuramaResort/src/view/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../FuramaResort/src/view/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../casestudy/THI/cau1.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy/THI/cau1.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../casestudy/THI/cau2.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy/THI/cau2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../casestudy/THI/cau3.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy/THI/cau3.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../casestudy/THI/cau4.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy/THI/cau4.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../casestudy/module1/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../casestudy/module1/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/src/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module2/ss1_introduction_to_java/SystemTime.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_1/ss05_html_form_table/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_1/ss05_html_form_table/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_1/ss11-cau_truc_lap_2/in_hinh_trai_tim.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_1/ss11-cau_truc_lap_2/mang_so_nguyen_random.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/DayFibonacciNhoHon100.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/DayFibonacciNhoHon100.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SapXepChuoiTangDan.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SapXepChuoiTangDan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SoLanXuatHienCuaPhanTuTrongChuoiString.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SoLanXuatHienCuaPhanTuTrongChuoiString.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SoLanXuatHienKyTuTrongChuoi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/SoLanXuatHienKyTuTrongChuoi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/TimSoNguyenTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/TimSoNguyenTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/TongCacSoNguyenTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/TongCacSoNguyenTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/ViTri2SoBatKyBangN.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/luyen_tap_thuat_toan_module2/ViTri2SoBatKyBangN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/controller/TransportationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/controller/TransportationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/OTo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/OTo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/PhuongTienGiaoThong.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/PhuongTienGiaoThong.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/XeMay.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/XeMay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/XeTai.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/model/XeTai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/ITransportationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/ITransportationRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/OToRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/OToRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/XeMayRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/XeMayRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/XeTaiRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/repository/impl/XeTaiRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IOToService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IOToService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IXeMayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IXeMayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IXeTaiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/IXeTaiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/OToService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/OToService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/XeMayService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/XeMayService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/XeTaiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/service/impl/XeTaiService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/utils/InputByUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/utils/InputByUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/practice_test/utils/ReadAndWrite.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/practice_test/utils/ReadAndWrite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/ss11_stack_and_queue/CountOccurrenceOfTheEachWordInAStringUsingMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/ss11_stack_and_queue/CountOccurrenceOfTheEachWordInAStringUsingMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/ss14_sort_algorithm/SetupInsertionSortAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/ss14_sort_algorithm/SetupInsertionSortAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/ss14_sort_algorithm/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/ss14_sort_algorithm/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/ss16_io_text_file/ReadFileCSV.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/ss16_io_text_file/ReadFileCSV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_2/src/ss1_introduce_to_java/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_2/src/ss1_introduce_to_java/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss10_jsp_and_jstl/exercise2/Calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss10_jsp_and_jstl/exercise2/Calculator/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_mvc_model/exercise1/ProductManagement/src/main/java/com/example/productmanagement/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_mvc_model/exercise1/ProductManagement/src/main/java/com/example/productmanagement/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss11_mvc_model/exercise1/ProductManagement/src/main/webapp/display-product-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss11_mvc_model/exercise1/ProductManagement/src/main/webapp/display-product-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/usermanager/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/usermanager/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/usermanager/repository/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/usermanager/repository/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/usermanager/repository/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/usermanager/repository/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/usermanager/service/IUserDAOService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/usermanager/service/IUserDAOService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/usermanager/service/UserDaoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/usermanager/service/UserDaoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss7_design_layout_website/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss7_design_layout_website/test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9_web_application_overview/exercise1/ProductDiscountCalculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_web_application_overview/exercise1/ProductDiscountCalculator/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../test.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2ZARJs1I7ysnDtnLtyOn9Nrmazc" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Code_Gym/Data GitHub/module_3/ss11_mvc_model/exercise1/ProductManagement"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat 10.1.16" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.16" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/users" />
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="Gradle : com.example : user-manager-1.0-SNAPSHOT.war">
+          <settings>
+            <option name="CONTEXT_PATH" value="" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="f03c812c-b743-42fd-be97-c47ebe3c07f7" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="51176" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="Gradle : com.example : user-manager-1.0-SNAPSHOT.war" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a5052bb-4776-43dc-a605-1c3491ec3a5c" name="Changes" comment="" />
+      <created>1701862829277</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701862829277</updated>
+      <workItem from="1701862830799" duration="9401000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

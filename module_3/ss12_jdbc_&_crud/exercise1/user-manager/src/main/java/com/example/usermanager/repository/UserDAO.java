@@ -14,6 +14,8 @@ public class UserDAO implements IUserDAO {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?, email = ?, country = ? where id = ?;";
+    private static final String FIND_USERS_SQL = "select * from users where country like ?;";
+    private static final String SORT_USERS_SQL = "select * from users order by substring_index (`name`,' ',-1);";
 
     public UserDAO() {
     }
@@ -85,6 +87,25 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
+    public List<User> findUsers(String countryInput) {
+        List<User> listUsers = new ArrayList<>();
+        try (Connection connection = BaseRepository.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(FIND_USERS_SQL)) {
+            preparedStatement.setString(1,"%" + countryInput + "%");
+            ResultSet rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                listUsers.add(new User(id, name, email, country));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return listUsers;
+    }
+
+    @Override
     public boolean updateUser(User user) {
         boolean rowUpdated = false;
         try(Connection connection = BaseRepository.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USERS_SQL)) {
@@ -98,6 +119,24 @@ public class UserDAO implements IUserDAO {
             e.printStackTrace();
         }
         return rowUpdated;
+    }
+
+    @Override
+    public List<User> sortList() {
+        List<User> sortedList = new ArrayList<>();
+        try(Connection connection = BaseRepository.getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(SORT_USERS_SQL)) {
+            ResultSet rs = preparedStatement.executeQuery();
+            while(rs.next()) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                String email = rs.getString("email");
+                String country = rs.getString("country");
+                sortedList.add(new User(id, name, email, country));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sortedList;
     }
 
     private void printSQLException(SQLException ex) {

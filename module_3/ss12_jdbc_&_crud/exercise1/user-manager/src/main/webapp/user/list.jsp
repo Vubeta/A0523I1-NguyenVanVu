@@ -17,6 +17,11 @@
     <h2>
         <a href="/users?action=create">Add New User</a>
     </h2>
+    <form action="/users" method="get">
+        <input type="text" placeholder="Search by country name" name="countryName">
+        <button type="submit" name="action" value="search">Search</button>
+    </form>
+    <a type="button" href="/users?action=sort">Sort List</a>
 </center>
 <div align="center">
     <table border="1" cellpadding="5">

@@ -10,4 +10,6 @@ public interface IUserDAOService {
     List<User> getAllUsers();
     boolean removeUser(int id);
     boolean updateUser(User user);
+    List<User> findUser(String country);
+    List<User> sortList();
 }
