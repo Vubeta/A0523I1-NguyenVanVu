@@ -17,7 +17,7 @@ public class DictionaryController {
         return "/dictionary";
     }
 
-    @PostMapping("/find")
+    @GetMapping("/find")
     public String findDictionary(@RequestParam("engInput") String engInput, Model model) {
         String result = null;
         for (String[] s : arr) {

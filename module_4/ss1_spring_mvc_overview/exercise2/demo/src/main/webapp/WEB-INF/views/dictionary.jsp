@@ -5,7 +5,7 @@
     <title>Dictionary</title>
 </head>
 <body>
-<form action="/find" method="post">
+<form action="/find" method="get">
     <label for="engInput">English</label>
     <input type="text" name="engInput" id="engInput" required>
     <button type="submit">Find</button>
