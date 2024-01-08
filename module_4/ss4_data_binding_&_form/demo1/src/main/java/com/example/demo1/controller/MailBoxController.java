@@ -13,9 +13,14 @@ public class MailBoxController {
     private String[] arrLanguages = {"English", "Vietnamese", "Japanese", "Chinese"};
     private Integer[] arrPageSize = {5, 10, 15, 25, 50, 100};
     private MailBoxSettings mailBoxSettings = new MailBoxSettings();
+
+    @ModelAttribute("mailbox-settings")
+    public MailBoxSettings mailBoxSettings(){
+        return mailBoxSettings;
+    }
+
     @RequestMapping("/show-form")
     public String showForm(Model model){
-        model.addAttribute("mailbox-settings",mailBoxSettings);
         model.addAttribute("languageList",arrLanguages);
         model.addAttribute("pageSizeList",arrPageSize);
         return "/mailbox_settings/mailbox-settings";
