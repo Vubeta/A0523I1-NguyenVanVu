@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new music</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<style>
+    .m-1p {
+        margin: 1%;
+    }
+
+    .ms-1p {
+        margin-left: 1%;
+    }
+</style>
+<body>
+<div class="m-1p">
+    <h1>Create new music</h1>
+    <!--    form create-->
+    <form th:action="@{/music/create-music}" method="post" th:object="${music}">
+        <!--    Music name-->
+        <div class="mb-3">
+            <label for="musicName" class="form-label">Music name</label>
+            <input type="text" th:field="*{musicName}" class="form-control" id="musicName" required>
+        </div>
+        <p th:if="${#fields.hasErrors('musicName')}" th:errors="*{musicName}"></p>
+        <!--    Music artist-->
+        <div class="mb-3">
+            <label for="musicArtist" class="form-label">Artist</label>
+            <input type="text" th:field="*{musicArtist}" class="form-control" id="musicArtist" required>
+        </div>
+        <p th:if="${#fields.hasErrors('musicArtist')}" th:errors="*{musicArtist}"></p>
+        <!--    Music genre-->
+        <div class="mb-3">
+            <label for="musicGenre" class="form-label">Music genre</label>
+            <input type="text" th:field="*{musicGenre}" class="form-control" id="musicGenre" required>
+        </div>
+        <p th:if="${#fields.hasErrors('musicGenre')}" th:errors="*{musicGenre}"></p>
+        <!--    Music Submit-->
+        <div class="d-flex align-items-center">
+            <button type="submit" class="btn btn-primary m-0 me-">Create music</button>
+            <a class="btn btn-secondary ms-1p" href="/music/" role="button">Back to list music</a>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
