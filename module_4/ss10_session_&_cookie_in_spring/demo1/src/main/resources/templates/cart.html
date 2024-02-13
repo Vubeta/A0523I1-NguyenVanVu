@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cart</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+</head>
+<style>
+    .m-1p {
+        margin: 1%;
+    }
+
+    .img-customize {
+        max-width: 10vw;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .product {
+        position: relative;
+    }
+
+    .delete-button {
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        display: none;
+    }
+
+    .product:hover .delete-button {
+        display: block;
+    }
+
+    p, span {
+        margin: 1%;
+    }
+</style>
+<body>
+<div class="m-1p">
+    <h3 th:text="'GIỎ HÀNG (' + ${cart.countItemQuantity()} + ')'"></h3>
+    <table class="table table-bordered">
+        <tr th:each="product, loop : ${cart.products}">
+            <td class="w-25 text-center">
+                <div class="product">
+                    <img th:src="${product.getKey().productImg}" th:alt="${product.getKey().productName}"
+                         class="img-customize img-thumbnail">
+                    <div class="delete-button">
+                        <a th:href="@{/product/update/cart/{id}/{action}(id = ${product.getKey().productId}, action = 'remove')}"
+                           type="button" class="btn btn-danger btn-sm">X</a>
+                    </div>
+                </div>
+            </td>
+            <td class="w-25">
+                <p th:text="'Sản phẩm ' + ${loop.count}" class="text-danger fw-bold"></p>
+                <p class="fw-bold">Mã SP:</p>
+                <p>Đơn giá:</p>
+                <p>Số lượng:</p>
+            </td>
+            <td class="w-50">
+                <br>
+                <p th:text="${product.getKey().productCode}" class="text-success"></p>
+                <p th:text="${#numbers.formatDecimal(product.getKey().productPrice, 0, 'COMMA', 3, 'POINT') + ' đ'}"
+                   class="fw-bold"></p>
+                <a id="decrease_button" type="button" class="btn btn-secondary btn-sm"
+                   th:href="@{/product/update/cart/{id}/{action}(id = ${product.getKey().productId}, action = 'decrease')}">-</a>
+                <span th:text="${product.getValue()}"></span>
+                <a id="increase_button" type="button" class="btn btn-primary btn-sm"
+                   th:href="@{/product/update/cart/{id}/{action}(id = ${product.getKey().productId}, action = 'increase')}">+</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center text-danger">
+                <p class="m-1p">Tổng cộng:</p>
+            </td>
+            <td>
+                <p th:text="${#numbers.formatDecimal(cart.countTotalPayment(), 0, 'COMMA', 3, 'POINT') + ' đ'}"
+                   class="m-1p fw-bold"></p>
+            </td>
+        </tr>
+    </table>
+
+    <div class="d-flex justify-content-center">
+        <div class="w-25 text-center">
+            <a th:href="@{/product/}" type="button" class="btn btn-primary">Tiếp tục mua sắm</a>
+        </div>
+
+        <div class="w-25 text-center">
+            <a th:href="@{/order/checkout}" type="button" class="btn btn-warning">Đặt hàng</a>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+</html>
