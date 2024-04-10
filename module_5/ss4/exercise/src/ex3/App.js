@@ -1,16 +1,13 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Counter from "./Counter";
 
 function App() {
-    const [count, setCount] = useState(0);
-
-    function useIncrement(addAmount){
-
-    }
-
-    function increase(addAmount) {
-        setCount(count + addAmount);
-    }
-
+    return (
+        <div>
+            <Counter addMount={1} />
+            <Counter addMount={2} />
+        </div>
+    );
 }
 
 export default App;
