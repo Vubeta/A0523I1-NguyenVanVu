@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^1.6.8",
+    "json-server": "^1.0.0-alpha.23",
+    "react-notifications": "^1.7.4",
+    "react-router-dom": "^6.22.3"
+  }
+}
