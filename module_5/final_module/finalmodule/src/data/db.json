@@ -1,0 +1,69 @@
+{
+  "facilitys": [
+    {
+      "id": "e062",
+      "name": "3222"
+    },
+    {
+      "id": "8d00",
+      "name": "4"
+    },
+    {
+      "id": "5fb5",
+      "name": "Trần Văn Thiện",
+      "acreage": "124214",
+      "expense": "214",
+      "maxPerson": "42",
+      "roomStandard": "abc",
+      "floor": "2",
+      "description": "2"
+    },
+    {
+      "id": "eca8",
+      "name": "qwGFE"
+    },
+    {
+      "id": "b4ee",
+      "name": "QWH4WH"
+    }
+  ],
+  "customers": [
+    {
+      "id": "b1f6",
+      "name": "Tran Thien",
+      "dob": "1998-08-01",
+      "gender": "Female",
+      "email": "thien0801@gmail.com",
+      "address": "105/17 Ngũ Hành Sơn, Mỹ An, Ngũ Hành Sơn, Đà Nẵng",
+      "phone": "0374055614",
+      "idCard": "045098004112",
+      "customerType": {
+        "id": "3",
+        "name": "Gold"
+      }
+    }
+  ],
+  "emplyees": [],
+  "customerTypes": [
+    {
+      "id": "1",
+      "name": "Diamond"
+    },
+    {
+      "id": "2",
+      "name": "platinum"
+    },
+    {
+      "id": "3",
+      "name": "Gold"
+    },
+    {
+      "id": "4",
+      "name": "Silver"
+    },
+    {
+      "id": "5",
+      "name": "Member"
+    }
+  ]
+}
