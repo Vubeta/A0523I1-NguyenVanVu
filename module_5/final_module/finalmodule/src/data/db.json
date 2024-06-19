@@ -1,69 +1,80 @@
 {
-  "facilitys": [
-    {
-      "id": "e062",
-      "name": "3222"
-    },
-    {
-      "id": "8d00",
-      "name": "4"
-    },
-    {
-      "id": "5fb5",
-      "name": "Trần Văn Thiện",
-      "acreage": "124214",
-      "expense": "214",
-      "maxPerson": "42",
-      "roomStandard": "abc",
-      "floor": "2",
-      "description": "2"
-    },
-    {
-      "id": "eca8",
-      "name": "qwGFE"
-    },
-    {
-      "id": "b4ee",
-      "name": "QWH4WH"
-    }
-  ],
-  "customers": [
-    {
-      "id": "b1f6",
-      "name": "Tran Thien",
-      "dob": "1998-08-01",
-      "gender": "Female",
-      "email": "thien0801@gmail.com",
-      "address": "105/17 Ngũ Hành Sơn, Mỹ An, Ngũ Hành Sơn, Đà Nẵng",
-      "phone": "0374055614",
-      "idCard": "045098004112",
-      "customerType": {
-        "id": "3",
-        "name": "Gold"
-      }
-    }
-  ],
-  "emplyees": [],
-  "customerTypes": [
+  "books": [
     {
       "id": "1",
-      "name": "Diamond"
+      "bookId": "BO-0001",
+      "name": "AAA",
+      "type": {
+        "id": 1,
+        "name": "BBB"
+      },
+      "date": "2023-11-12",
+      "count": 3
     },
     {
       "id": "2",
-      "name": "platinum"
+      "bookId": "BO-0002",
+      "name": "CCC",
+      "type": {
+        "id": 1,
+        "name": "DDD"
+      },
+      "date": "2023-10-11",
+      "count": 7
     },
     {
       "id": "3",
-      "name": "Gold"
+      "bookId": "BO-0003",
+      "name": "AAACCC",
+      "type": {
+        "id": 1,
+        "name": "DDD"
+      },
+      "date": "2023-10-11",
+      "count": 7
     },
     {
-      "id": "4",
-      "name": "Silver"
+      "id": "b22b",
+      "bookId": "BO-0005",
+      "name": "THIEN1",
+      "type": {
+        "id": "2",
+        "name": "DDD"
+      },
+      "date": "2024-04-09",
+      "count": 6
     },
     {
-      "id": "5",
-      "name": "Member"
+      "id": "9254",
+      "bookId": "BO-0007",
+      "name": "thiekutp1",
+      "type": {
+        "id": "2",
+        "name": "DDD"
+      },
+      "date": "2024-04-10",
+      "count": 4
+    },
+    {
+      "id": "e5f3",
+      "bookId": "BO-0006",
+      "name": "thienkuto1",
+      "type": {
+        "id": "2",
+        "name": "DDD"
+      },
+      "date": "2024-04-10",
+      "count": 4.5
+    }
+  ],
+  "types": [
+    {
+      "id": "1",
+      "name": "BBB"
+    },
+    {
+      "id": "2",
+      "name": "DDD"
     }
   ]
 }
